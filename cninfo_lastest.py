@@ -93,6 +93,7 @@ def get_sz():
                 new_anno.announcementTypeName = j['announcementTypeName']
                 new_anno.url = 'http://www.cninfo.com.cn/' + j['adjunctUrl']                
                 new_anno.save()
+        print "Finish SZ pageNum: ", pageNum
         pageNum += 1
         #: testing with only one page
         # break
@@ -158,6 +159,7 @@ def get_s():
                 new_anno.announcementTypeName = j['announcementTypeName']
                 new_anno.url = 'http://www.cninfo.com.cn/' + j['adjunctUrl']
                 new_anno.save()
+        print "Finish S pageNum: ", pageNum
         pageNum += 1
         #: testing with only one page
         # break

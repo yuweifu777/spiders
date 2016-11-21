@@ -1,0 +1,192 @@
+2016-11-21 11:00:09 [scrapy] INFO: Scrapy 1.2.1 started (bot: announcement)
+2016-11-21 11:00:09 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'announcement.spiders', 'SPIDER_MODULES': ['announcement.spiders'], 'LOG_FILE': 'scrapy.log', 'LOG_LEVEL': 'INFO', 'BOT_NAME': 'announcement'}
+2016-11-21 11:00:09 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-11-21 11:00:09 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-11-21 11:00:09 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-11-21 11:00:09 [scrapy] INFO: Enabled item pipelines:
+['announcement.pipelines.MongoDBPipeline']
+2016-11-21 11:00:09 [scrapy] INFO: Spider opened
+2016-11-21 11:00:09 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2016-11-21 11:00:15 [scrapy] INFO: Closing spider (finished)
+2016-11-21 11:00:15 [scrapy] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 3652,
+ 'downloader/request_count': 6,
+ 'downloader/request_method_count/POST': 6,
+ 'downloader/response_bytes': 420602,
+ 'downloader/response_count': 6,
+ 'downloader/response_status_count/200': 6,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2016, 11, 21, 3, 0, 15, 261413),
+ 'item_scraped_count': 700,
+ 'log_count/INFO': 7,
+ 'request_depth_max': 5,
+ 'response_received_count': 6,
+ 'scheduler/dequeued': 6,
+ 'scheduler/dequeued/memory': 6,
+ 'scheduler/enqueued': 6,
+ 'scheduler/enqueued/memory': 6,
+ 'start_time': datetime.datetime(2016, 11, 21, 3, 0, 9, 498142)}
+2016-11-21 11:00:15 [scrapy] INFO: Spider closed (finished)
+2016-11-21 11:00:23 [scrapy] INFO: Scrapy 1.2.1 started (bot: announcement)
+2016-11-21 11:00:23 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'announcement.spiders', 'SPIDER_MODULES': ['announcement.spiders'], 'LOG_FILE': 'scrapy.log', 'LOG_LEVEL': 'INFO', 'BOT_NAME': 'announcement'}
+2016-11-21 11:00:23 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-11-21 11:00:23 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-11-21 11:00:23 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-11-21 11:00:23 [scrapy] INFO: Enabled item pipelines:
+['announcement.pipelines.MongoDBPipeline']
+2016-11-21 11:00:23 [scrapy] INFO: Spider opened
+2016-11-21 11:00:23 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2016-11-21 11:00:26 [scrapy] INFO: Closing spider (finished)
+2016-11-21 11:00:26 [scrapy] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 3009,
+ 'downloader/request_count': 5,
+ 'downloader/request_method_count/POST': 5,
+ 'downloader/response_bytes': 331212,
+ 'downloader/response_count': 5,
+ 'downloader/response_status_count/200': 5,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2016, 11, 21, 3, 0, 26, 33398),
+ 'item_scraped_count': 548,
+ 'log_count/INFO': 7,
+ 'request_depth_max': 4,
+ 'response_received_count': 5,
+ 'scheduler/dequeued': 5,
+ 'scheduler/dequeued/memory': 5,
+ 'scheduler/enqueued': 5,
+ 'scheduler/enqueued/memory': 5,
+ 'start_time': datetime.datetime(2016, 11, 21, 3, 0, 23, 910117)}
+2016-11-21 11:00:26 [scrapy] INFO: Spider closed (finished)
+2016-11-21 12:22:57 [scrapy] INFO: Scrapy 1.2.1 started (bot: announcement)
+2016-11-21 12:22:57 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'announcement.spiders', 'SPIDER_MODULES': ['announcement.spiders'], 'LOG_FILE': 'scrapy.log', 'LOG_LEVEL': 'INFO', 'BOT_NAME': 'announcement'}
+2016-11-21 12:22:57 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-11-21 12:22:57 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-11-21 12:22:57 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-11-21 12:22:57 [scrapy] INFO: Enabled item pipelines:
+['announcement.pipelines.MongoDBPipeline']
+2016-11-21 12:22:57 [scrapy] INFO: Spider opened
+2016-11-21 12:22:57 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2016-11-21 12:23:01 [scrapy] INFO: Closing spider (finished)
+2016-11-21 12:23:01 [scrapy] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 3652,
+ 'downloader/request_count': 6,
+ 'downloader/request_method_count/POST': 6,
+ 'downloader/response_bytes': 473501,
+ 'downloader/response_count': 6,
+ 'downloader/response_status_count/200': 6,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2016, 11, 21, 4, 23, 1, 181719),
+ 'item_scraped_count': 790,
+ 'log_count/INFO': 7,
+ 'request_depth_max': 5,
+ 'response_received_count': 6,
+ 'scheduler/dequeued': 6,
+ 'scheduler/dequeued/memory': 6,
+ 'scheduler/enqueued': 6,
+ 'scheduler/enqueued/memory': 6,
+ 'start_time': datetime.datetime(2016, 11, 21, 4, 22, 57, 576311)}
+2016-11-21 12:23:01 [scrapy] INFO: Spider closed (finished)
+2016-11-21 12:23:02 [scrapy] INFO: Scrapy 1.2.1 started (bot: announcement)
+2016-11-21 12:23:02 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'announcement.spiders', 'SPIDER_MODULES': ['announcement.spiders'], 'LOG_FILE': 'scrapy.log', 'LOG_LEVEL': 'INFO', 'BOT_NAME': 'announcement'}
+2016-11-21 12:23:02 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-11-21 12:23:02 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-11-21 12:23:02 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-11-21 12:23:02 [scrapy] INFO: Enabled item pipelines:
+['announcement.pipelines.MongoDBPipeline']
+2016-11-21 12:23:02 [scrapy] INFO: Spider opened
+2016-11-21 12:23:02 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2016-11-21 12:23:04 [scrapy] INFO: Closing spider (finished)
+2016-11-21 12:23:04 [scrapy] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 3009,
+ 'downloader/request_count': 5,
+ 'downloader/request_method_count/POST': 5,
+ 'downloader/response_bytes': 331222,
+ 'downloader/response_count': 5,
+ 'downloader/response_status_count/200': 5,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2016, 11, 21, 4, 23, 4, 540617),
+ 'item_scraped_count': 548,
+ 'log_count/INFO': 7,
+ 'request_depth_max': 4,
+ 'response_received_count': 5,
+ 'scheduler/dequeued': 5,
+ 'scheduler/dequeued/memory': 5,
+ 'scheduler/enqueued': 5,
+ 'scheduler/enqueued/memory': 5,
+ 'start_time': datetime.datetime(2016, 11, 21, 4, 23, 2, 473139)}
+2016-11-21 12:23:04 [scrapy] INFO: Spider closed (finished)
