@@ -58,7 +58,7 @@ class CninfoszSpider(Spider):
                 item = AnnouncementItem()
                 item['secName'] = j['secName']
                 item['secCode'] = j['secCode']
-                item['time'] = ts2time(j['announcementTime']/1000.0)
+                item['time'] = ts2time(j['storageTime']/1000.0)
                 item['announcementTitle'] = j['announcementTitle']
                 item['announcementTypeName'] = j['announcementTypeName']
                 item['url'] = 'http://www.cninfo.com.cn/'+j['adjunctUrl']
@@ -113,7 +113,7 @@ class CninfoshSpider(Spider):
                 item = AnnouncementItem()
                 item['secName'] = j['secName']
                 item['secCode'] = j['secCode']
-                item['time'] = ts2time(j['announcementTime']/1000.0)
+                item['time'] = ts2time(j['storageTime']/1000.0)
                 item['announcementTitle'] = j['announcementTitle']
                 item['announcementTypeName'] = j['announcementTypeName']
                 item['url'] = 'http://www.cninfo.com.cn/'+j['adjunctUrl']

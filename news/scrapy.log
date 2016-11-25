@@ -22971,3 +22971,1149 @@ TypeError: 'NoneType' object has no attribute '__getitem__'
  'spider_exceptions/TypeError': 1,
  'start_time': datetime.datetime(2016, 11, 21, 8, 13, 7, 332718)}
 2016-11-21 16:13:55 [scrapy] INFO: Spider closed (finished)
+2016-11-23 15:04:56 [scrapy] INFO: Scrapy 1.2.1 started (bot: news)
+2016-11-23 15:04:56 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'news.spiders', 'SPIDER_MODULES': ['news.spiders'], 'LOG_FILE': 'scrapy.log', 'LOG_LEVEL': 'INFO', 'BOT_NAME': 'news'}
+2016-11-23 15:04:56 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-11-23 15:04:56 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-11-23 15:04:56 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-11-23 15:04:56 [scrapy] INFO: Enabled item pipelines:
+['news.pipelines.MongoDBPipeline']
+2016-11-23 15:04:56 [scrapy] INFO: Spider opened
+2016-11-23 15:04:56 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2016-11-23 15:05:07 [scrapy] ERROR: Spider error processing <GET http://www.cs.com.cn/ssgs/gszt/20150325_61642/04/201611/t20161111_5092519.html> (referer: http://www.cs.com.cn/ssgs/hyzx/index_5.html)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/twisted/internet/defer.py", line 649, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/yuweifu/spiders/news/news/spiders/cs.py", line 64, in parse_item
+    item['time'] = response.xpath('//span[@class="ctime01"]/text()').extract_first()[:10]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2016-11-23 15:05:08 [scrapy] ERROR: Spider error processing <GET http://www.cs.com.cn/ssgs/gszt/20150325_61642/> (referer: http://www.cs.com.cn/ssgs/hyzx/index_4.html)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/twisted/internet/defer.py", line 649, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/yuweifu/spiders/news/news/spiders/cs.py", line 64, in parse_item
+    item['time'] = response.xpath('//span[@class="ctime01"]/text()').extract_first()[:10]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2016-11-23 15:05:13 [scrapy] ERROR: Spider error processing <GET http://www.cs.com.cn/ssgs/wysg/> (referer: http://www.cs.com.cn/ssgs/gsxw/)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/twisted/internet/defer.py", line 649, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/yuweifu/spiders/news/news/spiders/cs.py", line 65, in parse_item
+    item['time'] = datetime.datetime.strptime(item['time'], '%Y-%m-%d')
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/_strptime.py", line 325, in _strptime
+    (data_string, format))
+ValueError: time data '(11-23 09:' does not match format '%Y-%m-%d'
+2016-11-23 15:05:13 [scrapy] ERROR: Spider error processing <GET http://www.cs.com.cn/ssgs/gszt/20150325_61782/> (referer: http://www.cs.com.cn/ssgs/gsxw/)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/twisted/internet/defer.py", line 649, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/yuweifu/spiders/news/news/spiders/cs.py", line 64, in parse_item
+    item['time'] = response.xpath('//span[@class="ctime01"]/text()').extract_first()[:10]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2016-11-23 15:05:19 [scrapy] INFO: Closing spider (finished)
+2016-11-23 15:05:19 [scrapy] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 317127,
+ 'downloader/request_count': 1055,
+ 'downloader/request_method_count/GET': 1055,
+ 'downloader/response_bytes': 9333361,
+ 'downloader/response_count': 1055,
+ 'downloader/response_status_count/200': 1055,
+ 'dupefilter/filtered': 145,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2016, 11, 23, 7, 5, 19, 832261),
+ 'item_scraped_count': 1021,
+ 'log_count/ERROR': 4,
+ 'log_count/INFO': 7,
+ 'request_depth_max': 1,
+ 'response_received_count': 1055,
+ 'scheduler/dequeued': 1055,
+ 'scheduler/dequeued/memory': 1055,
+ 'scheduler/enqueued': 1055,
+ 'scheduler/enqueued/memory': 1055,
+ 'spider_exceptions/TypeError': 3,
+ 'spider_exceptions/ValueError': 1,
+ 'start_time': datetime.datetime(2016, 11, 23, 7, 4, 56, 806071)}
+2016-11-23 15:05:19 [scrapy] INFO: Spider closed (finished)
+2016-11-23 15:05:21 [scrapy] INFO: Scrapy 1.2.1 started (bot: news)
+2016-11-23 15:05:21 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'news.spiders', 'SPIDER_MODULES': ['news.spiders'], 'LOG_FILE': 'scrapy.log', 'LOG_LEVEL': 'INFO', 'BOT_NAME': 'news'}
+2016-11-23 15:05:21 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-11-23 15:05:21 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-11-23 15:05:21 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-11-23 15:05:21 [scrapy] INFO: Enabled item pipelines:
+['news.pipelines.MongoDBPipeline']
+2016-11-23 15:05:21 [scrapy] INFO: Spider opened
+2016-11-23 15:05:21 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2016-11-23 15:05:22 [scrapy] ERROR: Spider error processing <GET http://www.cs.com.cn/tzjj/00/201611/t20161109_5090199.html> (referer: http://www.cs.com.cn/xwzx/hwxx/index_7.html)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/twisted/internet/defer.py", line 649, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/yuweifu/spiders/news/news/spiders/cs.py", line 110, in parse_item
+    item['time'] = response.xpath('//span[@class="ctime01"]/text()').extract_first()[:10]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2016-11-23 15:05:30 [scrapy] ERROR: Spider error processing <GET http://www.cs.com.cn/xwzx/xwzt/151215_61693/01/201611/t20161117_5097402.html> (referer: http://www.cs.com.cn/xwzx/hg/index_4.html)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/twisted/internet/defer.py", line 649, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/yuweifu/spiders/news/news/spiders/cs.py", line 110, in parse_item
+    item['time'] = response.xpath('//span[@class="ctime01"]/text()').extract_first()[:10]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2016-11-23 15:05:32 [scrapy] INFO: Closing spider (finished)
+2016-11-23 15:05:32 [scrapy] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 236182,
+ 'downloader/request_count': 790,
+ 'downloader/request_method_count/GET': 790,
+ 'downloader/response_bytes': 6694487,
+ 'downloader/response_count': 790,
+ 'downloader/response_status_count/200': 790,
+ 'dupefilter/filtered': 10,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2016, 11, 23, 7, 5, 32, 223092),
+ 'item_scraped_count': 768,
+ 'log_count/ERROR': 2,
+ 'log_count/INFO': 7,
+ 'request_depth_max': 1,
+ 'response_received_count': 790,
+ 'scheduler/dequeued': 790,
+ 'scheduler/dequeued/memory': 790,
+ 'scheduler/enqueued': 790,
+ 'scheduler/enqueued/memory': 790,
+ 'spider_exceptions/TypeError': 2,
+ 'start_time': datetime.datetime(2016, 11, 23, 7, 5, 21, 317582)}
+2016-11-23 15:05:32 [scrapy] INFO: Spider closed (finished)
+2016-11-23 15:05:33 [scrapy] INFO: Scrapy 1.2.1 started (bot: news)
+2016-11-23 15:05:33 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'news.spiders', 'SPIDER_MODULES': ['news.spiders'], 'LOG_FILE': 'scrapy.log', 'LOG_LEVEL': 'INFO', 'BOT_NAME': 'news'}
+2016-11-23 15:05:33 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-11-23 15:05:33 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-11-23 15:05:33 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-11-23 15:05:33 [scrapy] INFO: Enabled item pipelines:
+['news.pipelines.MongoDBPipeline']
+2016-11-23 15:05:33 [scrapy] INFO: Spider opened
+2016-11-23 15:05:33 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2016-11-23 15:06:10 [scrapy] ERROR: Spider error processing <GET http://yjbg.cnstock.com/> (referer: http://company.cnstock.com/company/scp_gsxw/62)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/yuweifu/spiders/news/news/spiders/cnstock.py", line 36, in parse_item
+    item['time'] = response.xpath('//span[@class="timer"]/text()').extract_first()[:10]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2016-11-23 15:06:15 [scrapy] ERROR: Spider error processing <GET http://www.cnstock.com> (referer: http://company.cnstock.com/company/scp_gsxw/69)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/yuweifu/spiders/news/news/spiders/cnstock.py", line 36, in parse_item
+    item['time'] = response.xpath('//span[@class="timer"]/text()').extract_first()[:10]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2016-11-23 15:06:33 [scrapy] INFO: Crawled 2458 pages (at 2458 pages/min), scraped 2336 items (at 2336 items/min)
+2016-11-23 15:07:18 [scrapy] ERROR: Spider error processing <GET http://company.cnstock.com/topics/xzqmsdwk15> (referer: http://company.cnstock.com/company/scp_gsxw/180)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/yuweifu/spiders/news/news/spiders/cnstock.py", line 36, in parse_item
+    item['time'] = response.xpath('//span[@class="timer"]/text()').extract_first()[:10]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2016-11-23 15:07:19 [scrapy] ERROR: Spider error processing <GET http://company.cnstock.com/topics/xzqmsdwk15/201512/3663412.htm> (referer: http://company.cnstock.com/company/scp_gsxw/183)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/yuweifu/spiders/news/news/spiders/cnstock.py", line 36, in parse_item
+    item['time'] = response.xpath('//span[@class="timer"]/text()').extract_first()[:10]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2016-11-23 15:07:28 [scrapy] ERROR: Spider error processing <GET http://yjbg.cnstock.com/dyjm> (referer: http://company.cnstock.com/company/scp_gsxw/201)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/yuweifu/spiders/news/news/spiders/cnstock.py", line 36, in parse_item
+    item['time'] = response.xpath('//span[@class="timer"]/text()').extract_first()[:10]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2016-11-23 15:07:33 [scrapy] INFO: Crawled 4793 pages (at 2335 pages/min), scraped 4556 items (at 2220 items/min)
+2016-11-23 15:07:35 [scrapy] ERROR: Spider error processing <GET http://company.cnstock.com/company/scp_ggjd/gszhuanti/20153jb> (referer: http://company.cnstock.com/company/scp_gsxw/196)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/yuweifu/spiders/news/news/spiders/cnstock.py", line 36, in parse_item
+    item['time'] = response.xpath('//span[@class="timer"]/text()').extract_first()[:10]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2016-11-23 15:07:54 [scrapy] ERROR: Spider error processing <GET http://ggjd.cnstock.com/ggdetail/index/2000589770> (referer: http://company.cnstock.com/company/scp_gsxw/63)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/yuweifu/spiders/news/news/spiders/cnstock.py", line 36, in parse_item
+    item['time'] = response.xpath('//span[@class="timer"]/text()').extract_first()[:10]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2016-11-23 15:08:15 [scrapy] ERROR: Error processing {'content': u'<div class="content" id="qmt_content_div">\r\n                        <p>\u3000\u3000\u4e2d\u56fd\u8bc1\u5238\u7f51\u8baf\uff08\u8bb0\u8005 \u738b\u5c79\uff09 \u529b\u5e06\u80a1\u4efd9\u670830\u665a\u95f4\u516c\u544a\uff0c\u516c\u53f8\u62df\u534f\u540c\u5168\u8d44\u5b50\u516c\u53f8\u91cd\u5e86\u529b\u5e06\u5b9e\u4e1a\uff08\u96c6\u56e2\uff09\u8fdb\u51fa\u53e3\u6709\u9650\u516c\u53f8\u5171\u540c\u6295\u8d44\u4e0d\u8d85\u8fc73\u4ebf\u7f8e\u5143\u5728\u4fc4\u7f57\u65af\u5229\u4f69\u8328\u514b\u5dde\u5883\u5185\u65b0\u8bbe\u4e3b\u4f53\u5efa\u5382\u751f\u4ea7\u8f66\u8f86\uff0c\u5176\u4e2d\uff0c\u529b\u5e06\u80a1\u4efd\u5360\u6bd45%\uff0c\u529b\u5e06\u8fdb\u51fa\u53e3\u5360\u6bd495%\u3002</p><p>\u3000\u3000\u529b\u5e06\u80a1\u4efd\u4eca\u5e748\u670819\u65e5\u8463\u4e8b\u4f1a\u66fe\u51b3\u5b9a\uff0c\u62df\u901a\u8fc7\u529b\u5e06\u56fd\u9645(\u63a7\u80a1)\u6709\u9650\u516c\u53f8\u5728\u65b0\u52a0\u5761\u8bbe\u7acb\u7684\u5168\u8d44\u5b50\u516c\u53f8\u2014\u2014\u529b\u5e06\u56fd\u9645\uff08\u8d38\u6613\uff09\u6709\u9650\u516c\u53f8\uff0c\u6295\u8d441.5\u4ebf\u5143\u7f8e\u91d1\u5728\u4fc4\u7f57\u65af\u5361\u5362\u52a0\u5dde\u6295\u8d44\u5efa\u5382\u53ca\u751f\u4ea7\u548c\u9500\u552e\u8f66\u8f86\uff0c\u5e76\u5c31\u4e0a\u8ff0\u6295\u8d44\u4e8b\u5b9c\u4e0e\u5f53\u5730\u653f\u5e9c\u4ee3\u8868\u7b7e\u7f72\u300a\u6295\u8d44\u610f\u5411\u534f\u8bae\u300b\u3002</p><p>\u3000\u3000\u5bf9\u4e8e\u6b64\u6b21\u53d8\u66f4\uff0c\u529b\u5e06\u80a1\u4efd\u8868\u793a\uff0c\u5728\u4fc4\u7f57\u65af\u5361\u5362\u52a0\u5dde\u6295\u8d44\u5efa\u5382\u53ca\u751f\u4ea7\u548c\u9500\u552e\u8f66\u8f86\u7684\u5177\u4f53\u5b89\u6392\u4e0e\u5f53\u5730\u653f\u5e9c\u4ee3\u8868\u672a\u80fd\u8fbe\u6210\u4e00\u81f4\uff0c\u4e5f\u6ca1\u6709\u6b63\u5f0f\u7b7e\u7f72\u6295\u8d44\u610f\u5411\u6587\u4ef6\u3002\u7ecf\u516c\u53f8\u7814\u7a76\u8ba8\u8bba\uff0c\u62df\u6539\u5728\u6295\u8d44\u53ca\u751f\u4ea7\u73af\u5883\u66f4\u4e3a\u9002\u5b9c\u7684\u4fc4\u7f57\u65af\u5229\u4f69\u8328\u514b\u5dde\u5883\u5185\u5efa\u5382\u3001\u5e76\u8c03\u6574\u6295\u8d44\u989d\u5ea6\u53ca\u6295\u8d44\u4e3b\u4f53\u3002</p><p>\u3000\u3000\u6839\u636e\u516c\u544a\uff0c\u4e0a\u8ff0\u9879\u76ee\u6267\u884c\u5730\u5728\u5229\u4f69\u8328\u514b\u5dde\u5229\u4f69\u8328\u514b\u8054\u90a6\u7ecf\u6d4e\u7279\u533a\uff0c\u571f\u5730\u7531\u5f53\u5730\u653f\u5e9c\u843d\u5b9e\uff0c\u5efa\u8bbe\u671f\u95f4\u79df\u8d41\u4e88\u529b\u5e06\u80a1\u4efd\u6216\u5176\u5b50\u516c\u53f8\u3002\u5de5\u5382\u8fd0\u8425\u540e\uff0c\u529b\u5e06\u65b9\u9762\u83b7\u5f97\u8d2d\u4e70\u8be5\u5730\u5757\u7684\u6743\u5229\uff0c\u5f53\u5730\u653f\u5e9c\u5219\u4fdd\u8bc1\u7ed9\u4e88\u5176\u989d\u59163\u516c\u9877\u571f\u5730\u7528\u4e8e\u5458\u5de5\u5bbf\u820d\u5efa\u8bbe\uff0c\u5e76\u8d1f\u8d23\u7ed9\u4e88\u5168\u9762\u534f\u52a9\u3002\u6b64\u5916\uff0c\u5f53\u5730\u653f\u5e9c\u53ca\u7ecf\u6d4e\u7279\u533a\u7ba1\u7406\u516c\u53f8\u8fd8\u5c06\u534f\u52a9\u529b\u5e06\u83b7\u53d6\u9002\u7528\u4fc4\u7f57\u65af\u8054\u90a6\u53ca\u8be5\u5dde\u6cd5\u5f8b\u7684\u5404\u9879\u7a0e\u6536\u4f18\u60e0\u653f\u7b56\uff0c\u8fdb\u53e3\u81f3\u8054\u90a6\u7ecf\u6d4e\u7279\u533a\u5185\u7684\u8d27\u7269\u514d\u9664\u5173\u7a0e\u3001\u589e\u503c\u7a0e\uff0c\u5e76\u5b9a\u671f\u4fdd\u6301\u53cc\u65b9\u7684\u4f1a\u89c1\u548c\u4f1a\u8bae\u4ee5\u89e3\u51b3\u9879\u76ee\u6295\u8d44\u7684\u5404\u79cd\u95ee\u9898\u3002</p><p>\u3000\u3000\u636e\u4e86\u89e3\uff0c\u5229\u4f69\u8328\u514b\u5dde\u4f4d\u4e8e\u4fc4\u7f57\u65af\u6b27\u6d32\u90e8\u5206\u7684\u4e2d\u5fc3\uff0c\u8ddd\u83ab\u65af\u79d1400\u516c\u91cc\uff0c\u5c06\u4fc4\u7f57\u65af\u9996\u90fd\u548c\u4fc4\u5357\u90e8\u3001\u5317\u9ad8\u52a0\u7d22\u3001\u4fc4\u897f\u90e8\u3001\u4f0f\u5c14\u52a0\u6cb3\u6d41\u57df\u8fde\u63a5\u5728\u4e00\u8d77\uff0c\u662f\u91cd\u8981\u7684\u4ea4\u901a\u67a2\u7ebd\u3002\u5dde\u9762\u79ef2.4\u4e07\u5e73\u65b9\u516c\u91cc\uff0c\u4eba\u53e3120\u4e07\u3002\u65e9\u5728\u524d\u82cf\u8054\u65f6\u671f\uff0c\u8be5\u5dde\u5c31\u5df2\u7ecf\u662f\u751f\u4ea7\u767d\u8272\u5bb6\u7535\u7684\u5de5\u4e1a\u57fa\u5730\uff0c\u4ea7\u54c1\u5305\u62ec\u51b0\u7bb1\u3001\u6d17\u8863\u673a\u3001\u7a7a\u8c03\u7b49\u3002\u5f53\u5730\u5de5\u4e1a\u57fa\u7840\u8f83\u96c4\u539a\uff0c\u6709\u94a2\u94c1\u5382\u3001\u5927\u578b\u953b\u9020\u4f01\u4e1a\u7b49\u7b49\uff0c\u5177\u6709\u8f83\u4e3a\u5b8c\u5584\u7684\u5de5\u4e1a\u7efc\u5408\u4f53\u7cfb\u548c\u914d\u5957\u4ea7\u4e1a\uff0c\u76f8\u8f83\u4e8e\u5361\u5362\u52a0\u5dde\u5177\u6709\u66f4\u4e3a\u5b8c\u5584\u7684\u751f\u4ea7\u914d\u5957\u73af\u5883\u548c\u66f4\u4f18\u7684\u6295\u8d44\u73af\u5883\u3002</p><p>\u3000\u3000\u529b\u5e06\u80a1\u4efd\u63d0\u793a\uff0c\u672c\u6b21\u7b7e\u7f72\u7684\u534f\u8bae\u5c5e\u4e8e\u610f\u5411\u6027\u534f\u8bae\uff0c\u5176\u4e2d\u5404\u65b9\u8868\u8fbe\u4e86\u76f8\u4e92\u5408\u4f5c\u610f\u613f\u5e76\u56fa\u5316\u4e86\u5177\u4f53\u5408\u4f5c\u6761\u4ef6\u53ca\u4f18\u60e0\u653f\u7b56\uff0c\u6700\u7ec8\u6295\u8d44\u65b9\u6848\u5728\u6295\u8d44\u5b9e\u65bd\u65f6\u6240\u6d89\u5185\u5bb9\u53ef\u80fd\u4f1a\u53d1\u751f\u53d8\u5316\u53ca\u8c03\u6574\uff0c\u6700\u7ec8\u4ee5\u83b7\u5f97\u56fd\u5185\u76f8\u5173\u5ba1\u6279\u90e8\u95e8\u6279\u51c6\u4e3a\u51c6\u3002</p><p>\u3000\u3000\u636e\u529b\u5e06\u80a1\u4efd\u6709\u5173\u8d1f\u8d23\u4eba\u4ecb\u7ecd\uff0c\u51fa\u53e3\u4e1a\u52a1\u5386\u6765\u662f\u516c\u53f8\u6210\u957f\u58ee\u5927\u7684\u201c\u6cd5\u5b9d\u4e4b\u4e00\u201d\uff0c\u8fd1\u5e74\u6765\u66f4\u52a0\u5927\u4e86\u5bf9\u6d77\u5916\u5e02\u573a\u7684\u62d3\u5c55\u529b\u5ea6\u30022013\u5e74\u516c\u53f8\u51fa\u53e3\u91d1\u989d\u8fbe53.52\u4ebf\u5143\uff0c\u4fdd\u6301\u91cd\u5e86\u6c11\u8425\u5236\u9020\u4f01\u4e1a\u7b2c\u4e00\uff0c\u5360\u516c\u53f8\u8425\u4e1a\u603b\u6536\u5165\u6bd4\u91cd\u5df2\u8d85\u8fc7\u4e00\u534a\u3002\u5176\u4e2d\uff0c\u529b\u5e06\u8f7f\u8f66\u51fa\u53e3\u4f4d\u5217\u4e2d\u56fd\u81ea\u4e3b\u54c1\u724c\u8f7f\u8f66\u51fa\u53e3\u7b2c\u4e09\u540d\uff0c\u8fde\u7eed\u4e09\u5e74\u4e3a\u4fc4\u7f57\u65af\u4e2d\u56fd\u8f66\u4f01\u9500\u91cf\u51a0\u519b\uff1b\u6469\u6258\u8f66\u51fa\u53e3\u9500\u91cf\u4ea6\u589e\u957f\u4e8614.11%\u3002</p><div id="output_hangqing_div" style="text-align:center;" class="visible-md-block visible-lg-block"></div><input type="hidden" id="hid_totalPage" value="1"><input type="hidden" id="hid_docId" value="3197648">\r\n                        \r\n                    </div>',
+ 'time': datetime.datetime(2014, 9, 30, 0, 0),
+ 'title': u'\u529b\u5e06\u80a1\u4efd\u8c03\u6574\u4fc4\u7f57\u65af\u5de5\u5382\u5730\u5740 \u6295\u8d44\u89c4\u6a21\u589e\u81f33\u4ebf\u7f8e\u5143',
+ 'url': 'http://ggjd.cnstock.com/company/scp_ggjd/tjd_bbdj/201409/3197648.htm'}
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/twisted/internet/defer.py", line 649, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/yuweifu/spiders/news/news/pipelines.py", line 32, in process_item
+    self.db[self.collection_name].create_index("url", unique=True)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1387, in create_index
+    self.__create_index(keys, kwargs)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1298, in __create_index
+    sock_info, cmd, read_preference=ReadPreference.PRIMARY)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 208, in _command
+    read_concern=read_concern)
+  File "/Library/Python/2.7/site-packages/pymongo/pool.py", line 244, in command
+    self._raise_connection_failure(error)
+  File "/Library/Python/2.7/site-packages/pymongo/pool.py", line 372, in _raise_connection_failure
+    raise error
+AutoReconnect: connection closed
+2016-11-23 15:08:45 [scrapy] ERROR: Error processing {'content': u'<div class="content" id="qmt_content_div">\r\n                        <p>\u3000\u3000\u4e2d\u56fd\u8bc1\u5238\u7f51\u8baf\uff08\xa0\u8bb0\u8005\xa0\u4e25\u7fe0\uff09 \u56fd\u5185\u81b3\u98df\u8425\u517b\u8865\u5145\u5242\u9886\u5148\u4f01\u4e1a\u6c64\u81e3\u500d\u50659\u670830\u65e5\u665a\u95f4\u53d1\u5e03\u524d\u4e09\u5b63\u5ea6\u4e1a\u7ee9\u9884\u544a\u663e\u793a\uff0c\u9884\u8ba1\u4eca\u5e74\u524d\u4e09\u5b63\u5ea6\u51c0\u5229\u6da6\u4e3a\xa04.4199\xa0\u4ebf\u5143-5.1271\u4ebf\u5143\uff0c\u53bb\u5e74\u540c\u671f\u4e3a3.535948\u4ebf\u5143\uff0c\u540c\u6bd4\u589e\u957f25%-45%\u3002</p><p>\u3000\u3000\u6c64\u81e3\u500d\u5065\u8868\u793a\uff0c2014\xa0\u5e74\u524d\u4e09\u5b63\u5ea6\uff0c\u516c\u53f8\u843d\u5b9e\xa02014\xa0\u5e74\u5ea6\u7ecf\u8425\u8ba1\u5212\u7684\u8981\u6c42\uff0c\u59cb\u7ec8\u575a\u6301\u201c\u53d6\u81ea\u5168\u7403\uff0c\u5065\u5eb7\u5168\u5bb6\u201d\u7684\u54c1\u724c\u7406\u5ff5\uff0c\u7740\u624b\u63d0\u5347\u670d\u52a1\u529b\uff0c\u542f\u52a8\u4e0e\u63a8\u5e7f\u201c\u8425\u517b\u5bb6\u4f53\u7cfb\u201d\uff0c\u5b9a\u5236\u5168\u65b0\u7ba1\u7406\u7cfb\u7edf\u4ee5\u6253\u9020\u6838\u5fc3\u7ade\u4e89\u529b\uff1b\u7ee7\u7eed\u5f00\u62d3\u5355\u54c1\u65b0\u6a21\u5f0f\u7b49\u65b0\u54c1\u724c\u3001\u65b0\u54c1\u7c7b\u3001\u65b0\u9879\u76ee\u7b49\u5229\u6da6\u589e\u957f\u70b9\uff0c\u63a8\u51fa\u4e0e\u79ef\u6781\u57f9\u80b2\u57fa\u4e8e\u79fb\u52a8\u4e92\u8054\u7f51\u601d\u7ef4\u7684\u5065\u5eb7\u7ba1\u7406\u54c1\u724c\u201c\u5341\u4e8c\u7bee\u201d\u3002\u57fa\u4e8e\u6b64\u516c\u53f8\u9884\u8ba1\xa02014\xa0\u5e74\u524d\u4e09\u5b63\u5ea6\u516c\u53f8\u9500\u552e\u6536\u5165\u8f83\u53bb\u5e74\u540c\u671f\u5c06\u6709\u4e00\u5b9a\u5e45\u5ea6\u589e\u957f\uff0c\u5bfc\u81f4\u516c\u53f8\xa02014\xa0\u5e74\u524d\u4e09\u5b63\u5ea6\u7684\u4e1a\u7ee9\u8f83\u53bb\u5e74\u540c\u671f\u6709\u4e00\u5b9a\u5e45\u5ea6\u589e\u52a0\u3002</p><p>\u3000\u3000\u56de\u67e5\u6c64\u81e3\u500d\u5065\u8d22\u52a1\u6570\u636e\u53d1\u73b0\uff0c\u51762013\u5e74\u5ea6\u3001\u4eca\u5e74\u4e00\u5b63\u5ea6\u3001\u4ee5\u53ca\u4eca\u5e74\u4e0a\u534a\u5e74\u51c0\u5229\u6da6\u5206\u522b\u540c\u6bd4\u589e\u957f50.41%\u300150.68%\u300151.6%\uff0c\u56e0\u6b64\u5bf9\u6bd4\u672c\u6b21\u51c0\u5229\u6da6\u9884\u589e\u60c5\u51b5\u770b\uff0c\u4eca\u5e74\u7b2c\u4e09\u5b63\u5ea6\u4e1a\u7ee9\u6bd4\u6b64\u524d\u7684\u9ad8\u589e\u901f\u6216\u7a0d\u6709\u56de\u843d\u3002</p><div id="output_hangqing_div" style="text-align:center;" class="visible-md-block visible-lg-block"></div><input type="hidden" id="hid_totalPage" value="1"><input type="hidden" id="hid_docId" value="3197661">\r\n                        \r\n                    </div>',
+ 'time': datetime.datetime(2014, 9, 30, 0, 0),
+ 'title': u'\u6c64\u81e3\u500d\u5065\u524d\u4e09\u5b63\u5ea6\u51c0\u5229\u9884\u589e25%-45%',
+ 'url': 'http://ggjd.cnstock.com/company/scp_ggjd/tjd_bbdj/201409/3197661.htm'}
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/twisted/internet/defer.py", line 649, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/yuweifu/spiders/news/news/pipelines.py", line 32, in process_item
+    self.db[self.collection_name].create_index("url", unique=True)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1387, in create_index
+    self.__create_index(keys, kwargs)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1294, in __create_index
+    with self._socket_for_writes() as sock_info:
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/Library/Python/2.7/site-packages/pymongo/mongo_client.py", line 762, in _get_socket
+    server = self._get_topology().select_server(selector)
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 210, in select_server
+    address))
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 186, in select_servers
+    self._error_message(selector))
+ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused
+2016-11-23 15:08:45 [scrapy] INFO: Crawled 6414 pages (at 1621 pages/min), scraped 6145 items (at 1589 items/min)
+2016-11-23 15:09:15 [scrapy] ERROR: Error processing {'content': u'<div class="content" id="qmt_content_div">\r\n                        <p><p></p></p><p>\u3000\u3000\u4e2d\u56fd\u8bc1\u5238\u7f51\u8baf\uff08\u8bb0\u8005 \u738b\u5c79\uff09 \u897f\u5357\u8bc1\u52389\u670830\u65e5\u665a\u95f4\u516c\u544a,\u7ecf9\u670829\u65e5\u53ec\u5f00\u7684\u4e2d\u56fd\u8bc1\u76d1\u4f1a\u53d1\u884c\u5ba1\u6838\u59d4\u5458\u4f1a\u5ba1\u6838\uff0c\u516c\u53f8\u53d1\u884c\u516c\u53f8\u503a\u5238\u7533\u8bf7\u83b7\u5f97\u901a\u8fc7\u3002\u6309\u7167\u89c4\u5b9a,\u516c\u53f8\u5c06\u5728\u6536\u5230\u8bc1\u76d1\u4f1a\u6b63\u5f0f\u6279\u6587\u540e\u65b9\u80fd\u542f\u52a8\u53d1\u884c\u4e8b\u5b9c\u3002</p><p>\u3000\u3000\u4eca\u5e745\u670812\u65e5\uff0c\u897f\u5357\u8bc1\u5238\u80a1\u4e1c\u5927\u4f1a\u5ba1\u8bae\u901a\u8fc7\u4e86\u300a\u5173\u4e8e\u516c\u53f8\u53d1\u884c\u516c\u53f8\u503a\u5238\u7684\u8bae\u6848\u300b\uff0c\u62df\u6309\u4e0d\u8d85\u8fc7\u53d1\u884c\u524d\u6700\u8fd1\u4e00\u671f\u672b\u51c0\u8d44\u4ea7\u989d\u768440%\u7684\u89c4\u5b9a\u4e0a\u9650\u7533\u8bf7\u53d1\u884c\u516c\u53f8\u503a\u5238\uff0c\u671f\u9650\u4e3a\u4e0d\u8d85\u8fc710\u5e74\uff0c\u53ef\u4ee5\u4e3a\u5355\u4e00\u671f\u9650\u54c1\u79cd\uff0c\u4e5f\u53ef\u4ee5\u4e3a\u591a\u79cd\u671f\u9650\u7684\u6df7\u5408\u54c1\u79cd\uff0c\u52df\u96c6\u8d44\u91d1\u5168\u90e8\u7528\u4e8e\u8865\u5145\u516c\u53f8\u8425\u8fd0\u8d44\u91d1\u3002</p><p>\u3000\u3000\u6839\u636e\u897f\u5357\u8bc1\u5238\u622a\u81f3\u4eca\u5e746\u670830\u65e5\u7684\u51c0\u8d44\u4ea7154\u4ebf\u5143\u8ba1\uff0c\u6700\u591a\u53ef\u53d1\u884c\u7ea660\u4ebf\u5143\u516c\u53f8\u503a\u5238\u3002</p><div id="output_hangqing_div" style="text-align:center;" class="visible-md-block visible-lg-block"></div><input type="hidden" id="hid_totalPage" value="1"><input type="hidden" id="hid_docId" value="3197647">\r\n                        \r\n                    </div>',
+ 'time': datetime.datetime(2014, 9, 30, 0, 0),
+ 'title': u'\u897f\u5357\u8bc1\u5238\u516c\u53f8\u503a\u53d1\u884c\u7533\u8bf7\u83b7\u5ba1\u6838\u901a\u8fc7',
+ 'url': 'http://ggjd.cnstock.com/company/scp_ggjd/tjd_bbdj/201409/3197647.htm'}
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/twisted/internet/defer.py", line 649, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/yuweifu/spiders/news/news/pipelines.py", line 32, in process_item
+    self.db[self.collection_name].create_index("url", unique=True)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1387, in create_index
+    self.__create_index(keys, kwargs)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1294, in __create_index
+    with self._socket_for_writes() as sock_info:
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/Library/Python/2.7/site-packages/pymongo/mongo_client.py", line 762, in _get_socket
+    server = self._get_topology().select_server(selector)
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 210, in select_server
+    address))
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 186, in select_servers
+    self._error_message(selector))
+ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused
+2016-11-23 15:09:45 [scrapy] ERROR: Error processing {'content': u'<div class="content" id="qmt_content_div">\r\n                        <p>\u3000\u3000\u4e2d\u56fd\u8bc1\u5238\u7f51\u8baf\uff08\u8bb0\u8005 \u4e25\u7fe0\uff09 \u79d1\u529b\u8fdc9\u670830\u65e5\u665a\u95f4\u516c\u544a\uff0c\u516c\u53f8\u5168\u8d44\u5b50\u516c\u53f8\u6e56\u5357\u79d1\u9738\u52a8\u529b\u7535\u6c60\u6709\u9650\u8d23\u4efb\u516c\u53f8\u8fd1\u65e5\u6536\u5230\u653f\u5e9c\u8865\u8d34\u5171\u8ba13548\u4e07\u5143\uff0c\u8d44\u91d1\u5df2\u4e8e2014\u5e749\u670829\u65e5\u5230\u8d26\u3002<br>\u3000\u3000\u4e0a\u8ff0\u653f\u5e9c\u8865\u8d34\u5747\u6765\u81ea\u65b0\u80fd\u6e90\u6c7d\u8f66\u76f8\u5173\u9879\u76ee\uff0c\u5305\u62ec\u4e24\u90e8\u5206\uff0c\u5176\u4e00\u662f\u6839\u636e\u957f\u6c99\u5e02\u8d22\u653f\u5c40\u300a\u5173\u4e8e\u4e0b\u8fbe2014\u5e74\u7a00\u571f\u4ea7\u4e1a\u8865\u52a9\u8d44\u91d1\u9884\u7b97\uff08\u62e8\u6b3e\uff09\u7684\u901a\u77e5\u300b\uff08\u957f\u8d22\u4f01\u6307[2014]74\u53f7\uff09\uff0c\u79d1\u9738\u516c\u53f8\u83b7\u5f972014\u5e74\u7a00\u571f\u4ea7\u4e1a\u8865\u52a9\u8d44\u91d11178\u4e07\u5143\uff0c\u7528\u4e8e\u201c\u5e74\u4ea74.8\u4e07\u53f0\u5957\u65b0\u80fd\u6e90\u6c7d\u8f66\u7528\u7a00\u571f\u50a8\u6c22\u5408\u91d1\u52a8\u529b\u7535\u6c60\u6a21\u5757\u4ea7\u4e1a\u5316\u201d\u9879\u76ee\u3002 <br>\u3000\u3000\u5176\u4e8c\uff0c\u662f\u6839\u636e\u957f\u6c99\u5e02\u8d22\u653f\u5c40\u3001\u957f\u6c99\u5e02\u5de5\u4e1a\u548c\u4fe1\u606f\u5316\u59d4\u5458\u4f1a\u300a\u5173\u4e8e\u4e0b\u8fbe2014\u5e74\u5de5\u4e1a\u8f6c\u578b\u5347\u7ea7\uff08\u5de5\u4e1a\u5f3a\u57fa\u5de5\u7a0b\uff09\u8d44\u91d1\u7684\u901a\u77e5\u300b\uff08\u957f\u8d22\u4f01\u6307[2014]75\u53f7\uff09\uff0c\u79d1\u9738\u516c\u53f8\u83b7\u5f972014\u5e74\u5de5\u4e1a\u8f6c\u578b\u5347\u7ea7\uff08\u5de5\u4e1a\u5f3a\u57fa\u5de5\u7a0b\uff09\u8d44\u91d12370\u4e07\u5143\uff0c\u7528\u4e8e\u201c\u6df7\u5408\u52a8\u529b\u6c7d\u8f66\u954d\u6c22\u7535\u6c60\u5b9e\u65bd\u65b9\u6848\u201d\u9879\u76ee\u3002<br>\u3000\u3000\u4eca\u5e74\u4ee5\u6765\uff0c\u79d1\u529b\u8fdc\u4e00\u76f4\u5728\u52a0\u5927\u5bf9\u65b0\u80fd\u6e90\u6c7d\u8f66\u4e1a\u52a1\u7684\u6295\u5165\u4e0e\u89c4\u5212\u529b\u5ea6\u3002\u5982\u4eca\u5e745\u670827\u65e5\u665a\uff0c\u79d1\u529b\u8fdc\u516c\u544a\u62df\u5411\u56db\u5bb6\u6218\u7565\u6295\u8d44\u673a\u6784\u975e\u516c\u5f00\u53d1\u884c2810\u4e07\u81f34680\u4e07\u80a1\u80a1\u7968\uff0c\u52df\u8d446\u4ebf-10\u4ebf\u7528\u4e8e\u8865\u5145\u6d41\u52a8\u8d44\u91d1\u65f6\uff0c\u79d1\u529b\u8fdc\u603b\u7ecf\u7406\u7f57\u97ec\u5c31\u66fe\u660e\u786e\u8868\u793a\uff0c\u201c\u672c\u6b21\u975e\u516c\u5f00\u52df\u8d44\uff0c\u6709\u5229\u4e8e\u5feb\u901f\u63a8\u8fdbHEV\uff08\u6df7\u5408\u52a8\u529b\u6c7d\u8f66\uff09\u7535\u6c60\u80fd\u91cf\u5305\u5efa\u8bbe\uff0c\u4e3a\u516c\u53f8HEV\u52a8\u529b\u7535\u6c60\u4e1a\u52a1\u7206\u53d1\u505a\u51c6\u5907\u201d\u3002<br>\u3000\u3000\u518d\u5982\uff0c9\u670819\u65e5\u665a\uff0c\u79d1\u529b\u8fdc\u518d\u5ea6\u516c\u544a\uff0c\u62df\u8054\u59fb\u201c\u5409\u5229\u201d\uff0c\u5171\u540c\u6210\u7acb\u5408\u8d44\u516c\u53f8\uff0c\u6df1\u8015\u6df7\u5408\u52a8\u529b\u6c7d\u8f66\u3002</p><div id="output_hangqing_div" style="text-align:center;" class="visible-md-block visible-lg-block"></div><input type="hidden" id="hid_totalPage" value="1"><input type="hidden" id="hid_docId" value="3197662">\r\n                        \r\n                    </div>',
+ 'time': datetime.datetime(2014, 9, 30, 0, 0),
+ 'title': u'\u79d1\u529b\u8fdc\u65b0\u80fd\u6e90\u6c7d\u8f66\u9879\u76ee\u83b73548\u4e07\u653f\u5e9c\u8865\u8d34',
+ 'url': 'http://ggjd.cnstock.com/company/scp_ggjd/tjd_bbdj/201409/3197662.htm'}
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/twisted/internet/defer.py", line 649, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/yuweifu/spiders/news/news/pipelines.py", line 32, in process_item
+    self.db[self.collection_name].create_index("url", unique=True)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1387, in create_index
+    self.__create_index(keys, kwargs)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1294, in __create_index
+    with self._socket_for_writes() as sock_info:
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/Library/Python/2.7/site-packages/pymongo/mongo_client.py", line 762, in _get_socket
+    server = self._get_topology().select_server(selector)
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 210, in select_server
+    address))
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 186, in select_servers
+    self._error_message(selector))
+ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused
+2016-11-23 15:10:15 [scrapy] ERROR: Error processing {'content': u'<div class="content" id="qmt_content_div">\r\n                        <p>\u3000\u3000\u4e2d\u56fd\u8bc1\u5238\u7f51\u8baf\uff08\u8bb0\u8005 \u674e\u7433\uff09 \u8f89\u4e30\u80a1\u4efd\u4e0e\u4e30\u4e1c\u80a1\u4efd10\u67087\u65e5\u665a\u95f4\u540c\u65f6\u53d1\u5e03\u516c\u544a\uff0c\u7531\u8f89\u4e30\u80a1\u4efd\u4f5c\u4e3a\u4e3b\u53d1\u8d77\u4eba\uff0c\u4e24\u516c\u53f8\u53c2\u80a1\u7533\u8bf7\u8bbe\u7acb\u7684\u519c\u6751\u5c0f\u8d37\u516c\u53f8\u83b7\u6c5f\u82cf\u7701\u91d1\u878d\u529e\u7b79\u5efa\u6279\u590d\u3002<br>\u3000\u3000\u6839\u636e\u516c\u544a\uff0c\u8f89\u4e30\u80a1\u4efd\u4e0e\u4e30\u4e1c\u80a1\u4efd\u5747\u4e8e\u8fd1\u65e5\u6536\u5230\u6c5f\u82cf\u7701\u4eba\u6c11\u653f\u5e9c\u91d1\u878d\u529e\u4e0b\u53d1\u7684\u300a\u5173\u4e8e\u540c\u610f\u7b79\u5efa\u5927\u4e30\u5e02\u6cbf\u6d77\u519c\u6751\u5c0f\u989d\u8d37\u6b3e\u6709\u9650\u516c\u53f8\u7684\u6279\u590d\u300b\uff0c\u540c\u610f\u4e24\u516c\u53f8\u53d1\u8d77\u8bbe\u7acb\u5927\u4e30\u5e02\u6cbf\u6d77\u519c\u6751\u5c0f\u989d\u8d37\u6b3e\u6709\u9650\u516c\u53f8\uff0c\u7b79\u5efa\u5730\u70b9\u4e3a\u5927\u4e30\u5e02\u897f\u56e2\u9547\uff0c\u7b79\u5907\u671f\u6700\u957f\u4e0d\u8d85\u8fc76 \u4e2a\u6708\u3002<br>\u3000\u3000\u540c\u5904\u5927\u4e30\u5e02\u7684\u8f89\u4e30\u80a1\u4efd\u548c\u4e30\u4e1c\u80a1\u4efd\u4ece2013\u5e7410\u6708\u4e2d\u65ec\u5f00\u59cb\u8054\u624b\u53d1\u8d77\u8bbe\u7acb\u5c0f\u989d\u8d37\u6b3e\u516c\u53f8\uff0c\u6ce8\u518c\u8d44\u672c\u4e3a2\u4ebf\u5143\uff0c\u5c0f\u8d37\u516c\u53f8\u7684\u6295\u8d44\u65b9\u5f53\u65f6\u62df\u5b9a\u4e3a5\u540d\uff0c\u5305\u62ec\u8f89\u4e30\u80a1\u4efd\u3001\u4e30\u4e1c\u80a1\u4efd\u548c3\u540d\u81ea\u7136\u4eba\u3002\u5176\u4e2d\uff0c\u8f89\u4e30\u80a1\u4efd\u51fa\u8d447000\u4e07\u5143\uff0c\u5360\u603b\u80a1\u672c\u768435%\uff0c\u4e3a\u4e3b\u53d1\u8d77\u4eba\uff1b\u4e30\u4e1c\u80a1\u4efd\u51fa\u8d444000\u4e07\u5143\uff0c\u5360\u5176\u6ce8\u518c\u8d44\u672c\u768420%\u3002<br>\u3000\u3000\u6b64\u6b21\u7b79\u5efa\u7684\u5927\u4e30\u5e02\u6cbf\u6d77\u519c\u6751\u5c0f\u989d\u8d37\u6b3e\u6709\u9650\u516c\u53f8\u4ee5\u670d\u52a1\u201c\u4e09\u519c\u201d\u4e3a\u5b97\u65e8\uff0c\u4e0d\u5438\u6536\u516c\u4f17\u5b58\u6b3e\uff0c\u4e3b\u8425\u4e1a\u52a1\u4e3a\u9762\u5411\u201c\u4e09\u519c\u201d\u53d1\u653e\u5c0f\u989d\u8d37\u6b3e\u3001\u63d0\u4f9b\u62c5\u4fdd\u3002<br>\u3000\u3000\u6839\u636e\u6b64\u524d\u53d1\u8d77\u8bbe\u7acb\u65f6\u7684\u9884\u60f3\uff0c\u5c0f\u8d37\u516c\u53f8\u5229\u7387\u4e0a\u9650\u8f83\u5176\u4ed6\u91d1\u878d\u673a\u6784\u9ad8\uff0c\u53ef\u83b7\u5f97\u7a33\u5b9a\u548c\u8f83\u597d\u7684\u6536\u76ca\u3002\u8f89\u4e30\u80a1\u4efd\u66f4\u9884\u671f\u5c0f\u8d37\u516c\u53f8\u6b63\u5e38\u7ecf\u84253\u5e74\u540e\uff0c\u6709\u671b\u6539\u5236\u4e3a\u6751\u9547\u94f6\u884c\uff0c\u521b\u9020\u66f4\u5927\u6548\u76ca\u3002<br>\u3000\u3000\u4e24\u516c\u53f8\u8868\u793a\uff0c\u5c06\u6309\u7167\u7b79\u5efa\u6279\u590d\u6587\u4ef6\u7684\u8981\u6c42\uff0c\u5c3d\u5feb\u5b8c\u6210\u9884\u5148\u6838\u51c6\u767b\u8bb0\u3001\u9009\u8058\u4e0e\u62a5\u5907\u9ad8\u7ba1\u53ca\u4ece\u4e1a\u4eba\u5458\u3001\u62df\u5b9a\u7ae0\u7a0b\u4e0e\u5236\u5ea6\u3001\u51fa\u8d44\u9a8c\u8d44\u3001\u7533\u8bf7\u5f00\u4e1a\u4ee5\u53ca\u5de5\u5546\u767b\u8bb0\u7b49\u5de5\u4f5c\u3002</p><div id="output_hangqing_div" style="text-align:center;" class="visible-md-block visible-lg-block"></div><input type="hidden" id="hid_totalPage" value="1"><input type="hidden" id="hid_docId" value="3198061">\r\n                        \r\n                    </div>',
+ 'time': datetime.datetime(2014, 10, 7, 0, 0),
+ 'title': u'\u8f89\u4e30\u80a1\u4efd\u8054\u624b\u4e30\u4e1c\u80a1\u4efd\u7b79\u5efa\u519c\u6751\u5c0f\u8d37\u516c\u53f8\u83b7\u6279\u590d',
+ 'url': 'http://ggjd.cnstock.com/company/scp_ggjd/tjd_bbdj/201410/3198061.htm'}
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/twisted/internet/defer.py", line 649, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/yuweifu/spiders/news/news/pipelines.py", line 32, in process_item
+    self.db[self.collection_name].create_index("url", unique=True)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1387, in create_index
+    self.__create_index(keys, kwargs)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1294, in __create_index
+    with self._socket_for_writes() as sock_info:
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/Library/Python/2.7/site-packages/pymongo/mongo_client.py", line 762, in _get_socket
+    server = self._get_topology().select_server(selector)
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 210, in select_server
+    address))
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 186, in select_servers
+    self._error_message(selector))
+ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused
+2016-11-23 15:10:46 [scrapy] ERROR: Error processing {'content': u'<div class="content" id="qmt_content_div">\r\n                        <p>\u3000\u3000\u4e2d\u56fd\u8bc1\u5238\u7f51\u8baf\uff08\u8bb0\u8005 \u4e25\u7fe0\uff09 \u8bd5\u56fe\u5927\u529b\u62d3\u5c55\u975e\u6d32\u5e02\u573a\u7684\u5168\u56fd\u5149\u7f06\u4e1a\u9996\u5bb6\u6c11\u8425\u4e0a\u5e02\u516c\u53f8\u6c38\u9f0e\u80a1\u4efd\uff0c\u5982\u4eca\u975e\u6d32\u5e02\u573a\u518d\u4e0b\u4e00\u57ce\u2014\u2014\u8d5e\u6bd4\u4e9a\u3002<br>\u3000\u3000\u6c38\u9f0e\u80a1\u4efd9\u670830\u65e5\u665a\u95f4\u516c\u544a\uff0c\u516c\u53f8\u63a7\u80a1\u5b50\u516c\u53f8\u6c5f\u82cf\u6c38\u9f0e\u6cf0\u5bcc\u5de5\u7a0b\u6709\u9650\u516c\u53f8\u8fd1\u65e5\u4e0e\u8d5e\u6bd4\u4e9a\u56fd\u6709\u7535\u529b\u516c\u53f8\u7b7e\u8ba2\u4e86\u201c\u8d5e\u6bd4\u4e9a\u65b0\u5efa\u3001\u6269\u5efa5\u4e2a132/33KV\u53d8\u7535\u7ad9\u548c\u65b0\u5efa6\u4e2a33/0.415KV\u53d8\u7535\u7ad9\u7684\u9879\u76ee\u5408\u540c\u201d\uff0c\u5408\u540c\u91d1\u989d\u7ea6\u6298\u5408\u4e3a2607\u4e07\u7f8e\u5143\u3002<br>\u3000\u3000\u6839\u636e\u534f\u8bae\uff0c\u8be5\u9879\u76ee\u672a\u63d0\u4f9b\u8bbe\u8ba1\uff0c\u4f9b\u8d27\uff0c\u571f\u5efa\u3001\u8c03\u8bd5\u7684\u4ea4\u94a5\u5319\u5de5\u7a0b\uff0c\u5de5\u671f2\u5e74\u3001\u8d28\u4fdd\u671f1\u5e74\uff0c\u4e1a\u4e3b\u4e3a\u8d5e\u6bd4\u4e9a\u56fd\u6709\u7535\u529b\u516c\u53f8ZESCO Limited\uff0c\u8d1f\u8d23\u8d5e\u6bd4\u4e9a\u5168\u56fd\u8f93\u7535\u8bbe\u65bd\u89c4\u5212\u3001\u5efa\u8bbe\u548c\u7ecf\u8425\u3002\u9879\u76ee\u7531\u6c38\u9f0e\u6cf0\u5bcc\u4e0e\u5317\u4eac\u4e2d\u7f06\u901a\u8fbe\u7535\u6c14\u6210\u5957\u6709\u9650\u516c\u53f8\uff0c\u8d5e\u6bd4\u4e9a\u5f53\u5730\u516c\u53f8Cavery Investment Limited\u7ec4\u6210\u7684\u8054\u5408\u4f53\u603b\u627f\u5305\u5efa\u9020\u3002<br>\u3000\u3000\u503c\u5f97\u6ce8\u610f\u7684\u662f\uff0c\u8be5\u5408\u540c\u4e3a\u6c38\u9f0e\u80a1\u4efd\u5728\u8d5e\u6bd4\u4e9a\u7684\u7b2c\u4e00\u4e2a\u603b\u627f\u5305\u5408\u540c\uff0c\u5408\u540c\u7684\u5229\u6da6\u9884\u8ba1\u4f4e\u4e8e\u516c\u53f8\u5728\u4f20\u7edf\u4e1c\u5357\u4e9a\u5e02\u573a\u540c\u7c7b\u5408\u540c\u7684\u5229\u6da6\uff0c\u5982\u672c\u5408\u540c\u5f97\u5230\u987a\u5229\u5c65\u884c\uff0c\u5c06\u5bf9\u6c38\u9f0e\u6cf0\u5bcc\u5f00\u62d3\u975e\u6d32\u65b0\u5e02\u573a\u5177\u6709\u8f83\u5927\u7684\u610f\u4e49\u3002<br>\u3000\u3000\u4e0d\u8fc7\uff0c\u6c38\u9f0e\u80a1\u4efd\u8868\u793a\uff0c\u8be5\u5408\u540c\u9884\u8ba1\u57282015\u5e74\u4e0b\u534a\u5e74\u5f00\u59cb\u6b63\u5f0f\u542f\u52a8\uff0c\u5bf9\u4e0a\u5e02\u516c\u53f8\u672c\u5e74\u5ea6\u7684\u8d44\u4ea7\u603b\u989d\u3001\u8d44\u4ea7\u51c0\u989d\u548c\u51c0\u5229\u6da6\u4e0d\u6784\u6210\u5f71\u54cd\u3002<br>\u3000\u3000\u4e2d\u56fd\u8bc1\u5238\u7f51\u8bb0\u8005\u4e86\u89e3\u5230\uff0c\u53bb\u5e74\u4ee5\u6765\uff0c\u516c\u53f8\u975e\u6d32\u5e02\u573a\u5f00\u62d3\u8fdb\u5c55\u660e\u663e\uff0c\u5df2\u521d\u89c1\u6210\u6548\u3002\u4eca\u5e743\u6708\uff0c\u6c38\u9f0e\u80a1\u4efd\u63a7\u80a1\u5b50\u516c\u53f8\u6c5f\u82cf\u6c38\u9f0e\u6cf0\u5bcc\u5de5\u7a0b\u6709\u9650\u516c\u53f8\u521a\u521a\u7b7e\u4e0b\u975e\u6d32\u57c3\u585e\u4fc4\u6bd4\u4e9a972\u4e07\u7f8e\u5143\u8f93\u53d8\u7535\u5de5\u7a0b\u9879\u76ee\uff0c\u800c\u8fd9\u662f\u7ee7\u516c\u53f8\u53bb\u5e74\u7684\u5b5f\u52a0\u62c9KODDA 150MW\u7535\u5382\u9879\u76ee\u540e\u7684\u53c8\u4e00\u4e2a\u8f83\u5927\u91d1\u989d\u6d77\u5916\u5de5\u7a0b\u4e1a\u52a1\uff0c\u4e5f\u662f\u516c\u53f8\u4eca\u5e74\u5927\u529b\u62d3\u5c55\u975e\u6d32\u5e02\u573a\u7684\u91cd\u8981\u6536\u83b7\u3002</p><div id="output_hangqing_div" style="text-align:center;" class="visible-md-block visible-lg-block"></div><input type="hidden" id="hid_totalPage" value="1"><input type="hidden" id="hid_docId" value="3197668">\r\n                        \r\n                    </div>',
+ 'time': datetime.datetime(2014, 9, 30, 0, 0),
+ 'title': u'\u6c38\u9f0e\u80a1\u4efd\u975e\u6d32\u5e02\u573a\u518d\u4e0b\u4e00\u57ce \u83b7\u8d5e\u6bd4\u4e9a2607\u4e07\u7f8e\u5143\u5408\u540c',
+ 'url': 'http://ggjd.cnstock.com/company/scp_ggjd/tjd_bbdj/201409/3197668.htm'}
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/twisted/internet/defer.py", line 649, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/yuweifu/spiders/news/news/pipelines.py", line 32, in process_item
+    self.db[self.collection_name].create_index("url", unique=True)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1387, in create_index
+    self.__create_index(keys, kwargs)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1294, in __create_index
+    with self._socket_for_writes() as sock_info:
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/Library/Python/2.7/site-packages/pymongo/mongo_client.py", line 762, in _get_socket
+    server = self._get_topology().select_server(selector)
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 210, in select_server
+    address))
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 186, in select_servers
+    self._error_message(selector))
+ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused
+2016-11-23 15:11:16 [scrapy] ERROR: Error processing {'content': u'<div class="content" id="qmt_content_div">\r\n                        <p>\u3000\u3000\u4e2d\u56fd\u8bc1\u5238\u7f51\u8baf\uff08\u8bb0\u8005 \u4e25\u7fe0\uff09 2008\u5e74\u91d1\u878d\u5371\u673a\u4ee5\u6765\uff0c\u5168\u7403\u7ecf\u6d4e\u75b2\u8f6f\u3001\u4e2d\u56fd\u7ecf\u6d4e\u589e\u957f\u653e\u7f13\u3001\u822a\u8fd0\u5e02\u573a\u8fd0\u529b\u8fc7\u5269\u7b49\u5f71\u54cd\uff0c\u9677\u5165\u7ecf\u8425\u56f0\u5883\u7684\u4e2d\u56fd\u8fdc\u6d0b\uff0c\u4eca\u5e74\u6709\u671b\u56e0\u63a7\u80a1\u80a1\u4e1c\u7684\u503e\u56ca\u76f8\u52a9\u800c\u5b9e\u73b0\u626d\u4e8f\uff0c\u540c\u65f6\u6709\u671b\u201c\u6458\u5e3d\u201d<br>\u3000\u3000\u4e2d\u56fd\u8fdc\u6d0b9\u670830\u65e5\u665a\u95f4\u516c\u544a\uff0c\u516c\u53f8\u4e8e9\u670830\u65e5\u6536\u5230\u63a7\u80a1\u80a1\u4e1c\u4e2d\u56fd\u8fdc\u6d0b\u8fd0\u8f93(\u96c6\u56e2)\u603b\u516c\u53f8\u8f6c\u62e8\u4ed8\u7684\u8239\u8236\u62a5\u5e9f\u66f4\u65b0\u8865\u52a9\u8d44\u91d1\u4eba\u6c11\u5e0113.79\u4ebf\u5143\u3002 <br>\u3000\u3000\u516c\u53f8\u79f0\uff0c\u6839\u636e\u4f01\u4e1a\u4f1a\u8ba1\u51c6\u5219\u7684\u89c4\u5b9a\uff0c\u516c\u53f8\u5c06\u8be5\u7b14\u8865\u52a9\u8d44\u91d1\u786e\u8ba4\u4e3a\u8425\u4e1a\u5916\u6536\u5165\uff0c\u5e76\u8ba1\u51652014\u5e74\u5ea6\u635f\u76ca\uff0c\u5f25\u8865\u4f01\u4e1a\u56e0\u8239\u8236\u63d0\u524d\u62c6\u89e3\u5e26\u6765\u7684\u635f\u5931\uff0c\u5177\u4f53\u4f1a\u8ba1\u5904\u7406\u4ee5\u4f1a\u8ba1\u5e08\u4e8b\u52a1\u6240\u5e74\u5ea6\u5ba1\u8ba1\u786e\u8ba4\u540e\u7684\u7ed3\u679c\u4e3a\u51c6\u3002\u8be5\u7b14\u8865\u52a9\u8d44\u91d1\u7684\u53d6\u5f97\u5c06\u5bf9\u672c\u516c\u53f82014\u5e74\u5ea6\u7684\u7ecf\u8425\u4e1a\u7ee9\u4ea7\u751f\u4e00\u5b9a\u7684\u79ef\u6781\u5f71\u54cd\u3002<br>\u3000\u3000\u4e2d\u56fd\u8fdc\u6d0b\u662f\u4e2d\u8fdc\u96c6\u56e2\u65d7\u4e0b\u5927\u578b\u56fd\u4f01\uff0c\u4e5f\u662f\u5176\u91cd\u8981\u4e0a\u5e02\u5e73\u53f0\u30022008\u5e74\u4ee5\u6765\uff0c\u56e0\u822a\u8fd0\u5e02\u573a\u6574\u4f53\u4e0d\u666f\u6c14\u7b49\uff0c\u6301\u7eed\u9677\u5165\u4e8f\u635f\u5883\u51b5\u30022011\u5e74\u4e2d\u56fd\u8fdc\u6d0b\u5de8\u4e8f104\u4ebf\uff0c2012\u5e74\u518d\u4e8f95\u4ebf\uff0c\u8fde\u7eed\u4e24\u5e74\u5de8\u4e8f\u7684\u4e2d\u56fd\u8fdc\u6d0b\uff0c\u53d8\u6210\u4e86*ST\u8fdc\u6d0b\u3002\u597d\u5728\uff0c\u4e3a\u907f\u514d\u9000\u5e02\uff0c\u4e2d\u56fd\u8fdc\u6d0b\u53ca\u65f6\u901a\u8fc7\u5356\u8d44\u4ea7\u7684\u65b9\u5f0f\uff0c\u53bb\u5e74\u6210\u529f\u5b9e\u73b0\u4e86\u5fae\u5229\uff0c\u51c0\u5229\u6da6\u4e3a2.35\u4ebf\u3002<br>\u3000\u3000\u8d44\u6599\u663e\u793a\uff0c\u4e2d\u56fd\u8fdc\u6d0b\u5728\u53bb\u5e74\u5904\u7f6e\u8d44\u4ea7\u83b7\u5f97\u7684\u6536\u76ca\u9ad8\u8fbe84.26\u4ebf\u5143\uff0c\u88ab\u51fa\u552e\u7684\u8d44\u4ea7\u6709\u4e2d\u8fdc\u7269\u6d41100%\u80a1\u6743\u3001\u4e2d\u8fdc\u96c6\u88c5\u7bb1\u5de5\u4e1a\u516c\u53f8100%\u80a1\u6743\u4ee5\u53ca\u9752\u5c9b\uff08\u697c\u76d8\uff09\u3001\u4e0a\u6d77\uff08\u697c\u76d8\uff09\u7b49\u4e24\u5904\u7269\u4e1a\u8d44\u4ea7\u80a1\u6743\u9879\u76ee\u3002<br>\u3000\u3000\u7136\u800c\uff0c\u56e0\u56fd\u9645\u822a\u8fd0\u5e02\u573a\u4f9b\u6c42\u5931\u8861\u5c40\u9762\u4ecd\u65e0\u5b9e\u8d28\u6539\u5584\uff0c\u8fd0\u4ef7\u6c34\u5e73\u4f4e\u4f4d\u5f98\u5f8a\uff0c\u5e02\u573a\u7ade\u4e89\u6fc0\u70c8\uff0c\u540c\u65f6\uff0c\u71c3\u6cb9\u4ef7\u683c\u4ecd\u5904\u9ad8\u4f4d\uff0c\u4e2d\u56fd\u8fdc\u6d0b\u7ecf\u8425\u627f\u53d7\u5de8\u5927\u538b\u529b\uff0c\u4eca\u5e74\u4e00\u5b63\u5ea6\u53ca\u4eca\u5e74\u4e0a\u534a\u5e74\uff0c\u4e2d\u56fd\u8fdc\u6d0b\u4f9d\u7136\u5206\u522b\u4e8f\u635f18.8\u4ebf\u5143\u300128.8\u4ebf\u5143\u3002<br>\u3000\u3000\u5206\u6790\u4eba\u58eb\u6307\u51fa\uff0c\u6b64\u6b21\u63a7\u80a1\u80a1\u4e1c\u503e\u56ca\u76f8\u52a9\u8fd114\u4ebf\u5143\uff0c\u6709\u52a9\u4e8e\u4e2d\u56fd\u8fdc\u6d0b\u6539\u5584\u4e1a\u7ee9\uff0c\u4e14\u82e5\u540e\u7eed\u7ee7\u7eed\u83b7\u5f97\u8865\u52a9\u6216\u5356\u51fa\u4e00\u4e9b\u8d44\u4ea7\u83b7\u5f97\u6536\u76ca\uff0c\u4ee5\u53ca\u516c\u53f8\u4e3b\u4e1a\u7ecf\u8425\u6539\u5584\uff0c\u4e2d\u56fd\u8fdc\u6d0b\u4eca\u5e74\u6709\u671b\u626d\u4e8f\u4e3a\u76c8\uff0c\u4ece\u800c\u6210\u529f\u5b9e\u73b0\u8131\u5e3d\u3002</p><div id="output_hangqing_div" style="text-align:center;" class="visible-md-block visible-lg-block"></div><input type="hidden" id="hid_totalPage" value="1"><input type="hidden" id="hid_docId" value="3197669">\r\n                        \r\n                    </div>',
+ 'time': datetime.datetime(2014, 9, 30, 0, 0),
+ 'title': u'\u63a7\u80a1\u80a1\u4e1c\u503e\u529b\u8865\u52a913.8\u4ebf \u4e2d\u56fd\u8fdc\u6d0b\u626d\u4e8f\u5728\u671b',
+ 'url': 'http://ggjd.cnstock.com/company/scp_ggjd/tjd_bbdj/201409/3197669.htm'}
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/twisted/internet/defer.py", line 649, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/yuweifu/spiders/news/news/pipelines.py", line 32, in process_item
+    self.db[self.collection_name].create_index("url", unique=True)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1387, in create_index
+    self.__create_index(keys, kwargs)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1294, in __create_index
+    with self._socket_for_writes() as sock_info:
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/Library/Python/2.7/site-packages/pymongo/mongo_client.py", line 762, in _get_socket
+    server = self._get_topology().select_server(selector)
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 210, in select_server
+    address))
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 186, in select_servers
+    self._error_message(selector))
+ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused
+2016-11-23 15:11:16 [scrapy] INFO: Crawled 6414 pages (at 0 pages/min), scraped 6145 items (at 0 items/min)
+2016-11-23 15:11:46 [scrapy] ERROR: Error processing {'content': u'<div class="content" id="qmt_content_div">\r\n                        <p>\u3000\u3000\u4e2d\u56fd\u8bc1\u5238\u7f51\u8baf\uff08\u8bb0\u8005 \u6ed5\u98de\uff09 \u5fb7\u68c9\u80a1\u4efd10\u67087\u65e5\u665a\u95f4\u516c\u544a\uff0c\u516c\u53f8\u4e8e9\u670830\u65e5\u4e0e\u5317\u4eac\u548c\u5408\u6c38\u5174\u79d1\u6280\u6709\u9650\u516c\u53f8\uff08\u4ee5\u4e0b\u7b80\u79f0\u201c\u548c\u5408\u6c38\u5174\u79d1\u6280\u201d\uff09\u4e24\u540d\u80a1\u4e1c\u674e\u690d\u3001\u5510\u8f89\u7b7e\u8ba2\u80a1\u6743\u8f6c\u8ba9\u534f\u8bae\u3002\u516c\u53f8\u62df\u4ee52700\u4e07\u5143\u6536\u8d2d\u548c\u5408\u6c38\u5174\u79d1\u6280100%\u7684\u80a1\u6743\u3002<br>\u3000\u3000\u636e\u4ecb\u7ecd\uff0c\u548c\u5408\u6c38\u5174\u79d1\u6280\u662f\u81f4\u529b\u4e8e\u65e0\u7eb8\u5316\u5f69\u7968\u4e1a\u52a1\u670d\u52a1\u7684\u516c\u53f8\uff0c\u7531\u5f69\u7968\u884c\u4e1a\u5185\u5177\u6709\u4e30\u5bcc\u7ecf\u9a8c\u7684\u4eba\u5458\u7ec4\u5efa\u800c\u6210\uff0c\u516c\u53f8\u548c\u767e\u5ea6\u4e50\u548c\u5f69\u3001\u5317\u4eac\u534e\u5f69\u8d62\u901a\u3001\u767e\u5b9d\u5f69\u7b49\u516c\u53f8\u7b7e\u8ba2\u5408\u4f5c\u534f\u8bae\u5e76\u5efa\u7acb\u4e86\u6218\u7565\u5408\u4f5c\u5173\u7cfb\u3002\u516c\u53f8\u5df2\u7ecf\u83b7\u5f97\u9ed1\u9f99\u6c5f\u4f53\u5f69\u65e0\u7eb8\u5316\u5f69\u7968\u9500\u552e\u6b63\u5f0f\u6388\u6743\uff0c\u5e76\u5728\u9ed1\u9f99\u6c5f\u5efa\u7acb\u4e86\u51fa\u7968\u57fa\u5730\uff0c\u57fa\u5730\u62e5\u6709\u6253\u7968\u673a30 \u53f0\u3002\u516c\u53f8\u5c06\u57282014\u5e74\u5e95\u63a8\u51fa\u81ea\u6709\u552e\u5f69\u7f51\u7ad9\u3001\u624b\u673a\u552e\u5f69\u5ba2\u6237\u7aef\u53ca O2O \u4e1a\u52a1\u5e73\u53f0\uff0c\u968f\u7740\u516c\u53f8\u4e1a\u52a1\u5168\u9762\u94fa\u5f00\uff0c\u516c\u53f8\u4e1a\u7ee9\u5c06\u5728\u672a\u6765\u51e0\u5e74\u83b7\u5f97\u5feb\u901f\u63d0\u9ad8\u3002<br>\u3000\u3000\u8d22\u52a1\u6570\u636e\u663e\u793a\uff0c\u8f83\u53bb\u5e74\u76f8\u6bd4\uff0c\u548c\u5408\u6c38\u5174\u79d1\u6280\u4e1a\u7ee9\u4eca\u5e74\u8fdb\u5165\u6210\u957f\u671f\u3002\u622a\u6b62\u4eca\u5e747\u6708\uff0c\u6807\u7684\u516c\u53f8\u8d44\u4ea7\u603b\u989d\u4e3a1419.26\u4e07\u5143\uff0c\u51c0\u8d44\u4ea71001.16\u4e07\u5143\uff0c\u5b9e\u73b0\u8425\u653693.94\u4e07\u5143\uff0c\u51c0\u5229\u6da610.99\u4e07\u5143\uff0c\u76f8\u8f83\u53bb\u5e74\u5168\u5e74\u6570\u636e\uff0c\u6807\u7684\u516c\u53f8\u5b9e\u73b0\u4e1a\u7ee9\u589e\u957f\uff0c2013\u5e74\u6807\u7684\u8d44\u4ea7\u8d44\u4ea7\u603b\u989d\u4e3a1003.89\u4e07\u5143\uff0c\u51c0\u8d44\u4ea7990.16\u4e07\u5143\uff0c\u8425\u6536\u4e3a3\u4e07\u5143\uff0c\u5168\u5e74\u4e8f\u635f9.8\u4e07\u5143\u3002<br>\u3000\u3000\u516c\u53f8\u8868\u793a\uff0c\u56fd\u5185\u5f69\u7968\u884c\u4e1a\u5e02\u573a\u548c\u53d1\u5c55\u6f5c\u529b\u5de8\u5927\uff0c\u4e14\u56fd\u5185\u5f69\u7968\u884c\u4e1a\u5904\u4e8e\u8f6c\u6298\u53d8\u9769\u65f6\u671f\uff0c\u673a\u4f1a\u5f88\u591a\u3002\u4e3a\u57f9\u80b2\u65b0\u7684\u5229\u6da6\u589e\u957f\u70b9\uff0c\u516c\u53f8\u901a\u8fc7\u6536\u8d2d\u548c\u5408\u6c38\u5174\u8fdb\u5165\u5f69\u7968\u884c\u4e1a\uff0c\u6b64\u6b21\u6536\u8d2d\u4f5c\u4e3a\u516c\u53f8\u591a\u5143\u5316\u7ecf\u8425\u6218\u7565\u7684\u91cd\u8981\u7ec4\u6210\u90e8\u5206\uff0c\u5c06\u6709\u52a9\u4e8e\u516c\u53f8\u8fc5\u901f\u8fdb\u5165\u79fb\u52a8\u4e92\u8054\u7f51\u7b49\u5f69\u7968\u9886\u57df\uff0c\u63d0\u9ad8\u516c\u53f8\u7684\u6574\u4f53\u76c8\u5229\u80fd\u529b\u3002</p><div id="output_hangqing_div" style="text-align:center;" class="visible-md-block visible-lg-block"></div><input type="hidden" id="hid_totalPage" value="1"><input type="hidden" id="hid_docId" value="3198074">\r\n                        \r\n                    </div>',
+ 'time': datetime.datetime(2014, 10, 7, 0, 0),
+ 'title': u'\u5fb7\u68c9\u80a1\u4efd\u6536\u8d2d\u548c\u5408\u6c38\u5174\u79d1\u6280 \u5207\u5165\u4e92\u8054\u7f51\u5f69\u7968\u4e1a\u52a1',
+ 'url': 'http://ggjd.cnstock.com/company/scp_ggjd/tjd_bbdj/201410/3198074.htm'}
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/twisted/internet/defer.py", line 649, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/yuweifu/spiders/news/news/pipelines.py", line 32, in process_item
+    self.db[self.collection_name].create_index("url", unique=True)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1387, in create_index
+    self.__create_index(keys, kwargs)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1294, in __create_index
+    with self._socket_for_writes() as sock_info:
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/Library/Python/2.7/site-packages/pymongo/mongo_client.py", line 762, in _get_socket
+    server = self._get_topology().select_server(selector)
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 210, in select_server
+    address))
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 186, in select_servers
+    self._error_message(selector))
+ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused
+2016-11-23 15:12:17 [scrapy] ERROR: Error processing {'content': u'<div class="content" id="qmt_content_div">\r\n                        <p>\u3000\u3000\u4e2d\u56fd\u8bc1\u5238\u7f51\u8baf\uff08\u8bb0\u8005 \u8d75\u78a7\u541b \u5218\u6d9b\uff09 \u505c\u724c\u4e8c\u5341\u4f59\u5929\u540e\uff0c\u592a\u9633\u9e1f10\u67087\u65e5\u665a\u95f4\u516c\u544a\uff0c\u62df\u5411\u674e\u8dc3\u5148\u3001\u6df1\u5733\u524d\u6d77\u745e\u8054\u4e09\u53f7\u6295\u8d44\u4e2d\u5fc3(\u6709\u9650\u5408\u4f19)\u3001\u4e45\u94f6\u6295\u8d44\u57fa\u91d1\u7ba1\u7406(\u5317\u4eac)\u6709\u9650\u516c\u53f8\u3001\u738b\u5927\u5bcc\u548c\u8096\u4e5d\u6210\u5171\u8ba1\u4e94\u540d\u7279\u5b9a\u5bf9\u8c61\u975e\u516c\u5f00\u53d1\u884c5072.46\u4e07\u80a1\uff0c\u53d1\u884c\u4ef7\u683c\u4e3a8.28\u5143/\u80a1\uff0c\u52df\u96c6\u8d44\u91d14.2\u4ebf\u5143\uff0c\u6263\u9664\u53d1\u884c\u8d39\u7528\u540e\u62df\u7528\u4e8e\u8865\u5145\u516c\u53f8\u6d41\u52a8\u8d44\u91d1\u3002\u516c\u53f8\u80a1\u7968\u4e8e10\u67088\u65e5\u5f00\u5e02\u8d77\u590d\u724c\u3002</p><p>\u3000\u3000\u503c\u5f97\u5173\u6ce8\u7684\u662f\uff0c\u672c\u6b21\u53d1\u884c\u5bf9\u8c61\u5747\u4e3a\u770b\u597d\u516c\u53f8\u672a\u6765\u53d1\u5c55\u3001\u62e5\u6709\u7b26\u5408\u516c\u53f8\u6218\u7565\u53d1\u5c55\u9700\u6c42\u8d44\u6e90\u7684\u7684\u6218\u7565\u6295\u8d44\u4eba\u3002\u5176\u4e2d\u674e\u8dc3\u5148\u4e3a\u516c\u53f8\u5b9e\u9645\u63a7\u5236\u4eba\uff0c\u73b0\u91d1\u51fa\u8d4420,000.00\u4e07\u5143\uff0c\u8ba4\u8d2d24,154,589\u80a1\uff0c\u6784\u6210\u5173\u8054\u4ea4\u6613\uff0c\u53d1\u884c\u5b8c\u6210\u540e\uff0c\u5408\u8ba1\u63a7\u5236\u516c\u53f8\u80a1\u4efd42%\u80a1\u6743\u7684\u674e\u8dc3\u5148\u4ecd\u4e3a\u5b9e\u9645\u63a7\u5236\u4eba\uff1b\u6d77\u5929\u76db\u7b75\u5b9e\u9645\u63a7\u5236\u4eba\u738b\u5927\u5bcc\u51fa\u8d443,000.00\u4e07\u5143\uff0c\u8ba4\u8d2d3,623,188\u80a1\uff1b\u6e56\u5357\u4e5d\u57ce\u901a\u7528\u822a\u7a7a\u6709\u9650\u516c\u53f8\u5b9e\u9645\u63a7\u5236\u4eba\u8096\u4e5d\u6210\u51fa\u8d448,000.00\u4e07\u5143\uff0c\u8ba4\u8d2d9,661,835\u80a1\uff0c\u6df1\u5733\u524d\u6d77\u745e\u8054\u4e09\u53f7\u6295\u8d44\u4e2d\u5fc3(\u6709\u9650\u5408\u4f19)\u51fa\u8d448,000.00\u4e07\u5143\uff0c\u8ba4\u8d2d9,661,835\u80a1\uff0c\u5176\u57fa\u91d1\u7ba1\u7406\u4eba\u534e\u6cf0\u745e\u8054\u57fa\u91d1\u7ba1\u7406\u6709\u9650\u516c\u53f8\uff0c\u5728\u4e0a\u5e02\u516c\u53f8\u4ea7\u4e1a\u53d1\u5c55\u548c\u5e02\u503c\u7ba1\u7406\u65b9\u9762\u8f83\u6709\u5f71\u54cd\uff1b\u4e45\u94f6\u6295\u8d44\u51fa\u8d443,000.00\u4e07\u5143\uff0c\u8ba4\u8d2d3,623,188\u80a1\uff0c\u5176\u5b9e\u9645\u63a7\u5236\u4eba\u674e\u5b89\u6c11\u5728\u8d44\u672c\u5e02\u573a\u9887\u6709\u540d\u6c14\u3002</p><p>\u3000\u3000\u4ece\u672c\u6b21\u5b9a\u589e\u7684\u5b9e\u65bd\u9884\u6848\u770b\uff0c\u9664\u4e86\u73b0\u91d1\u8865\u88404.2\u4ebf\u5916\uff0c\u8ba4\u8d2d\u65b9\u5728\u8d44\u6e90\u5339\u914d\u65b9\u9762\u4e5f\u9887\u5177\u60f3\u8c61\u7a7a\u95f4\u3002\u516c\u544a\u79f0\uff0c\u516c\u53f8\u5b9e\u9645\u63a7\u5236\u4eba\u674e\u8dc3\u5148\u4e8e9\u670829\u65e5\u5206\u522b\u4e0e\u534e\u6cf0\u745e\u8054\u57fa\u91d1\u7ba1\u7406\u6709\u9650\u516c\u53f8\u3001\u738b\u5927\u5bcc\u548c\u8096\u4e5d\u6210\u5206\u522b\u7b7e\u8ba2\u300a\u6218\u7565\u5408\u4f5c\u534f\u8bae\u300b\uff0c\u7ea6\u5b9a\u5f15\u5165\u4e09\u65b9\u4e3a\u4ea7\u4e1a\u6218\u7565\u6295\u8d44\u8005\uff0c\u4ee5\u80a1\u6743\u4e3a\u7ebd\u5e26\uff0c\u5171\u540c\u63a8\u52a8\u4e0a\u5e02\u516c\u53f8\u901a\u8fc7\u8d44\u672c\u8fd0\u4f5c\u52a0\u5f3a\u5236\u9020\u4e3b\u4e1a\u548c\u5347\u7ea7\u670d\u52a1\u4e1a\uff0c\u4e0d\u65ad\u589e\u5f3a\u76c8\u5229\u80fd\u529b\u53ca\u63d0\u5347\u516c\u53f8\u4ef7\u503c\u3002</p><p>\u3000\u3000\u636e\u6089\uff0c\u572890\u5929\u5185\uff0c\u674e\u8dc3\u5148\u8ba4\u53ef\u5e76\u534f\u8c03\u534e\u6cf0\u745e\u8054\u63a8\u8350\u7684\u4e00\u540d\u719f\u6089\u8d44\u672c\u8fd0\u4f5c\u548c\u4ea7\u4e1a\u5e76\u8d2d\u4e13\u4e1a\u4eba\u58eb\uff0c\u901a\u8fc7\u5408\u6cd5\u5408\u89c4\u7a0b\u5e8f\u62c5\u4efb\u4e0a\u5e02\u516c\u53f8\u8463\u4e8b\uff0c\u53c2\u4e0e\u4e0a\u5e02\u516c\u53f8\u91cd\u5927\u4e8b\u9879\u51b3\u7b56\uff1b\u534e\u6cf0\u745e\u8054\u63a8\u8350\u7684\u8463\u4e8b\u4eba\u9009\u5c06\u4e0e\u4e0a\u5e02\u516c\u53f8\u5bc6\u5207\u914d\u5408\uff0c\u5728\u7b26\u5408\u4e0a\u5e02\u516c\u53f8\u6218\u7565\u53d1\u5c55\u601d\u8def\u548c\u5e02\u503c\u6700\u5927\u5316\u7684\u524d\u63d0\u4e0b\uff0c\u5728\u4e0a\u5e02\u516c\u53f8\u5185\u90e8\u7275\u5934\u8d1f\u8d23\u4e0a\u5e02\u516c\u53f8\u7684\u6e38\u8247\u7efc\u5408\u670d\u52a1\u6574\u5408\u65b9\u6848\u8bbe\u8ba1\u3001\u8de8\u754c\u5e76\u8d2d\u8d44\u672c\u8fd0\u4f5c\u548c\u6574\u4f53\u4f01\u4e1a\u4ef7\u503c\u4f20\u64ad\u5de5\u4f5c\uff0c\u5145\u5206\u53d1\u6325\u5176\u4e13\u6ce8\u5e76\u8d2d\u6210\u957f\u7684\u4e13\u4e1a\u4f18\u52bf\uff0c\u4e3a\u516c\u53f8\u63d0\u4f9b\u6301\u7eed\u3001\u4f18\u8d28\u3001\u5168\u9762\u7684\u91d1\u878d\u670d\u52a1\uff0c\u63a8\u52a8\u4e0a\u5e02\u516c\u53f8\u4ea7\u4e1a\u53d1\u5c55\u548c\u5e02\u503c\u6210\u957f\u3002</p><p>\u3000\u3000\u4f5c\u4e3a\u4e09\u4e9a\u9e3f\u6d32\u56fd\u9645\u6e38\u8247\u4f1a\u3001\u9e3f\u6d32\u7687\u5bb6\u9a6c\u672f\u4ff1\u4e50\u90e8\u3001\u9e3f\u6d32\u540d\u8f66\u4f1a\u3001\u9e3f\u9152\u4f1aSense Club\u7684\u5b9e\u9645\u63a7\u5236\u4eba\uff0c\u6d77\u5929\u76db\u7b75\u56fd\u9645\u751f\u6d3b\u65b9\u5f0f\u5c55\u521b\u529e\u4eba\uff0c\u738b\u5927\u5bcc\u5c06\u9002\u65f6\u63a8\u52a8\u9e3f\u6d32\u96c6\u56e2\u65d7\u4e0b\u805a\u7126\u4e2d\u9ad8\u7aef\u6536\u5165\u4eba\u7fa4\u7684\u670d\u52a1\u4e1a\u8d44\u4ea7\u4e0e\u516c\u53f8\u63a2\u8ba8\u4ea7\u4e1a\u5bf9\u63a5\u53ca\u8d44\u672c\u8fd0\u4f5c\uff1b\u800c\u62e5\u6709\u901a\u7528\u822a\u7a7a\u5404\u7c7b\u8fd0\u8425\u8d44\u8d28\uff0c\u6b63\u7b79\u5efa\u4e5d\u57ce\u822a\u7a7a\u57fa\u5730\u7684\u6e56\u5357\u4e5d\u57ce\u901a\u7528\u822a\u7a7a\u6709\u9650\u516c\u53f8\u5b9e\u9645\u63a7\u5236\u4eba\u7684\u8096\u4e5d\u6210\u4ea6\u5c06\u63a8\u52a8\u4e5d\u57ce\u96c6\u56e2\u65d7\u4e0b\u9ad8\u7aef\u670d\u52a1\u4e1a\u8d44\u4ea7\u4e0e\u516c\u53f8\u63a2\u8ba8\u4ea7\u4e1a\u5bf9\u63a5\u53ca\u8d44\u672c\u8fd0\u4f5c\u3002</p><p>\u3000\u3000\u516c\u53f8\u8463\u79d8\u590f\u4ea6\u624d\u5411\u4e2d\u56fd\u8bc1\u5238\u7f51\u8868\u793a\uff0c\u5f15\u8fdb\u4f18\u79c0\u4ea7\u4e1a\u8d44\u6e90\uff0c\u4fc3\u8fdb\u516c\u53f8\u5b9e\u73b0\u6218\u7565\u76ee\u6807\u662f\u672c\u6b21\u975e\u516c\u5f00\u53d1\u884c\u7684\u6839\u672c\u76ee\u7684\u3002\u901a\u8fc7\u52a0\u5f3a\u516c\u53f8\u5bf9\u5916\u5408\u4f5c\u3001\u4fc3\u8fdb\u4ea7\u4e1a\u94fe\u76f8\u5173\u62d3\u5c55\uff0c\u63d0\u5347\u4f01\u4e1a\u54c1\u724c\u5b9e\u529b\uff0c\u5c06\u6709\u5229\u4e8e\u516c\u53f8\u5feb\u901f\u5b9e\u73b0\u6218\u7565\u53d1\u5c55\u76ee\u6807\u3002\u6b64\u5916\uff0c\u52df\u96c6\u8d44\u91d1\u5230\u4f4d\u540e\uff0c\u5c06\u8fdb\u4e00\u6b65\u63d0\u5347\u516c\u53f8\u7ecf\u8425\u7684\u7075\u6d3b\u6027\uff0c\u4e3a\u516c\u53f8\u5404\u9879\u7ecf\u8425\u6d3b\u52a8\u63d0\u4f9b\u8d44\u91d1\u652f\u6301\uff0c\u589e\u5f3a\u516c\u53f8\u7684\u6838\u5fc3\u7ade\u4e89\u529b\u548c\u6297\u98ce\u9669\u80fd\u529b\uff0c\u52a0\u901f\u5411\u4e0b\u6e38\u53ca\u76f8\u5173\u4ea7\u4e1a\u62d3\u5c55\uff0c\u5de9\u56fa\u516c\u53f8\u7684\u884c\u4e1a\u5730\u4f4d\uff0c\u6709\u5229\u4e8e\u516c\u53f8\u7684\u53ef\u6301\u7eed\u53d1\u5c55\u3002</p><p>\u3000\u3000\u516c\u53f8\u540c\u671f\u516c\u5e03\u4e862014\u5e74\u5ea6\u524d\u4e09\u5b63\u5ea6\u4e1a\u7ee9\u9884\u544a\uff0c\u524d\u4e09\u5b63\u5ea6\uff0c\u516c\u53f8\u9884\u8ba1\u5f52\u5c5e\u4e8e\u4e0a\u5e02\u516c\u53f8\u80a1\u4e1c\u7684\u51c0\u5229\u6da6\u6bd4\u4e0a\u5e74\u540c\u671f\u53d8\u52a8\u4e3a-30%\u81f3-50%\uff0c\u76c8\u5229\u9884\u8ba1\u4e3a2180.97\u4e07\u5143\u81f33053.35\u4e07\u5143\uff0c\u4e0a\u5e74\u540c\u671f\u8fd9\u4e00\u6570\u636e\u4e3a4361.97\u4e07\u5143\u3002\u516c\u53f8\u8868\u793a\uff0c\u516c\u53f82014\u5e74\u4e09\u5b63\u5ea6\u516c\u53f8\u7ecf\u8425\u60c5\u51b5\u7a33\u5b9a\uff0c\u4e1a\u52a1\u7ed3\u6784\u672a\u53d1\u751f\u91cd\u5927\u53d8\u5316\u3002\u975e\u7ecf\u5e38\u6027\u635f\u76ca\u5bf92014\u5e741-3\u5b63\u5ea6\u7684\u51c0\u5229\u6da6\u5f71\u54cd\u91d1\u989d\u4e3a887\u4e07\u5143\u3002</p><div id="output_hangqing_div" style="text-align:center;" class="visible-md-block visible-lg-block"></div><input type="hidden" id="hid_totalPage" value="1"><input type="hidden" id="hid_docId" value="3198094">\r\n                        \r\n                    </div>',
+ 'time': datetime.datetime(2014, 10, 7, 0, 0),
+ 'title': u'\u592a\u9633\u9e1f\u5b9a\u589e\u8865\u88404.2\u4ebf  \u6d77\u5929\u76db\u7b75\u5b9e\u9645\u63a7\u5236\u4eba\u7b49\u8ba4\u8d2d',
+ 'url': 'http://ggjd.cnstock.com/company/scp_ggjd/tjd_bbdj/201410/3198094.htm'}
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/twisted/internet/defer.py", line 649, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/yuweifu/spiders/news/news/pipelines.py", line 32, in process_item
+    self.db[self.collection_name].create_index("url", unique=True)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1387, in create_index
+    self.__create_index(keys, kwargs)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1294, in __create_index
+    with self._socket_for_writes() as sock_info:
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/Library/Python/2.7/site-packages/pymongo/mongo_client.py", line 762, in _get_socket
+    server = self._get_topology().select_server(selector)
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 210, in select_server
+    address))
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 186, in select_servers
+    self._error_message(selector))
+ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused
+2016-11-23 15:12:47 [scrapy] ERROR: Error processing {'content': u'<div class="content" id="qmt_content_div">\r\n                        <p>\u3000\u3000\u4e2d\u56fd\u8bc1\u5238\u7f51\u8baf\uff08\u8bb0\u8005 \u9648\u5fd7\u5f3a\uff09 \u505c\u724c\u8fd12\u4e2a\u6708\uff0c\u4e2d\u5174\u5546\u4e1a\u505c\u724c\u516c\u544a\u7684\u91cd\u5927\u4e8b\u9879\u6682\u65f6\u6709\u4e86\u7709\u76ee\u300210\u67087\u65e5\u665a\u95f4\uff0c\u516c\u53f8\u516c\u544a\uff0c\u516c\u53f8\u6b63\u5728\u7b79\u5212\u91cd\u5927\u4e8b\u9879\u4e3a\u8d44\u4ea7\u6ce8\u5165\u4e8b\u9879\u3002</p><p>\u3000\u3000\u4eca\u5e746\u6708\u81f38\u6708\u95f4\uff0c\u56e0\u4e3a\u5927\u5546\u7cfb\u56db\u5ea6\u4e3e\u724c\uff0c\u4e14\u6301\u80a1\u6bd4\u4f8b\u5df2\u8fbe\u523020%\uff0c\u76f4\u903c\u5927\u80a1\u4e1c33.86%\u7684\u80a1\u4efd\uff0c\u516c\u53f8\u7d27\u6025\u505c\u724c\uff0c\u5171\u540c\u5546\u8bae\u5bf9\u7b56\u3002\u516c\u53f8\u80a1\u7968\u81ea8\u670819\u65e5\u8d77\u505c\u724c\uff0c\u671f\u95f4\u516c\u53f8\u5e76\u672a\u900f\u9732\u66f4\u591a\u6d88\u606f\uff0c\u53ea\u662f\u8868\u793a\u91cd\u5927\u4e8b\u9879\u4e00\u76f4\u5728\u78cb\u5546\u8bba\u8bc1\u8fc7\u7a0b\u4e2d\u3002\u516c\u53f8\u8868\u793a\uff0c\u516c\u53f8\u80a1\u7968\u5c06\u81ea10\u67088\u65e5\u8d77\u7ee7\u7eed\u505c\u724c\u3002\u516c\u53f8\u627f\u8bfa\u4e89\u53d6\u505c\u724c\u65f6\u95f4\u4e0d\u8d85\u8fc730\u4e2a\u81ea\u7136\u65e5\uff0c\u5373\u627f\u8bfa\u4e89\u53d6\u57282014\u5e7411\u67087\u65e5\u524d\u6309\u716726\u53f7\u683c\u5f0f\u51c6\u5219\u7684\u8981\u6c42\u62ab\u9732\u91cd\u5927\u8d44\u4ea7\u91cd\u7ec4\u4fe1\u606f\u3002\u82e5\u516c\u53f8\u672a\u80fd\u5728\u4e0a\u8ff0\u671f\u9650\u5185\u53ec\u5f00\u8463\u4e8b\u4f1a\u5ba1\u8bae\u5e76\u62ab\u9732\u76f8\u5173\u4e8b\u9879\u4e14\u516c\u53f8\u672a\u63d0\u51fa\u5ef6\u671f\u590d\u724c\u7533\u8bf7\u6216\u7533\u8bf7\u672a\u83b7\u4ea4\u6613\u6240\u540c\u610f\u7684\uff0c\u516c\u53f8\u80a1\u7968\u6700\u665a\u5c06\u4e8e2014 \u5e7411 \u67087\u65e5\u6062\u590d\u4ea4\u6613\uff0c\u516c\u53f8\u627f\u8bfa\u5728\u80a1\u7968\u6062\u590d\u4ea4\u6613\u540e3\u4e2a\u6708\u5185\u4e0d\u518d\u7b79\u5212\u91cd\u5927\u8d44\u4ea7\u91cd\u7ec4\u4e8b\u9879\u3002</p><p>\u3000\u3000\u516c\u53f8\u79f0\uff0c\u82e5\u5728\u4e0a\u8ff0\u505c\u724c\u671f\u6ee1\u524d\u5411\u4ea4\u6613\u6240\u7533\u8bf7\u5ef6\u671f\u590d\u724c\uff0c\u516c\u53f8\u627f\u8bfa\u7d2f\u8ba1\u505c\u724c\u65f6\u95f4\u4e0d\u8d85\u8fc7 3 \u4e2a\u6708\uff1b\u5728\u4e0a\u8ff0\u671f\u9650\u5185\u82e5\u516c\u53f8\u4ecd\u672a\u80fd\u53ec\u5f00\u8463\u4e8b\u4f1a\u5ba1\u8bae\u5e76\u62ab\u9732\u76f8\u5173\u4e8b\u9879\u7684\uff0c\u516c\u53f8\u5c06\u53d1\u5e03\u7ec8\u6b62\u91cd\u5927\u8d44\u4ea7\u91cd\u7ec4\u516c\u544a\u5e76\u80a1\u7968\u590d\u724c\uff0c\u540c\u65f6\u627f\u8bfa\u81ea\u516c\u544a\u4e4b\u65e5\u8d77\u81f3\u5c11 6 \u4e2a\u6708\u5185\u4e0d\u518d\u7b79\u5212\u91cd\u5927\u8d44\u4ea7\u91cd\u7ec4\u4e8b\u9879\u3002</p><p>\u3000\u3000\u516c\u5f00\u8d44\u6599\u663e\u793a\uff0c\u6c88\u9633\u5e02\u56fd\u8d44\u59d4\u662f\u4e2d\u5174\u5546\u4e1a\u7684\u5b9e\u9645\u63a7\u5236\u4eba\uff0c\u901a\u8fc7\u6c88\u9633\u4e2d\u5174\u5546\u4e1a\u96c6\u56e2\u6301\u6709\u4e2d\u5174\u5546\u4e1a33.86%\u7684\u80a1\u4efd\u3002</p><div id="output_hangqing_div" style="text-align:center;" class="visible-md-block visible-lg-block"></div><input type="hidden" id="hid_totalPage" value="1"><input type="hidden" id="hid_docId" value="3198069">\r\n                        \r\n                    </div>',
+ 'time': datetime.datetime(2014, 10, 7, 0, 0),
+ 'title': u'\u62df\u7b79\u5212\u8d44\u4ea7\u6ce8\u5165 \u4e2d\u5174\u5546\u4e1a\u7ee7\u7eed\u505c\u724c',
+ 'url': 'http://ggjd.cnstock.com/company/scp_ggjd/tjd_bbdj/201410/3198069.htm'}
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/twisted/internet/defer.py", line 649, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/yuweifu/spiders/news/news/pipelines.py", line 32, in process_item
+    self.db[self.collection_name].create_index("url", unique=True)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1387, in create_index
+    self.__create_index(keys, kwargs)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1294, in __create_index
+    with self._socket_for_writes() as sock_info:
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/Library/Python/2.7/site-packages/pymongo/mongo_client.py", line 762, in _get_socket
+    server = self._get_topology().select_server(selector)
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 210, in select_server
+    address))
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 186, in select_servers
+    self._error_message(selector))
+ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused
+2016-11-23 15:13:17 [scrapy] ERROR: Error processing {'content': u'<div class="content" id="qmt_content_div">\r\n                        <p>\u3000\u3000\u4e2d\u56fd\u8bc1\u5238\u7f51\u8baf\uff08\u8bb0\u8005 \u5915\u989c\uff09 \u91d1\u79be\u5b9e\u4e1a10\u67087\u65e5\u665a\u95f4\u53d1\u5e03\u5173\u4e8e\u5a92\u4f53\u62a5\u9053\u7684\u6f84\u6e05\u516c\u544a\uff0c\u516c\u53f8\u5df2\u5bf9\u672c\u6b21\u91cd\u5927\u4e8b\u9879\u505c\u6b62\u6d3d\u8c08\uff0c\u81f3\u4e8e\u4eca\u540e\u662f\u5426\u6709\u7ee7\u7eed\u5408\u4f5c\u5c1a\u5b58\u5728\u5f88\u5927\u7684\u4e0d\u786e\u5b9a\u6027\u3002\u516c\u53f8\u80a1\u7968\u5c06\u4e8e2014\u5e7410\u67088\u65e5\u5f00\u5e02\u8d77\u590d\u724c\u3002<br>\u3000\u30009\u670830\u65e5\uff0c\u6709\u5173\u5a92\u4f53\u4ee5\u201c\u91d1\u79be\u5b9e\u4e1a\u5e76\u8d2d\u88ab\u8feb\u6401\u6d45\u201d\u4e3a\u9898\u62a5\u9053\u524d\u671f\u516c\u53f8\u7b79\u5212\u91cd\u5927\u4e8b\u9879\u76f8\u5173\u4e8b\u5b9c\uff0c\u6587\u4e2d\u8d28\u7591\uff1a\u4ee5\u6709\u5173\u7f51\u53cb\u5728\u4e1c\u65b9\u8d22\u5bcc\u7f51\u80a1\u5427\u7684\u53d1\u8d34\u4e3a\u4f9d\u636e\uff0c\u8bf4\u201c\u6709\u6295\u8d44\u8005\u8d28\u7591\u516c\u53f8\u590d\u724c\u7684\u65f6\u95f4\u4ee5\u53ca\u516c\u544a\u7684\u5185\u5bb9\u53ef\u80fd\u88ab\u63d0\u524d\u6cc4\u9732\u201d\uff1b\u516c\u53f8\u5de5\u4f5c\u4eba\u5458\u56de\u7b54\u6295\u8d44\u8005\u63d0\u95ee\u65f6\u8bf4\u201c\u88ab\u516c\u53f8\u7ec8\u6b62\u7684\u91cd\u5927\u4e8b\u9879\u8fd8\u5b58\u5728\u968f\u65f6\u6062\u590d\u7684\u53ef\u80fd\u3002\u201d\u4e0a\u8ff0\u5de5\u4f5c\u4eba\u5458\u8bf4\uff0c\u201c\u4e3b\u8981\u662f\u56e0\u4e3a\u6df1\u4ea4\u6240\u7ed9\u7684\u65f6\u95f4\u592a\u77ed\u4e86\uff0c\u4e0d\u5f97\u4e0d\u6682\u65f6\u590d\u724c\u3002\u7b49\u6536\u8d2d\u5bf9\u8c61\u5185\u90e8\u7684\u5173\u7cfb\u5904\u7406\u597d\uff0c\u8fd8\u53ef\u4ee5\u7ee7\u7eed\u64cd\u4f5c\u201d\u3002\u201c \u4e0d\u6392\u9664\u516c\u53f8\u6709\u518d\u6b21\u4e34\u65f6\u505c\u724c\u7684\u53ef\u80fd\u201d\u3002<br>\u3000\u3000\u516c\u53f8\u9488\u5bf9\u4e0a\u8ff0\u62a5\u9053\u4e8b\u9879\u6f84\u6e05\u8bf4\uff1a\u516c\u53f8\u6309\u7167\u6df1\u4ea4\u6240\u4fe1\u606f\u62ab\u9732\u76f8\u5173\u89c4\u5219\u53ca\u65f6\u62ab\u9732\u76f8\u5173\u4fe1\u606f\uff0c\u4e0d\u5b58\u5728\u63d0\u524d\u6cc4\u9732\u76f8\u5173\u4fe1\u606f\u7684\u60c5\u51b5\uff1b\u56e0\u5de5\u4f5c\u4eba\u5458\u5bf9\u6df1\u4ea4\u6240\u5173\u4e8e\u91cd\u5927\u4e8b\u9879\u505c\u590d\u724c\u89c4\u5219\u7406\u89e3\u6709\u8bef\uff0c\u56de\u7b54\u4e0d\u591f\u4e25\u8c28\uff0c\u7531\u6b64\u5bf9\u6295\u8d44\u8005\u9020\u6210\u7684\u8bef\u89e3\u8868\u793a\u8bda\u631a\u7684\u6b49\u610f\uff1b\u516c\u53f8\u5df2\u5bf9\u672c\u6b21\u91cd\u5927\u4e8b\u9879\u505c\u6b62\u6d3d\u8c08\uff0c\u81f3\u4e8e\u4eca\u540e\u662f\u5426\u6709\u7ee7\u7eed\u5408\u4f5c\u5c1a\u5b58\u5728\u5f88\u5927\u7684\u4e0d\u786e\u5b9a\u6027\uff0c\u8bf7\u6295\u8d44\u8005\u4ee5\u516c\u53f8\u516c\u544a\u4e3a\u51c6\u3002<br>\u3000\u3000\u4e2d\u56fd\u8bc1\u5238\u7f51\u516c\u544a\u5728\u89e3\u8bfb\u516c\u53f8\u53d1\u5e03\u7ec8\u6b62\u91cd\u5927\u4e8b\u9879\u65f6\uff0c\u66fe\u7279\u522b\u63d0\u5230\u201c\u516c\u53f8\u5728\u516c\u544a\u4e2d\u5e76\u672a\u63d0\u53ca3\u4e2a\u6708\u5185\u4e0d\u518d\u7b79\u5212\u91cd\u5927\u4e8b\u9879\u3002\u201d\u8fd9\u4e5f\u662f\u5a92\u4f53\u62a5\u9053\u7684\u89c2\u70b9\u4e4b\u4e00\uff0c\u516c\u53f8\u5728\u672c\u6b21\u6f84\u6e05\u516c\u544a\u4e2d\u672a\u5c313\u4e2a\u6708\u7684\u627f\u8bfa\u65f6\u95f4\u7ed9\u4e88\u6b63\u9762\u56de\u5e94\uff0c\u800c\u662f\u79f0\u201c\u81f3\u4e8e\u4eca\u540e\u662f\u5426\u6709\u7ee7\u7eed\u5408\u4f5c\u5c1a\u5b58\u5728\u5f88\u5927\u7684\u4e0d\u786e\u5b9a\u6027\u201d\u3002\u4e1a\u5185\u4eba\u58eb\u79f0\uff0c\u6b64\u4e3e\u503c\u5f97\u6295\u8d44\u8005\u5173\u6ce8\u3002\u6b64\u5916\uff0c\u516c\u53f8\u4e00\u76f4\u79f0\u4e4b\u4e3a\u201c\u91cd\u5927\u4e8b\u9879\u201d\u800c\u975e\u201c\u91cd\u5927\u8d44\u4ea7\u91cd\u7ec4\u201d\uff0c\u6216\u610f\u5473\u7740\u6b64\u4e8b\u4ef6\u8fbe\u4e0d\u5230\u91cd\u5927\u8d44\u4ea7\u91cd\u7ec4\u7684\u6807\u51c6\uff0c\u4f46\u5bf9\u516c\u53f8\u751f\u4ea7\u7ecf\u8425\u4ea7\u751f\u91cd\u5927\u5f71\u54cd\u3002<br>\xa0</p><div id="output_hangqing_div" style="text-align:center;" class="visible-md-block visible-lg-block"></div><input type="hidden" id="hid_totalPage" value="1"><input type="hidden" id="hid_docId" value="3198075">\r\n                        \r\n                    </div>',
+ 'time': datetime.datetime(2014, 10, 7, 0, 0),
+ 'title': u'\u91d1\u79be\u5b9e\u4e1a\uff1a\u91cd\u5927\u4e8b\u9879\u662f\u5426\u6709\u7ee7\u7eed\u5408\u4f5c\u5b58\u5728\u5f88\u5927\u4e0d\u786e\u5b9a\u6027',
+ 'url': 'http://ggjd.cnstock.com/company/scp_ggjd/tjd_bbdj/201410/3198075.htm'}
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/twisted/internet/defer.py", line 649, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/yuweifu/spiders/news/news/pipelines.py", line 32, in process_item
+    self.db[self.collection_name].create_index("url", unique=True)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1387, in create_index
+    self.__create_index(keys, kwargs)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1294, in __create_index
+    with self._socket_for_writes() as sock_info:
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/Library/Python/2.7/site-packages/pymongo/mongo_client.py", line 762, in _get_socket
+    server = self._get_topology().select_server(selector)
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 210, in select_server
+    address))
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 186, in select_servers
+    self._error_message(selector))
+ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused
+2016-11-23 15:13:47 [scrapy] ERROR: Error processing {'content': u'<div class="content" id="qmt_content_div">\r\n                        <p><span style=\'font-family: \u5b8b\u4f53; mso-ascii-font-family: "Times New Roman"; mso-hansi-font-family: "Times New Roman"\'><font face="Times New Roman">\u3000\u3000\u4e2d\u56fd\u8bc1\u5238\u7f51\u8baf\uff08</font>\u8bb0\u8005</span> <span style=\'font-family: \u5b8b\u4f53; mso-ascii-font-family: "Times New Roman"; mso-hansi-font-family: "Times New Roman"\'>\u9ad8\u4e00\uff09</span><span style=\'font-family: \u5b8b\u4f53; mso-ascii-font-family: "Times New Roman"; mso-hansi-font-family: "Times New Roman"\'>\u636e\u4e2d\u56fd\u5730\u9707\u53f0\u7f51\u4e2d\u5fc3\u7f51\u7ad9\u6700\u65b0\u6d88\u606f\uff0c\u5317\u4eac\u65f6\u95f4</span><chsdate year="2014" month="10" day="7" islunardate="False" isrocdate="False" w:st="on"><span lang="EN-US">10</span><span style=\'font-family: \u5b8b\u4f53; mso-ascii-font-family: "Times New Roman"; mso-hansi-font-family: "Times New Roman"\'>\u6708</span><span lang="EN-US">7</span><span style=\'font-family: \u5b8b\u4f53; mso-ascii-font-family: "Times New Roman"; mso-hansi-font-family: "Times New Roman"\'>\u65e5</span><span lang="EN-US">21</span><span style=\'font-family: \u5b8b\u4f53; mso-ascii-font-family: "Times New Roman"; mso-hansi-font-family: "Times New Roman"\'>\u65f6</span><span lang="EN-US">49</span><span style=\'font-family: \u5b8b\u4f53; mso-ascii-font-family: "Times New Roman"; mso-hansi-font-family: "Times New Roman"\'>\u5206</span></chsdate><span style=\'font-family: \u5b8b\u4f53; mso-ascii-font-family: "Times New Roman"; mso-hansi-font-family: "Times New Roman"\'>\uff0c\u4e91\u5357\u7701\u666e\u6d31\u5e02\u666f\u8c37\u50a3\u65cf\u5f5d\u65cf\u81ea\u6cbb\u53bf\u53d1\u751f</span><span lang="EN-US">6.6</span><span style=\'font-family: \u5b8b\u4f53; mso-ascii-font-family: "Times New Roman"; mso-hansi-font-family: "Times New Roman"\'>\u7ea7\u5730\u9707\uff0c\u9707\u4e2d\u4f4d\u4e8e\u5317\u7eac</span><span lang="EN-US">23.4</span><span style=\'font-family: \u5b8b\u4f53; mso-ascii-font-family: "Times New Roman"; mso-hansi-font-family: "Times New Roman"\'>\u5ea6\u3001\u4e1c\u7ecf</span><span lang="EN-US">100.5</span><span style=\'font-family: \u5b8b\u4f53; mso-ascii-font-family: "Times New Roman"; mso-hansi-font-family: "Times New Roman"\'>\u5ea6\uff0c\u9707\u6e90\u6df1\u5ea6</span><chmetcnv w:st="on" unitname="\u516c\u91cc" sourcevalue="5" hasspace="False" negative="False" numbertype="1" tcsc="0"><span lang="EN-US">5.0</span><span style=\'font-family: \u5b8b\u4f53; mso-ascii-font-family: "Times New Roman"; mso-hansi-font-family: "Times New Roman"\'>\u516c\u91cc</span></chmetcnv><span style=\'font-family: \u5b8b\u4f53; mso-ascii-font-family: "Times New Roman"; mso-hansi-font-family: "Times New Roman"\'>\u3002</span></p><p class="MsoNormal"><span style=\'font-family: \u5b8b\u4f53; mso-ascii-font-family: "Times New Roman"; mso-hansi-font-family: "Times New Roman"\'>\u3000\u3000\u636e\u4e86\u89e3\uff0c\u6b64\u6b21\u5730\u9707\u5fae\u89c2\u9707\u4e2d\u4f4d\u4e8e\u666f\u8c37\u53bf\u5883\u5185\u6c38\u5e73\u9547\u9644\u8fd1\uff0c\u8ddd\u79bb\u666f\u8c37\u6797\u4e1a\uff08</span><span lang="EN-US">600265</span><span style=\'font-family: \u5b8b\u4f53; mso-ascii-font-family: "Times New Roman"; mso-hansi-font-family: "Times New Roman"\'>\uff09\u6240\u5728\u5730\u666f\u8c37\u53bf\u5a01\u8fdc\u9547</span><chmetcnv w:st="on" unitname="\u516c\u91cc" sourcevalue="60" hasspace="False" negative="False" numbertype="1" tcsc="0"><span lang="EN-US">60</span><span style=\'font-family: \u5b8b\u4f53; mso-ascii-font-family: "Times New Roman"; mso-hansi-font-family: "Times New Roman"\'>\u516c\u91cc</span></chmetcnv><span style=\'font-family: \u5b8b\u4f53; mso-ascii-font-family: "Times New Roman"; mso-hansi-font-family: "Times New Roman"\'>\u5de6\u53f3\uff0c\u76ee\u524d\u6682\u65e0\u76f8\u5173\u635f\u5931\u62a5\u544a\u3002</span></p><div id="output_hangqing_div" style="text-align:center;" class="visible-md-block visible-lg-block"></div><input type="hidden" id="hid_totalPage" value="1"><input type="hidden" id="hid_docId" value="3198501">\r\n                        \r\n                    </div>',
+ 'time': datetime.datetime(2014, 10, 8, 0, 0),
+ 'title': u'\u4e91\u5357\u666e\u6d31\u53d1\u751f6.6\u7ea7\u5730\u9707 \u666f\u8c37\u6797\u4e1a\u8ddd\u9707\u4e2d60\u516c\u91cc',
+ 'url': 'http://ggjd.cnstock.com/company/scp_ggjd/tjd_bbdj/201410/3198501.htm'}
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/twisted/internet/defer.py", line 649, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/yuweifu/spiders/news/news/pipelines.py", line 32, in process_item
+    self.db[self.collection_name].create_index("url", unique=True)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1387, in create_index
+    self.__create_index(keys, kwargs)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1294, in __create_index
+    with self._socket_for_writes() as sock_info:
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/Library/Python/2.7/site-packages/pymongo/mongo_client.py", line 762, in _get_socket
+    server = self._get_topology().select_server(selector)
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 210, in select_server
+    address))
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 186, in select_servers
+    self._error_message(selector))
+ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused
+2016-11-23 15:14:18 [scrapy] ERROR: Error processing {'content': u'<div class="content" id="qmt_content_div">\r\n                        <p>\u3000\u3000\u4e2d\u56fd\u8bc1\u5238\u7f51\u8baf\uff08\u8bb0\u8005 \u5f6d\u8d85\uff09\u8d5b\u4e3a\u667a\u80fd10\u67087\u65e5\u665a\u95f4\u53d1\u5e03\u516c\u544a\uff0c2014\u5e747\u67081\u65e5-9\u670830\u65e5\uff0c\u516c\u53f8\u65b0\u7b7e\u5408\u540c\u91d1\u989d\u7d2f\u8ba18300.85\u4e07\u5143\uff0c\u5df2\u4e2d\u6807\u4f46\u5c1a\u672a\u7b7e\u8ba2\u5408\u540c\u7684\u9879\u76ee\u91d1\u989d\u7d2f\u8ba13185.41\u4e07\u5143\uff0c\u5747\u96c6\u4e2d\u5728\u5efa\u7b51\u667a\u80fd\u5316\u9886\u57df\u3002<br>\u3000\u3000\u5176\u4e2d\uff0c\u516c\u53f8\u65b0\u7b7e\u5408\u540c\u91d1\u989d\u7d2f\u8ba18300.85\u4e07\u5143\uff0c\u5df2\u4e2d\u6807\u4f46\u5c1a\u672a\u7b7e\u8ba2\u5408\u540c\u7684\u9879\u76ee\u91d1\u989d\u7d2f\u8ba13185.41\u4e07\u5143\uff0c\u4e24\u8005\u5408\u8ba1\u8fc7\u4ebf\uff0c\u5747\u96c6\u4e2d\u5728\u5efa\u7b51\u667a\u80fd\u5316\u9886\u57df\uff0c\u8fd9\u4e5f\u662f\u516c\u53f8\u9664\u4e86\u8f68\u9053\u4ea4\u901a\u4e4b\u5916\u7684\u53e6\u4e00\u4e2a\u91cd\u70b9\u4e1a\u52a1\u9886\u57df\u3002<br>\u3000\u3000\u8d5b\u4e3a\u667a\u80fd\u8868\u793a\uff0c\u65b0\u7b7e\u5408\u540c\u9879\u76ee\u5bf9\u516c\u53f8\u672c\u5e74\u5ea6\u7ecf\u8425\u4e1a\u7ee9\u4f1a\u6709\u4e00\u5b9a\u7684\u63d0\u5347\u4f5c\u7528\uff1b\u800c\u5df2\u4e2d\u6807\u9879\u76ee\u5c1a\u672a\u4e0e\u4e1a\u4e3b\u65b9\u7b7e\u8ba2\u5408\u540c\uff0c\u5b58\u5728\u4e0d\u786e\u5b9a\u56e0\u7d20\u3002</p><div id="output_hangqing_div" style="text-align:center;" class="visible-md-block visible-lg-block"></div><input type="hidden" id="hid_totalPage" value="1"><input type="hidden" id="hid_docId" value="3198999">\r\n                        \r\n                    </div>',
+ 'time': datetime.datetime(2014, 10, 8, 0, 0),
+ 'title': u'\u8d5b\u4e3a\u667a\u80fd\u5efa\u7b51\u9886\u57df\u53d1\u529b \u524d\u4e09\u5b63\u8ba2\u5355\u8fc7\u4ebf',
+ 'url': 'http://ggjd.cnstock.com/company/scp_ggjd/tjd_bbdj/201410/3198999.htm'}
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/twisted/internet/defer.py", line 649, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/yuweifu/spiders/news/news/pipelines.py", line 32, in process_item
+    self.db[self.collection_name].create_index("url", unique=True)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1387, in create_index
+    self.__create_index(keys, kwargs)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1294, in __create_index
+    with self._socket_for_writes() as sock_info:
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/Library/Python/2.7/site-packages/pymongo/mongo_client.py", line 762, in _get_socket
+    server = self._get_topology().select_server(selector)
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 210, in select_server
+    address))
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 186, in select_servers
+    self._error_message(selector))
+ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused
+2016-11-23 15:14:48 [scrapy] ERROR: Error processing {'content': u'<div class="content" id="qmt_content_div">\r\n                        <p>\u3000\u3000\u4e2d\u56fd\u8bc1\u5238\u7f51\u8baf\uff08\u8bb0\u8005 \u6731\u5148\u59ae\uff09 \u6c89\u5bc2\u4e00\u6bb5\u65f6\u95f4\u540e\uff0c\u751f\u547d\u4eba\u5bff\u518d\u5ea6\u589e\u6301\u519c\u4ea7\u54c1\uff0c\u76ee\u524d\u5176\u6301\u6709\u519c\u4ea7\u54c1\u80a1\u4efd\u6bd4\u4f8b\u5df2\u8fbe25.016%\u3002</p><p>\u3000\u30007\u65e5\uff0c\u519c\u4ea7\u54c1\u62ab\u9732\u80a1\u4efd\u8be6\u5f0f\u6743\u76ca\u62a5\u544a\u4e66\u663e\u793a\uff0c\u751f\u547d\u4eba\u5bff\u81ea4\u670810\u65e5\u81f39\u670830\u65e5\uff0c\u901a\u8fc7\u4e8c\u7ea7\u5e02\u573a\u8d2d\u5165\u516c\u53f8\u80a1\u4efd8511.62\u4e07\u80a1\uff0c\u8017\u8d449.02\u4ebf\u5143\u3002\u8fd9\u76f8\u5f53\u4e8e\u519c\u4ea7\u54c15.01%\u7684\u80a1\u4efd\uff0c\u52a0\u4e0a\u6b64\u524d\u5176\u6301\u6709\u7684\u4efd\u989d\uff0c\u622a\u81f3\u4e09\u5b63\u672b\uff0c\u751f\u547d\u4eba\u5bff\u6301\u6709\u519c\u4ea7\u54c1\u80a1\u4efd\u6bd4\u4f8b\u8fbe\u523025.016%\uff0c\u4e0e\u519c\u4ea7\u54c1\u63a7\u80a1\u80a1\u4e1c\u6df1\u5733\u5e02\u56fd\u8d44\u59d4\u4e4b\u95f4\u7684\u5dee\u8ddd\u8fdb\u4e00\u6b65\u7f29\u5c0f\u3002</p><p>\u3000\u30004\u670818\u65e5\uff0c\u751f\u547d\u4eba\u5bff\u7b2c\u56db\u5c4a\u8463\u4e8b\u4f1a\u6267\u884c\u59d4\u5458\u4f1a\u7b2c\u5341\u6b21\u4f1a\u8bae\u901a\u8fc7\u51b3\u8bae\uff0c\u540c\u610f\u516c\u53f8\u901a\u8fc7\u4e8c\u7ea7\u5e02\u573a\u7ee7\u7eed\u589e\u6301\u519c\u4ea7\u54c1\u80a1\u4efd\uff0c\u6301\u80a1\u6bd4\u4f8b\u4e0d\u8d85\u8fc7\u8be5\u4e0a\u5e02\u516c\u53f8\u603b\u80a1\u672c\u768430%\u3002\u800c\u519c\u4ea7\u54c1\u63a7\u80a1\u80a1\u4e1c\u6df1\u5733\u5e02\u56fd\u8d44\u59d4\u5219\u56de\u5e94\uff0c\u4e3a\u8fdb\u4e00\u6b65\u7a33\u56fa\u5e02\u5c5e\u56fd\u6709\u63a7\u80a1\u6743\uff0c\u7d2f\u8ba1\u589e\u6301\u516c\u53f8\u80a1\u4efd1133.28\u4e07\u80a1\uff0c\u8fde\u540c\u5176\u4e00\u81f4\u884c\u52a8\u4eba\u6df1\u5733\u5e02\u8fdc\u81f4\u6295\u8d44\u6709\u9650\u516c\u53f8(\u7b80\u79f0\u8fdc\u81f4\u6295\u8d44)\u3001\u8fdc\u81f4\u6295\u8d44\u7684\u5168\u8d44\u5b50\u516c\u53f8\u6df1\u5733\u5e02\u4ebf\u946b\u6295\u8d44\u6709\u9650\u516c\u53f8\uff0c\u5408\u8ba1\u6301\u6709\u519c\u4ea7\u54c15.09\u4ebf\u80a1\uff0c\u5360\u603b\u80a1\u672c29.9999%\uff0c\u8ddd\u79bb30%\u7684\u8981\u7ea6\u6536\u8d2d\u7ea2\u7ebf\u4ec5\u4e00\u7ebf\u4e4b\u9694\u3002</p><p>\u3000\u3000\u4e1a\u5185\u4eba\u58eb\u5206\u6790\uff0c\u4ece\u751f\u547d\u4eba\u5bff\u4e3e\u724c\u7684\u666e\u904d\u6295\u8d44\u903b\u8f91\u6765\u770b\uff0c\u4e0d\u6392\u9664\u6b64\u4e3e\u610f\u5728\u8d22\u52a1\u6295\u8d44\u8005\u3002\u5305\u62ec\u519c\u4ea7\u54c1\u5728\u5185\uff0c\u751f\u547d\u4eba\u5bff\u6295\u8d44\u7684\u4e0a\u5e02\u516c\u53f8\u5747\u4e3a\u57fa\u672c\u9762\u8f83\u597d\u7684\u4f18\u8d28\u84dd\u7b79\u80a1\uff0c\u4e14\u76ee\u524d\u80a1\u4ef7\u5b58\u5728\u4f4e\u4f30\uff0c\u672a\u6765\u7684\u8d22\u52a1\u6536\u76ca\u53ef\u671f\u3002\u53e6\u5916\uff0c\u8fd9\u4e9b\u516c\u53f8\u5747\u5c5e\u56fd\u5bb6\u653f\u7b56\u652f\u6301\u7684\u884c\u4e1a\uff0c\u5951\u5408\u4ea7\u4e1a\u6d88\u8d39\u5347\u7ea7\u53d1\u5c55\u8d8b\u52bf\u3002</p><div id="output_hangqing_div" style="text-align:center;" class="visible-md-block visible-lg-block"></div><input type="hidden" id="hid_totalPage" value="1"><input type="hidden" id="hid_docId" value="3198093">\r\n                        \r\n                    </div>',
+ 'time': datetime.datetime(2014, 10, 7, 0, 0),
+ 'title': u'\u751f\u547d\u4eba\u5bff\u518d\u5ea6\u4e3e\u724c\u519c\u4ea7\u54c1 \u6301\u80a1\u6bd4\u4f8b\u903e25%',
+ 'url': 'http://ggjd.cnstock.com/company/scp_ggjd/tjd_bbdj/201410/3198093.htm'}
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/twisted/internet/defer.py", line 649, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/yuweifu/spiders/news/news/pipelines.py", line 32, in process_item
+    self.db[self.collection_name].create_index("url", unique=True)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1387, in create_index
+    self.__create_index(keys, kwargs)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1294, in __create_index
+    with self._socket_for_writes() as sock_info:
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/Library/Python/2.7/site-packages/pymongo/mongo_client.py", line 762, in _get_socket
+    server = self._get_topology().select_server(selector)
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 210, in select_server
+    address))
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 186, in select_servers
+    self._error_message(selector))
+ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused
+2016-11-23 15:15:18 [scrapy] ERROR: Error processing {'content': u'<div class="content" id="qmt_content_div">\r\n                        <p>\u3000\u3000\u4e2d\u56fd\u8bc1\u5238\u7f51\u8baf\uff08\u8bb0\u8005 \u674e\u7433\uff09 \u4e2d\u8d85\u7535\u7f0610\u67087\u65e5\u665a\u95f4\u516c\u544a\uff0c\u63a7\u80a1\u80a1\u4e1c\u4e2d\u8d85\u96c6\u56e2\u81ea8\u67088\u65e5\u8d77\u7d2f\u8ba1\u51cf\u6301\u516c\u53f8\u80a1\u4efd23.64%\uff0c\u76ee\u524d\u6301\u80a1\u6bd4\u4f8b\u4e3a37.08%\uff0c\u4ecd\u4e3a\u516c\u53f8\u63a7\u80a1\u80a1\u4e1c\u3002</p><p>\u3000\u3000\u516c\u53f8\u6b64\u524d8\u67084\u65e5\u516c\u544a\uff0c\u63a7\u80a1\u80a1\u4e1c\u4e2d\u8d85\u96c6\u56e2\u4e3a\u4e86\u5f52\u8fd8\u94f6\u884c\u501f\u6b3e\u53ca\u8865\u5145\u8fd0\u8425\u8d44\u91d1\uff0c\u540c\u65f6\u4f18\u5316\u516c\u53f8\u80a1\u4e1c\u7ed3\u6784\uff0c\u589e\u52a0\u4e8c\u7ea7\u5e02\u573a\u80a1\u7968\u7684\u6d41\u52a8\u6027\uff0c\u4f7f\u80a1\u7968\u4ef7\u683c\u80fd\u66f4\u597d\u5730\u4f53\u73b0\u516c\u53f8\u4ef7\u503c\uff0c\u62df\u81ea8\u67087\u65e5\u8d77\u7684\u672a\u6765\u516d\u4e2a\u6708\u5185\u51cf\u6301\u8d85\u8fc75%\u7684\u516c\u53f8\u80a1\u4efd\u3002</p><p>\u3000\u3000\u6b64\u524d\uff0c\u4e2d\u8d85\u96c6\u56e2\u6301\u6709\u516c\u53f8\u80a1\u4efd308,093,612\u80a1\uff0c\u5360\u516c\u53f8\u603b\u80a1\u672c\u768460.74%\u3002\u81ea\u4eca\u5e748\u67088\u65e5\u4ee5\u6765\uff0c\u4e2d\u8d85\u96c6\u56e2\u901a\u8fc7\u6df1\u4ea4\u6240\u5927\u5b97\u4ea4\u6613\u7cfb\u7edf\u7d2f\u8ba1\u51cf\u6301\u516c\u53f8\u80a1\u4efd\u5360\u603b\u80a1\u672c\u6bd4\u4f8b\u4e3a23.64%\uff1b\u622a\u6b629\u670830\u65e5\uff0c\u4e2d\u8d85\u96c6\u56e2\u8fd8\u6301\u6709\u516c\u53f8\u80a1\u4efd188,093,612\u80a1\uff0c\u5360\u516c\u53f8\u603b\u80a1\u672c\u768437.08%\uff0c\u5176\u4e2d\u65e0\u9650\u552e\u80a1\u4efd\u4e3a164,693,612\u80a1\uff0c\u5360\u516c\u53f8\u603b\u80a1\u672c32.47%\uff0c\u6709\u9650\u552e\u80a1\u4efd\u4e3a2,340\u4e07\u80a1\uff0c\u5360\u516c\u53f8\u603b\u80a1\u672c4.61%\uff0c\u4ecd\u4e3a\u516c\u53f8\u63a7\u80a1\u80a1\u4e1c\u3002</p><div id="output_hangqing_div" style="text-align:center;" class="visible-md-block visible-lg-block"></div><input type="hidden" id="hid_totalPage" value="1"><input type="hidden" id="hid_docId" value="3198086">\r\n                        \r\n                    </div>',
+ 'time': datetime.datetime(2014, 10, 8, 0, 0),
+ 'title': u'\u4e2d\u8d85\u7535\u7f06\u63a7\u80a1\u80a1\u4e1c\u8fde\u7eed\u51cf\u6301 \u6301\u80a1\u6bd4\u4f8b\u964d\u4e3a37.08%',
+ 'url': 'http://ggjd.cnstock.com/company/scp_ggjd/tjd_bbdj/201410/3198086.htm'}
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/twisted/internet/defer.py", line 649, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/yuweifu/spiders/news/news/pipelines.py", line 32, in process_item
+    self.db[self.collection_name].create_index("url", unique=True)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1387, in create_index
+    self.__create_index(keys, kwargs)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1294, in __create_index
+    with self._socket_for_writes() as sock_info:
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/Library/Python/2.7/site-packages/pymongo/mongo_client.py", line 762, in _get_socket
+    server = self._get_topology().select_server(selector)
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 210, in select_server
+    address))
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 186, in select_servers
+    self._error_message(selector))
+ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused
+2016-11-23 15:15:18 [scrapy] INFO: Crawled 6414 pages (at 0 pages/min), scraped 6145 items (at 0 items/min)
+2016-11-23 15:15:49 [scrapy] ERROR: Error processing {'content': u'<div class="content" id="qmt_content_div">\r\n                        <p>\u3000\u3000\u4e2d\u56fd\u8bc1\u5238\u7f51\u8baf\uff08\u8bb0\u8005 \u9ad8\u6587\u529b \u9648\u5fd7\u5f3a\uff09 \u7ecf\u8fc7\u77ed\u6682\u7684\u505c\u724c\uff0c10\u67088\u65e5\u665a\u95f4\uff0c\u6613\u4e16\u8fbe\u53d1\u5e03\u516c\u544a\uff0c\u516c\u53f8\u62df\u4f7f\u7528\u8d85\u52df\u8d44\u91d1\u53ca\u5229\u606f2.38\u4ebf\u6536\u8d2d\u795e\u5149\u65b0\u80fd\u6e90\u6709\u9650\u516c\u53f8\u6240\u6301\u7684\u683c\u5c14\u6728\u795e\u5149\u65b0\u80fd\u6e90\u6709\u9650\u516c\u53f8\u7684100%\u80a1\u6743\u3002 <br>\u3000\u3000\u8d44\u6599\u663e\u793a\uff0c\u683c\u5c14\u6728\u795e\u5149\u6210\u7acb\u4e8e2012\u5e7410\u6708\uff0c\u7ecf\u8425\u8303\u56f4\u4e3a\u592a\u9633\u80fd\u5149\u4f0f\u53d1\u7535\uff1b\u80fd\u6e90\u8bbe\u5907\u7684\u9500\u552e\u3001\u7ef4\u62a4\u7b49\uff0c\u622a\u81f32014\u5e746\u670830\u65e5\uff0c\u683c\u5c14\u6728\u795e\u5149\u603b\u8d44\u4ea7\u4e3a6.94\u4ebf\u5143\uff0c\u51c0\u8d44\u4ea7\u4e3a1.74\u4ebf\u5143\uff0c\u51762013\u5e74\u5ea6\u5b9e\u73b0\u8425\u4e1a\u6536\u51652185.19\u4e07\u5143\uff0c\u51c0\u5229\u6da6\u4e3a-1143.19\u4e07\u5143\u3002<br>\u3000\u3000\u503c\u5f97\u4e00\u63d0\u7684\u662f\uff0c\u5728\u8f6c\u8ba9\u534f\u8bae\u4e2d\uff0c\u8f6c\u8ba9\u65b9\u627f\u8bfa\uff0c\u76ee\u6807\u516c\u53f82015\u5e74\u5ea6\u30012016\u5e74\u5ea6\u7ecf\u5ba1\u8ba1\u51c0\u5229\u6da6\u5206\u522b\u4e0d\u4f4e\u4e8e2825\u4e07\u548c3080\u4e07\u3002\u5426\u5219\u5356\u65b9\u627f\u8bfa\u6309\u5b9e\u9645\u51c0\u5229\u6da6\u4e0e\u76ee\u6807\u51c0\u5229\u6da6\u4e4b\u5dee\u989d\u4ee5\u8d27\u5e01\u8d44\u91d1\u5411\u76ee\u6807\u516c\u53f8\u8fdb\u884c\u8865\u507f\u3002<br>\u3000\u3000\u6b64\u5916\uff0c\u4e3a\u4fdd\u8bc1\u4e0a\u8ff0\u627f\u8bfa\u7684\u5c65\u884c\uff0c\u5356\u65b9\u81ea\u6536\u5230\u7b2c\u4e00\u7b14\u80a1\u6743\u8f6c\u8ba9\u6b3e\u540e\uff0c\u5728\u4e09\u4e2a\u6708\u5185\u4f7f\u7528\u4e0d\u4f4e\u4e8e4000\u4e07\u5728\u4e8c\u7ea7\u5e02\u573a\u4e0a\u8d2d\u4e70\u6613\u4e16\u8fbe\u80a1\u7968\uff0c\u5728\u8d2d\u4e70\u5b8c\u6210\u540e\u627f\u8bfa\u9501\u5b9a2\u5e74\u5e76\u7531\u6613\u4e16\u8fbe\u5bf9\u5916\u516c\u544a\uff0c\u82e5\u5728\u4e1a\u7ee9\u627f\u8bfa\u671f\u5185\uff0c\u5356\u65b9\u4e0d\u5c65\u884c\u6216\u65e0\u529b\u5c65\u884c\u8d27\u5e01\u8d44\u91d1\u8865\u507f\u4e4b\u8d23\u4efb\uff0c\u5219\u4e0a\u8ff0\u80a1\u6743\u7684\u5904\u7f6e\u6743\u53ca\u6536\u76ca\u6743\u5f52\u6613\u4e16\u8fbe\u6240\u6709\uff0c\u7528\u4e8e\u8865\u507f\u4e0a\u8ff0\u51c0\u5229\u6da6\u76ee\u6807\u91d1\u989d\u3002<br>\u3000\u3000\u4e2d\u56fd\u8bc1\u5238\u7f51\u8bb0\u8005\u4e86\u89e3\u5230\uff0c\u6613\u4e16\u8fbe\u4e3b\u8425\u4e1a\u52a1\u4e3a\u6c34\u6ce5\u3001\u94a2\u94c1\u7b49\u9ad8\u8017\u80fd\u884c\u4e1a\u7684\u4f59\u70ed\u4f59\u538b\u53d1\u7535\u7cfb\u7edf\u7684\u6280\u672f\u670d\u52a1\u3001\u5de5\u7a0b\u8bbe\u8ba1\u3001\u8bbe\u5907\u6210\u5957\u53ca\u5de5\u7a0b\u603b\u627f\u5305\u4e1a\u52a1\uff0c\u4ee5\u53ca\u7531\u4e0a\u8ff0\u4e1a\u52a1\u884d\u751f\u51fa\u7684\u5408\u540c\u80fd\u6e90\u7ba1\u7406\u7b49\u65b0\u578b\u4e1a\u52a1\u6a21\u5f0f\u3002<br>\u3000\u3000\u8fd1\u5e74\u6765\uff0c\u7531\u4e8e\u53d7\u5230\u5173\u8054\u884c\u4e1a\u4e0d\u666f\u6c14\u7b49\u8bf8\u591a\u56e0\u7d20\u5f71\u54cd\uff0c\u516c\u53f8\u4e3b\u8425\u4e1a\u52a1\u4f59\u70ed\u53d1\u7535\u53d7\u5230\u5f71\u54cd\u8f83\u5927\uff0c\u4e3a\u6b64\uff0c\u4ece2012\u5e74\u5f00\u59cb\uff0c\u516c\u53f8\u5236\u5b9a\u4e86\u201c\u7d27\u7d27\u56f4\u7ed5\u8282\u80fd\u3001\u6e05\u6d01\u80fd\u6e90\u53ca\u65b0\u80fd\u6e90\u9886\u57df\u8fdb\u884c\u4e1a\u52a1\u62d3\u5c55\u201d\u7684\u53d1\u5c55\u65b9\u5411\uff0c\u6b64\u6b21\u6d89\u8db3\u5149\u4f0f\u53d1\u7535\uff0c\u4e5f\u662f\u7ee7\u516c\u53f8\u6d89\u8db3\u5929\u7136\u6c14\u4e4b\u540e\u7684\u53c8\u4e00\u6b21\u6709\u9488\u5bf9\u6027\u7684\u63a2\u7d22\u3002<br>\u3000\u3000\u516c\u53f8\u79f0\uff0c\u516c\u53f8\u4e00\u76f4\u81f4\u529b\u4e8e\u8282\u80fd\u3001\u6e05\u6d01\u80fd\u6e90\u53ca\u65b0\u80fd\u6e90\u9886\u57df\u7684\u63a8\u5e7f\u53ca\u5e94\u7528\u5de5\u4f5c\uff0c\u4e14\u5728\u7535\u7ad9\u8fd0\u8425\u65b9\u9762\u5177\u5907\u4e00\u5b9a\u7684\u4e13\u4e1a\u4eba\u5458\uff0c\u901a\u8fc7\u6b64\u6b21\u5e76\u8d2d\u53ef\u5b9e\u73b0\u4f18\u52bf\u4e92\u8865\uff0c\u6709\u5229\u4e8e\u589e\u5f3a\u4e0a\u5e02\u516c\u53f8\u7684\u76c8\u5229\u80fd\u529b\uff1b\u6709\u5229\u4e8e\u6613\u4e16\u8fbe\u628a\u63e1\u6e05\u6d01\u80fd\u6e90\u7684\u53d1\u5c55\u5951\u673a\uff0c\u62d3\u5c55\u65b0\u7684\u4e1a\u52a1\u53d1\u5c55\u9886\u57df\uff0c\u5bf9\u51b2\u7ecf\u6d4e\u5468\u671f\u548c\u5b8f\u89c2\u653f\u7b56\u5bf9\u516c\u53f8\u4f59\u70ed\u53d1\u7535\u4e1a\u52a1\u7684\u5f71\u54cd\uff0c\u6811\u7acb\u8d44\u672c\u5e02\u573a\u7684\u826f\u597d\u5f62\u8c61\uff1b\u6b64\u5916\uff0c\u6709\u52a9\u4e8e\u4e0a\u5e02\u516c\u53f8\u83b7\u5f97\u7a33\u5b9a\u7684\u73b0\u91d1\u6d41\uff1b\u8be5\u9879\u76ee\u5df2\u57fa\u672c\u5b9e\u73b0\u7a33\u5b9a\u8fd0\u884c\uff0c\u6709\u52a9\u4e8e\u63d0\u9ad8\u4e0a\u5e02\u516c\u53f8\u4e1a\u7ee9\u3002<br>\u3000\u3000\u516c\u53f8\u80a1\u7968\u5c06\u4e8e10\u67089\u65e5\u5f00\u59cb\u8d77\u590d\u724c\u3002\u622a\u6b62\u4e0a\u4e00\u4e2a\u4ea4\u6613\u65e5\uff0c\u516c\u53f8\u80a1\u4ef7\u62a5\u6536\u4e8e22.89\u5143\u3002</p><div id="output_hangqing_div" style="text-align:center;" class="visible-md-block visible-lg-block"></div><input type="hidden" id="hid_totalPage" value="1"><input type="hidden" id="hid_docId" value="3199631">\r\n                        \r\n                    </div>',
+ 'time': datetime.datetime(2014, 10, 8, 0, 0),
+ 'title': u'\u5ef6\u4f38\u65b0\u80fd\u6e90\u4ea7\u4e1a\u94fe \u6613\u4e16\u8fbe\u62df2.38\u4ebf\u6536\u8d2d\u683c\u5c14\u6728\u5149\u4f0f\u9879\u76ee',
+ 'url': 'http://ggjd.cnstock.com/company/scp_ggjd/tjd_bbdj/201410/3199631.htm'}
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/twisted/internet/defer.py", line 649, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/yuweifu/spiders/news/news/pipelines.py", line 32, in process_item
+    self.db[self.collection_name].create_index("url", unique=True)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1387, in create_index
+    self.__create_index(keys, kwargs)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1294, in __create_index
+    with self._socket_for_writes() as sock_info:
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/Library/Python/2.7/site-packages/pymongo/mongo_client.py", line 762, in _get_socket
+    server = self._get_topology().select_server(selector)
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 210, in select_server
+    address))
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 186, in select_servers
+    self._error_message(selector))
+ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused
+2016-11-23 15:15:49 [scrapy] INFO: Crawled 6429 pages (at 15 pages/min), scraped 6145 items (at 0 items/min)
+2016-11-23 15:16:19 [scrapy] ERROR: Error processing {'content': u'<div class="content" id="qmt_content_div">\r\n                        <p>\u3000\u3000\u4e2d\u56fd\u8bc1\u5238\u7f51\u8baf\uff08\u8bb0\u8005 \u8d75\u78a7\u541b \u5218\u6d9b\uff09 \u9686\u5e73\u9ad8\u79d19\u65e5\u665a\u95f4\u53d1\u5e03\u524d\u4e09\u5b63\u5ea6\u4e1a\u7ee9\u9884\u589e\u516c\u544a\uff0c\u5f52\u5c5e\u4e8e\u4e0a\u5e02\u516c\u53f8\u80a1\u4e1c\u51c0\u5229\u6da6\u6bd4\u4e0a\u5e74\u540c\u671f\u589e\u957f80%\u81f3130%\uff0c\u516c\u53f8\u76c8\u522910,392.25\u4e07\u5143\u81f313,278.98 \u4e07\u5143\uff0c\u53bb\u5e74\u540c\u671f\u76c8\u5229\u4e3a5,773.47\u4e07\u5143\u3002</p><p>\u3000\u3000\u4e0a\u534a\u5e74\uff0c\u516c\u53f8\u5b9e\u73b0\u5f52\u5c5e\u4e8e\u4e0a\u5e02\u516c\u53f8\u80a1\u4e1c\u7684\u51c0\u5229\u6da61320.09\u4e07\u5143\uff0c\u8f83\u4e0a\u5e74\u540c\u671f\u589e\u957f 25.49%\uff1b\u663e\u7136\uff0c\u7b2c\u4e09\u5b63\u5ea6\u516c\u53f8\u4e1a\u7ee9\u51fa\u73b0\u663e\u8457\u63d0\u901f\u3002</p><p>\u3000\u3000\u503c\u5f97\u5173\u6ce8\u7684\u662f\uff0c\u516c\u53f8\u524d\u4e09\u5b63\u5ea6\u5229\u6da6\u4e2d\u67095,436.18\u4e07\u5143\uff08\u7a0e\u540e\uff09\u4e3a\u516c\u53f8\u8f6c\u8ba9\u65b0\u7586\u94f6\u9686\u519c\u4e1a\u56fd\u9645\u5408\u4f5c\u80a1\u4efd\u6709\u9650\u516c\u53f8\u6216\u6709\u6743\u76ca\u6240\u5f97\uff0c\u82e5\u6263\u9664\u8fd9\u90e8\u5206\u6536\u76ca\uff0c\u516c\u53f8\u524d\u4e09\u5b63\u5ea6\u76c8\u52294956.07\u4e07\u5143\u81f37842.8 \u4e07\u5143\uff0c\u6bd4\u53bb\u5e74\u540c\u671f\u5b9e\u9645\u589e\u957f-14.15%\u81f335.84%\u3002</p><div id="output_hangqing_div" style="text-align:center;" class="visible-md-block visible-lg-block"></div><input type="hidden" id="hid_totalPage" value="1"><input type="hidden" id="hid_docId" value="3201252">\r\n                        \r\n                    </div>',
+ 'time': datetime.datetime(2014, 10, 9, 0, 0),
+ 'title': u'\u9686\u5e73\u9ad8\u79d1\u524d\u4e09\u5b63\u5ea6\u5229\u6da6\u540c\u6bd4\u589e\u957f 80%\u81f3 130%',
+ 'url': 'http://ggjd.cnstock.com/company/scp_ggjd/tjd_bbdj/201410/3201252.htm'}
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/twisted/internet/defer.py", line 649, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/yuweifu/spiders/news/news/pipelines.py", line 32, in process_item
+    self.db[self.collection_name].create_index("url", unique=True)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1387, in create_index
+    self.__create_index(keys, kwargs)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1294, in __create_index
+    with self._socket_for_writes() as sock_info:
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/Library/Python/2.7/site-packages/pymongo/mongo_client.py", line 762, in _get_socket
+    server = self._get_topology().select_server(selector)
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 210, in select_server
+    address))
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 186, in select_servers
+    self._error_message(selector))
+ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused
+2016-11-23 15:16:50 [scrapy] ERROR: Error processing {'content': u'<div class="content" id="qmt_content_div">\r\n                        <p>\u3000\u3000\u4e2d\u56fd\u8bc1\u5238\u7f51\u8baf\uff08\u8bb0\u8005 \u738b\u5c79\uff09 \u957f\u5b89\u6c7d\u8f6610\u67088\u65e5\u665a\u95f4\u516c\u5e03\u4e869\u6708\u4efd\u4ea7\u9500\u5feb\u62a5\uff0c\u5f53\u6708\u516c\u53f8\u4ea7\u9500\u6c7d\u8f66\u5206\u522b\u4e3a22.4653\u4e07\u8f86\u548c22.6681\u4e07\u8f86\uff0c\u540c\u6bd4\u5206\u522b\u589e\u957f20.12%\u548c13.07%\uff0c\u867d\u7136\u4ea7\u91cf\u8f838\u6708\u6709\u660e\u663e\u589e\u957f\uff0c\u4f46\u9500\u91cf\u589e\u901f\u5374\u8f838\u6708\u7ee7\u7eed\u56de\u843d\uff0c\u663e\u793a\u76ee\u524d\u201c\u53bb\u5e93\u5b58\u201d\u538b\u529b\u72b9\u5b58\u3002</p><p>\u3000\u3000\u4eca\u5e74\u524d\u4e09\u5b63\u5ea6\uff0c\u957f\u5b89\u6c7d\u8f66\u7d2f\u8ba1\u6c7d\u8f66\u4ea7\u9500\u91cf\u5206\u522b\u4e3a190.7050\u4e07\u8f86\u548c190.2358\u4e07\u8f86\uff0c\u540c\u6bd4\u5206\u522b\u589e\u957f25.08%\u548c24.15%\uff0c\u603b\u4f53\u4fdd\u6301\u4e86\u8f83\u9ad8\u7684\u589e\u957f\u901f\u5ea6\u3002</p><p>\u3000\u3000\u5206\u677f\u5757\u770b\uff0c9\u6708\u4efd\u957f\u5b89\u6c7d\u8f66\u672c\u90e8\u9500\u91cf\u8fbe7.7301\u4e07\u8f86\uff0c\u540c\u6bd4\u589e\u957f27.51%\uff0c\u589e\u901f\u73af\u6bd48\u6708\u63d0\u5347\u4e867\u4e2a\u591a\u767e\u5206\u70b9\uff0c\u663e\u793a\u957f\u5b89\u81ea\u4e3b\u54c1\u724c\u8f7f\u8f66\u4ecd\u5904\u4e8e\u653e\u91cf\u589e\u957f\u8d8b\u52bf\u4e4b\u4e2d\uff0c\u9038\u52a8\u3001CS35\u3001CS75\u7b49\u8f66\u578b\u6301\u7eed\u70ed\u9500\uff1b\u957f\u5b89\u94c3\u6728\u9500\u91cf\u8fbe1.2878\u4e07\u8f86\uff0c\u957f\u5b89\u9a6c\u81ea\u8fbe\u9500\u91cf1.1377\u4e07\u8f86\uff0c\u4e5f\u5904\u4e8e\u6301\u7eed\u589e\u957f\u4e2d\u3002\u4e0d\u8fc7\u503c\u5f97\u6ce8\u610f\u7684\u662f\uff0c\u957f\u5b89\u798f\u7279\u5f53\u6708\u9500\u91cf6.9420\u4e07\u8f86\uff0c\u540c\u6bd4\u4e0b\u964d\u4e864.35%\uff0c\u8fd9\u4e5f\u662f\u8fd1\u4e24\u5e74\u6765\u957f\u798f\u9500\u91cf\u589e\u901f\u9996\u5ea6\u51fa\u73b0\u540c\u6bd4\u4e0b\u6ed1\u3002</p><p>\u3000\u3000\u6839\u636e\u534a\u5e74\u62a5\uff0c1-6\u6708\u957f\u5b89\u6c7d\u8f66\u5b8c\u6210\u9500\u552e\u6c7d\u8f66132\u4e07\u8f86\uff0c\u540c\u6bd4\u589e\u957f25%\uff0c\u5b9e\u73b0\u8425\u4e1a\u6536\u5165242.07\u4ebf\u5143\uff0c\u51c0\u5229\u6da636.28\u4ebf\u5143\uff0c\u5206\u522b\u540c\u6bd4\u589e\u957f19.77%\u548c194.85%\u3002\u7167\u6b64\u6d4b\u7b97\uff0c\u516c\u53f8\u4eca\u5e74\u524d\u4e09\u5b63\u5ea6\u4e1a\u7ee9\u4ecd\u80fd\u5b9e\u73b0\u8f83\u5927\u5e45\u5ea6\u589e\u957f\uff0c\u4f46\u4e09\u5b63\u5ea6\u7531\u4e8e\u53bb\u5e74\u57fa\u6570\u8f83\u9ad8\uff0c\u589e\u901f\u5e94\u8f83\u4e0a\u534a\u5e74\u6709\u6240\u653e\u7f13\u3002</p><p>\u3000\u3000\u5c55\u671b\u56db\u5b63\u5ea6\uff0c\u67d0\u5238\u5546\u6c7d\u8f66\u884c\u4e1a\u7814\u7a76\u5458\u5206\u6790\uff0c\u957f\u5b89\u6c7d\u8f66\u6700\u5927\u7684\u770b\u70b9\u5728\u81ea\u4e3b\u54c1\u724c\u8f7f\u8f66\u548c\u957f\u5b89\u9a6c\u81ea\u8fbe\u4e24\u65b9\u9762\uff0c\u957f\u5b89\u798f\u7279\u7531\u4e8e\u6ca1\u6709\u65b0\u8f66\u578b\u63a8\u51fa\uff0c\u4e14\u7b2c\u4e09\u5de5\u5382\u9884\u8ba1\u5230\u5e74\u5e95\u624d\u80fd\u6295\u4ea7\uff0c\u56e0\u6b64\u7ef4\u6301\u76ee\u524d\u7684\u5e02\u573a\u8868\u73b0\u5e94\u8be5\u53ef\u4ee5\u63a5\u53d7\u3002</p><div id="output_hangqing_div" style="text-align:center;" class="visible-md-block visible-lg-block"></div><input type="hidden" id="hid_totalPage" value="1"><input type="hidden" id="hid_docId" value="3199605">\r\n                        \r\n                    </div>',
+ 'time': datetime.datetime(2014, 10, 8, 0, 0),
+ 'title': u'\u957f\u5b89\u6c7d\u8f66\u524d\u4e09\u5b63\u5ea6\u9500\u91cf\u589e\u957f24.15%',
+ 'url': 'http://ggjd.cnstock.com/company/scp_ggjd/tjd_bbdj/201410/3199605.htm'}
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/twisted/internet/defer.py", line 649, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/yuweifu/spiders/news/news/pipelines.py", line 32, in process_item
+    self.db[self.collection_name].create_index("url", unique=True)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1387, in create_index
+    self.__create_index(keys, kwargs)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1294, in __create_index
+    with self._socket_for_writes() as sock_info:
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/Library/Python/2.7/site-packages/pymongo/mongo_client.py", line 762, in _get_socket
+    server = self._get_topology().select_server(selector)
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 210, in select_server
+    address))
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 186, in select_servers
+    self._error_message(selector))
+ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused
+2016-11-23 15:17:20 [scrapy] ERROR: Error processing {'content': u'<div class="content" id="qmt_content_div">\r\n                        <div id="doc_3199621_0" style="display:none;"><p>\u3000\u3000\u4e2d\u56fd\u8bc1\u5238\u7f51\u8baf\uff08\u8bb0\u8005 \u738b\u6625\u6656\uff09 *ST\u5408\u6cf08\u65e5\u665a\u95f4\u516c\u544a\uff0c\u4e3a\u8fdb\u4e00\u6b65\u63a8\u8fdb\u516c\u53f8\u6295\u8d44\u53ca\u6574\u5408\u667a\u80fd\u7a7f\u6234\u4ea7\u4e1a\u83b7\u5f97\u5916\u5ef6\u5f0f\u6269\u5f20\u7684\u7a7a\u95f4\uff0c\u516c\u53f8\u5168\u8d44\u5b50\u516c\u53f8\u6c5f\u897f\u5408\u529b\u6cf0\u4e0e\u6df1\u5733\u957f\u6da6\u8d44\u4ea7\u5171\u540c\u7ec4\u5efa\u6210\u7acb\u5408\u6cf0\u957f\u6da6\u667a\u80fd\u7a7f\u6234\u4ea7\u4e1a\u6295\u8d44\u57fa\u91d1\uff08\u6709\u9650\u5408\u4f19\uff09\u3002\u6839\u636e\u53cc\u65b9\u7b7e\u8ba2\u7684\u6846\u67b6\u534f\u8bae\uff0c\u57fa\u91d1\u603b\u89c4\u6a21\u4e3a10\u4ebf\u5143\uff0c\u62df\u5206\u671f\u52df\u96c6\uff0c\u4e00\u671f\u52df\u8d44\u603b\u989d1\u4ebf\u5143\u3002<br>\u3000\u3000\u6c5f\u897f\u5408\u529b\u6cf0\u4e3a\u4ea7\u4e1a\u57fa\u91d1\u7684\u6709\u9650\u5408\u4f19\u4eba\uff0c\u4ee5\u81ea\u6709\u8d44\u91d1\u8ba4\u7f34\u7cfb\u5217\u4ea7\u4e1a\u57fa\u91d1\u603b\u51fa\u8d44\u989d\u4e0d\u8d85\u8fc7\u4eba\u6c11\u5e01 8000 \u4e07\uff1b\u8ba4\u7f34\u4e00\u671f\u57fa\u91d1\u51fa\u8d44\u989d\u4e0d\u8d85\u8fc7\u4eba\u6c11\u5e01 3000 \u4e07\u5143\u3002\u8be5\u57fa\u91d1\u7684\u6295\u8d44\u9886\u57df\u5c06\u4e3b\u8981\u4e3a\u667a\u80fd\u7a7f\u6234\u4ea7\u4e1a\uff0c\u6295\u8d44\u5bf9\u8c61\u9996\u9009\u7b26\u5408\u6c5f\u897f\u5408\u529b\u6cf0\u7684\u53d1\u5c55\u6218\u7565\u548c\u5e76\u8d2d\u6295\u8d44\u65b9\u5411\u7684\u4f01\u4e1a\u3002 <br>\u3000\u3000\u516c\u53f8\u8868\u793a\uff0c\u901a\u8fc7\u4e0e\u957f\u6da6\u8d44\u4ea7\u5171\u540c\u8bbe\u7acb\u4ea7\u4e1a\u5e76\u8d2d\u57fa\u91d1\uff0c\u76ee\u7684\u662f\u5728\u516c\u53f8\u81ea\u8eab\u884c\u4e1a\u7ecf\u9a8c\u7684\u57fa\u7840\u4e0a\u5145\u5206\u5229\u7528\u957f\u6da6\u8d44\u4ea7\u7684\u4e13\u4e1a\u6295\u8d44\u56e2\u961f\u548c\u878d\u8d44\u6e20\u9053\uff0c\u901a\u8fc7\u5404\u79cd\u91d1\u878d\u5de5\u5177\u548c\u624b\u6bb5\u653e\u5927\u6295\u8d44\u80fd\u529b\uff0c\u6293\u4f4f\u667a\u80fd\u7a7f\u6234\u53d1\u5c55\u7684\u5e02\u573a\u673a\u9047\uff0c\u4e3a\u516c\u53f8\u672a\u6765\u53d1\u5c55\u50a8\u5907\u66f4\u591a\u5e76\u8d2d\u6807\u7684\uff0c\u8fdb\u4e00\u6b65\u63d0\u9ad8\u516c\u53f8\u5728\u667a\u80fd\u7a7f\u6234\u9886\u57df\u7684\u5f00\u62d3\u80fd\u529b\u548c\u6838\u5fc3\u7ade\u4e89\u529b\u3002\u672c\u6b21\u5408\u4f5c\u5728\u4fdd\u8bc1\u516c\u53f8\u4e3b\u8425\u4e1a\u52a1\u53d1\u5c55\u7684\u524d\u63d0\u4e0b\uff0c\u901a\u8fc7\u501f\u9274\u5408\u4f5c\u65b9\u7684\u6295\u8d44\u5e76\u8d2d\u7ecf\u9a8c\uff0c\u53ef\u4e3a\u516c\u53f8\u7684\u8d44\u672c\u8fd0\u4f5c\u63d0\u4f9b\u4e30\u5bcc\u7684\u7ecf\u9a8c\uff0c\u77ed\u671f\u5185\u5bf9\u516c\u53f8\u7684\u65e5\u5e38\u751f\u4ea7\u7ecf\u8425\u6d3b\u52a8\u4e0d\u4f1a\u4ea7\u751f\u5b9e\u8d28\u6027\u7684\u5f71\u54cd\uff0c\u957f\u671f\u5c06\u6709\u52a9\u4e8e\u516c\u53f8\u6210\u529f\u5e76\u8d2d\u5728\u667a\u80fd\u7a7f\u6234\u9886\u57df\u7684\u4f18\u8d28\u4f01\u4e1a\uff0c\u4e3a\u516c\u53f8\u6301\u7eed\u3001\u5feb\u901f\u3001\u7a33\u5b9a\u53d1\u5c55\u63d0\u4f9b\u4fdd\u969c\u3002</p><p>\u3000\u3000\u3010<span style="color: #666699"><strong>\u884c\u4e1a\u8d44\u8baf</strong></span>\u3011</p><p><strong>\u3000\u3000\u5916\u5a92\uff1a2014\u5e74\u5c06\u662f\u53ef\u7a7f\u6234\u8bbe\u5907\u5143\u5e74</strong></p><p>\u3000\u3000\u4e2d\u56fd\u8bc1\u5238\u7f51\u8baf\uff08\u8bb0\u8005 \u738b\u5b99\u6d01\uff09\u6d77\u5916\u5a92\u4f53\u8fd1\u65e5\u62a5\u9053\u79f0\uff0c2014\u5e74\u5c06\u4f1a\u662f\u53ef\u7a7f\u6234\u8ba1\u7b97\u8bbe\u5907\u4e4b\u5e74\u3002\u4f34\u968f\u773c\u955c\u3001\u5e3d\u5b50\u3001\u624b\u8868\u548c\u5176\u4ed6\u8bbe\u5907\u5927\u6d8c\u73b0\uff0c2014\u5e74\u201c\u7269\u8054\u7f51\u201d\u5c06\u8fc5\u901f\u53d1\u5c55\u3002\uff08<strong><a href="javascript:goPage(1)">\u8be6\u89c1\u5168\u6587</a></strong>\uff09</p><p><strong>\u3000\u3000IT\u5de8\u5934\u624e\u5806\u8fdb\u519b \u53ef\u7a7f\u6234\u8bbe\u5907\u767e\u4ebf\u91d1\u77ff\u5f85\u6398</strong></p><p>\u3000\u3000\u65e5\u524d\u56fd\u5185\u5916IT\u5de8\u5934\u7eb7\u7eb7\u8fdb\u519b\u53ef\u7a7f\u6234\u8bbe\u5907\u300226\u65e5\uff0cTCL\u901a\u8baf\u63a8\u51fa\u516b\u6838\u667a\u80fd\u624b\u673aidol X+\u53ca\u53ef\u7a7f\u6234\u8bbe\u5907Boom Band\u667a\u80fd\u624b\u73af\u3002\uff08<strong><a href="javascript:goPage(2)">\u8be6\u89c1\u5168\u6587</a></strong>\uff09</p><p>\u3000\u3000\u3010<span style="color: #666699"><strong>\u76f8\u5173\u6848\u4f8b</strong></span>\u3011</p><p><strong>\u3000\u3000\u73af\u65ed\u7535\u5b50\u5b9a\u589e\u52df\u8d44\u903e20\u4ebf\u5143\u52a0\u7801\u53ef\u7a7f\u6234\u8bbe\u5907</strong></p><p>\u3000\u3000\u4e2d\u56fd\u8bc1\u5238\u7f51\u8baf\uff08\u8bb0\u8005 \u674e\u9510\uff09 \u73af\u65ed\u7535\u5b50\u80a1\u4efd\u6709\u9650\u516c\u53f814\u65e5\u53d1\u5e03\u975e\u516c\u5f00\u53d1\u884c\u516c\u544a\uff0c\u516c\u53f8\u62df\u975e\u516c\u5f00\u53d1\u884c\u80a1\u7968\u4e0d\u8d85\u8fc7 11,444 \u4e07\u80a1\uff0c\u53d1\u884c\u4ef7\u683c\u6bcf\u80a1\u4e0d\u4f4e\u4e8e18.03 \u5143\u4eba\u6c11\u5e01\uff0c\u52df\u96c6\u8d44\u91d1\u603b\u989d\u9884\u8ba1\u4e0d\u8d85\u8fc7206,300 \u4e07\u5143\u3002\uff08<strong><a href="javascript:goPage(3)">\u8be6\u89c1\u5168\u6587</a></strong>\uff09</p><p><strong>\u3000\u3000\u4eac\u4e1c\u65b9\u53c2\u80a1\u7f8e\u56fdMeta\u516c\u53f8 \u5207\u5165\u53ef\u7a7f\u6234\u6280\u672f\u9886\u57df</strong></p><p>\u3000\u3000\u4e2d\u56fd\u8bc1\u5238\u7f51\u8baf\uff08\u8bb0\u8005 \u8d3a\u5efa\u4e1a\uff09 \u4eac\u4e1c\u65b9\u65e5\u524d\u901a\u8fc7\u4e0b\u5c5e\u5168\u8d44\u5b50\u516c\u53f8BOEOH\u51fa\u8d44\u7ea6500\u4e07\u7f8e\u5143\u8ba4\u8d2d\u4e86\u7f8e\u56fdMeta\u516c\u53f8\u90e8\u5206\u4f18\u5148\u80a1\u80a1\u6743\u3002\u5728\u516c\u53f8\u770b\u6765\uff0c\u6b64\u4e3e\u662f\u5b9e\u73b0\u5728\u53ef\u7a7f\u6234\u667a\u80fd\u8bbe\u5907\u548c\u589e\u5f3a\u73b0\u5b9e\u6280\u672f\u7b49\u521b\u65b0\u6027\u3001\u98a0\u8986\u6027\u6280\u672f\u9886\u57df\u7684\u6218\u7565\u5e03\u5c40\u53ca\u6280\u672f\u4eba\u624d\u7684\u79ef\u7d2f\u3002\uff08<strong><a href="javascript:goPage(4)">\u8be6\u89c1\u5168\u6587</a></strong>\uff09</p></div><div id="doc_3199621_1" style="display:none;"><p jquery1412780716737="2" jquery1412780710735="2" jquery1412780704255="2" jquery1412780699349="2"><strong>\u3000\u3000\u5916\u5a92\uff1a2014\u5e74\u5c06\u662f\u53ef\u7a7f\u6234\u8bbe\u5907\u5143\u5e74</strong></p><p>\u3000\u3000\u4e2d\u56fd\u8bc1\u5238\u7f51\u8baf\uff08\u8bb0\u8005 \u738b\u5b99\u6d01\uff09\u6d77\u5916\u5a92\u4f53\u8fd1\u65e5\u62a5\u9053\u79f0\uff0c2014\u5e74\u5c06\u4f1a\u662f\u53ef\u7a7f\u6234\u8ba1\u7b97\u8bbe\u5907\u4e4b\u5e74\u3002\u4f34\u968f\u773c\u955c\u3001\u5e3d\u5b50\u3001\u624b\u8868\u548c\u5176\u4ed6\u8bbe\u5907\u5927\u6d8c\u73b0\uff0c2014\u5e74\u201c\u7269\u8054\u7f51\u201d\u5c06\u8fc5\u901f\u53d1\u5c55\u3002<br>\u3000\u3000\u636e\u5168\u7403\u79fb\u52a8\u901a\u4fe1\u7cfb\u7edf\u534f\u4f1a\uff08GSMA\uff09\u9884\u8ba1\uff0c\u4eca\u5e74\u5168\u7403\u7269\u8054\u7f51\u5e02\u573a\u7684\u89c4\u6a21\u5c06\u8fbe\u5230100\u4ebf\u7f8e\u5143\uff0c\u800c\u52302017\u5e74\uff0c\u8fd9\u4e00\u89c4\u6a21\u5c06\u589e\u957f\u81f3440\u4ebf\u7f8e\u5143\u3002<br>\u3000\u3000\u4f5c\u4e3a\u53ef\u7a7f\u6234\u8bbe\u5907\u754c\u7684\u5143\u8001\uff0c\u8c37\u6b4c\u773c\u955c\u5c06\u8fdb\u4e00\u6b65\u5347\u7ea7\u52302.0\u7248\u672c\uff0c\u5e76\u4e14\u5c06\u4f1a\u642d\u8f7d\u533b\u5b66\u955c\u7247\u7b49\u914d\u4ef6\u6a2a\u7a7a\u51fa\u4e16\u3002\u800c\u6e38\u620f\u673a\u6d88\u4ea1\u7684\u9884\u8a00\u53ef\u80fd\u4e3a\u65f6\u8fc7\u65e9\u3002\u534e\u76db\u987f\u5927\u5b66\u57282013\u5e74\u53d1\u5e03\u7814\u7a76\u79f0\uff0c\u7535\u5b50\u6e38\u620f\u4e2d\u7684\u8fd0\u52a8\u6e38\u620f\u5c06\u6ee1\u8db3\u5efa\u8bae\u8fd0\u52a8\u91cf\u7684\u8981\u6c42\uff0c\u540c\u65f6\u4e5f\u662f\u4f20\u7edf\u6559\u5b66\u7684\u7406\u60f3\u66ff\u4ee3\u65b9\u6848\u3002<br>\u3000\u3000\u6b64\u5916\uff0c\u62a5\u9053\u8fd8\u79f0\uff0c\u865a\u62df\u663e\u793a\u8033\u673aOcculous Rift\u7684\u51fa\u73b0\u88ab\u89c6\u4e3a\u5c06\u628a\u865a\u62df\u73b0\u5b9e\u5e02\u573a\u6380\u5f00\u4e00\u4e2a\u5927\u53e3\u5b50\uff0c\u7ed9\u4e88\u5f00\u53d1\u4eba\u5458\u548c\u7528\u6237\u9996\u4e2a\u771f\u6b63\u5bf9\u6d88\u8d39\u8005\u53cb\u597d\u76843D\u73af\u5883\u3002<br>\u3000\u3000\u4e0d\u8fc7\uff0c\u4e00\u4e9b\u6311\u6218\u4e5f\u7ee7\u7eed\u5b58\u5728\uff0c\u76ee\u524d\u53ef\u7a7f\u6234\u8bbe\u5907\u9700\u8981\u9762\u5bf9\u7684\u4e24\u5927\u6280\u672f\u74f6\u9888\u662f\u7535\u6c60\u7eed\u822a\u80fd\u529b\u548c\u5c4f\u5e55\u5206\u8fa8\u7387\u3002</p></div><div id="doc_3199621_2" style="display:none;"><p jquery1412780716737="3" jquery1412780710735="3" jquery1412780704255="3" jquery1412780699349="3"><strong>\u3000\u3000IT\u5de8\u5934\u624e\u5806\u8fdb\u519b \u53ef\u7a7f\u6234\u8bbe\u5907\u767e\u4ebf\u91d1\u77ff\u5f85\u6398</strong></p><p>\u3000\u3000\u65e5\u524d\u56fd\u5185\u5916IT\u5de8\u5934\u7eb7\u7eb7\u8fdb\u519b\u53ef\u7a7f\u6234\u8bbe\u5907\u300226\u65e5\uff0cTCL\u901a\u8baf\u63a8\u51fa\u516b\u6838\u667a\u80fd\u624b\u673aidol X+\u53ca\u53ef\u7a7f\u6234\u8bbe\u5907Boom Band\u667a\u80fd\u624b\u73af\u3002\u516c\u53f8\u8463\u4e8b\u957f\u517cCEO\u674e\u4e1c\u751f\u4e0e\u8054\u53d1\u79d1\u8463\u4e8b\u957f\u8521\u660e\u4ecb\u3001\u5bbd\u5e26\u8d44\u672c\u8463\u4e8b\u957f\u7530\u6eaf\u5b81\u3001\u767e\u5ea6\u526f\u603b\u88c1\u6731\u5149\u3001\u4eac\u4e1c\u5546\u57ce\u526f\u603b\u88c1\u738b\u7b11\u677e\u7b49\u6218\u7565\u5408\u4f5c\u4f19\u4f34\u8054\u8882\u51fa\u5e2d\u53d1\u5e03\u4f1a\u3002<br>\u3000\u3000\u674e\u4e1c\u751f\u5728\u53d1\u5e03\u4f1a\u4e0a\u8868\u793a\uff0c\u968f\u7740\u667a\u80fd\u7ec8\u7aef\u3001\u53ef\u7a7f\u6234\u8bbe\u5907\u3001\u5927\u6570\u636e\u30014G\u7b49\u6210\u4e3a\u6d88\u8d39\u7535\u5b50\u7684\u4ef7\u503c\u6d3c\u5730\uff0c\u672a\u6765TCL\u96c6\u56e2(2.72,0.020,0.74%)\u5c06\u4f1a\u79c9\u6301\u66f4\u52a0\u5f00\u653e\u7684\u5fc3\u6001\u4e0e\u4ea7\u4e1a\u94fe\u4e0a\u4e0b\u6e38\u7684\u4f18\u79c0\u4f01\u4e1a\u5408\u4f5c\u3002<br>\u3000\u3000\u65e0\u72ec\u6709\u5076\uff0c\u534e\u4e3a\u7ec8\u7aef\u624b\u673a\u4ea7\u54c1\u7ebf\u603b\u88c1\u4f55\u521a\u65e5\u524d\u900f\u9732\uff0c\u534e\u4e3a\u6b63\u5728\u5bf9\u81ea\u4e3b\u7814\u5236\u7684\u53ef\u7a7f\u6234\u5f0f\u8bbe\u5907\u8fdb\u884c\u6d4b\u8bd5\uff0c\u672a\u6765\u4f1a\u9010\u6b65\u4e0a\u5e02\u3002\u636e\u6089\uff0c\u534e\u4e3a\u67092-3\u6b3e\u53ef\u7a7f\u6234\u8bbe\u5907\u6b63\u5728\u5f00\u53d1\u4e4b\u4e2d\uff0c\u672a\u67651-2\u4e2a\u6708\u5185\u4f1a\u53d1\u5e03\uff0c\u6700\u5feb\u53ef\u80fd\u57282014\u5e74\u7684\u7f8e\u56fd\u62c9\u65af\u7ef4\u52a0\u65af\u56fd\u9645\u6d88\u8d39\u7535\u5b50\u5c55(CES)\u4e0a\u4eae\u76f8\u3002\u4f55\u521a\u8868\u793a\uff0c\u4e0d\u6392\u9664\u63a8\u51fa\u667a\u80fd\u624b\u8868\u7684\u53ef\u80fd\u6027\u3002<br>\u3000\u3000\u800c\u6d77\u5916\u65b9\u9762\uff0c\u4e09\u661f\u7684\u53ef\u7a7f\u6234\u8bbe\u5907\u6280\u672f\u518d\u83b7\u7a81\u7834\u3002\u4e09\u661f\u65e5\u524d\u5411\u7f8e\u56fd\u4e13\u5229\u5c40\u63d0\u4ea4\u4e86\u4e00\u4efd\u5173\u4e8e\u53ef\u6298\u53e0\u53cc\u5c4f\u667a\u80fd\u673a\u7684\u4e13\u5229\u3002\u636e\u4e13\u5229\u663e\u793a\uff0c\u8fd9\u6b3e\u53cc\u5c4f\u667a\u80fd\u624b\u673a\u5c06\u4f1a\u5728\u5e94\u7528\u663e\u793a\u754c\u9762\u4e0a\u6709\u6240\u7a81\u7834\u3002\u8be5\u4e13\u5229\u6db5\u76d6\u4f17\u591a\u5185\u5bb9\uff0c\u5305\u62ec\u65e5\u5386\u663e\u793a\u3001\u89c6\u9891\u64ad\u653e\u3001\u56fe\u7247\u663e\u793a\u3001\u6e38\u620f\u754c\u9762\u7b49\u3002\u4ece\u8fd9\u4f17\u591a\u7ec6\u8282\u6765\u770b\uff0c\u4e09\u661f\u610f\u6b32\u7531\u5185\u5230\u5916\u6253\u9020\u4e00\u6b3e\u9769\u547d\u6027\u7684\u4ea7\u54c1\u3002<br>\u3000\u3000\u6b64\u524d\u6709\u673a\u6784\u53d1\u5e03\u7684\u62a5\u544a\u663e\u793a\uff0c\u827e\u5a92\u54a8\u8be2\u53d1\u5e03\u7684\u300a2013\u4e2d\u56fd\u53ef\u7a7f\u6234\u8bbe\u5907\u5e02\u573a\u7814\u7a76\u62a5\u544a\u300b\u663e\u793a\uff0c2012\u5e74\u4e2d\u56fd\u53ef\u7a7f\u6234\u8bbe\u5907\u5e02\u573a\u89c4\u6a21\u8fbe\u52306.1\u4ebf\u5143\uff0c\u9884\u8ba1\u52302015\u5e74\u4e2d\u56fd\u53ef\u7a7f\u6234\u8bbe\u5907\u5e02\u573a\u89c4\u6a21\u5c06\u8d85\u8fc7100\u4ebf\u5143\uff0c\u8fbe\u5230114.9\u4ebf\u5143\u3002</p></div><div id="doc_3199621_3" style="display:none;"><p jquery1412780716737="4" jquery1412780710735="4" jquery1412780704255="4" jquery1412780699349="4"><strong>\u3000\u3000\u73af\u65ed\u7535\u5b50\u5b9a\u589e\u52df\u8d44\u903e20\u4ebf\u5143\u52a0\u7801\u53ef\u7a7f\u6234\u8bbe\u5907</strong></p><p>\u3000\u3000\u4e2d\u56fd\u8bc1\u5238\u7f51\u8baf\uff08\u8bb0\u8005 \u674e\u9510\uff09 \u73af\u65ed\u7535\u5b50\u80a1\u4efd\u6709\u9650\u516c\u53f814\u65e5\u53d1\u5e03\u975e\u516c\u5f00\u53d1\u884c\u516c\u544a\uff0c\u516c\u53f8\u62df\u975e\u516c\u5f00\u53d1\u884c\u80a1\u7968\u4e0d\u8d85\u8fc7 11,444 \u4e07\u80a1\uff0c\u53d1\u884c\u4ef7\u683c\u6bcf\u80a1\u4e0d\u4f4e\u4e8e18.03 \u5143\u4eba\u6c11\u5e01\uff0c\u52df\u96c6\u8d44\u91d1\u603b\u989d\u9884\u8ba1\u4e0d\u8d85\u8fc7206,300 \u4e07\u5143\u3002\u52df\u96c6\u8d44\u91d1\u5c06\u4e3b\u8981\u7528\u4e8e\u73af\u7ef4\u7535\u5b50\uff08\u4e0a\u6d77\uff09\u6709\u9650\u516c\u53f8\u4e00\u671f\u9879\u76ee\uff08\u5fae\u5c0f\u5316\u7cfb\u7edf\u6a21\u7ec4\u5236\u9020\u65b0\u5efa\u9879\u76ee\uff09\u3001\u9ad8\u4f20\u8f93\u9ad8\u5bc6\u5ea6\u5fae\u578b\u5316\u65e0\u7ebf\u901a\u4fe1\u6a21\u5757\u5236\u9020\u6280\u672f\u6539\u9020\u9879\u76ee\u4ee5\u53ca\u8865\u5145\u6d41\u52a8\u8d44\u91d1\u3002\u516c\u53f8\u80a1\u7968\u5c06\u4e8e4\u670815\u65e5\u590d\u724c\u3002<br>\u3000\u3000\u516c\u544a\u663e\u793a\uff0c\u672c\u6b21\u52df\u6295\u9879\u76ee\u5fae\u5c0f\u5316\u7cfb\u7edf\u6a21\u7ec4\u9879\u76ee\u8ba1\u5212\u603b\u6295\u8d4413 \u4ebf\u5143\uff0c\u62df\u65b0\u5efa3\u6761\u751f\u4ea7\u7ebf\uff0c\u4e3b\u8981\u7528\u4e8e\u5fae\u5c0f\u5316\u7cfb\u7edf\u6a21\u7ec4\u9879\u76ee\u65b0\u4ea7\u54c1\u7684\u7814\u53d1\u751f\u4ea7\uff0c\u6ee1\u8db3\u591a\u529f\u80fd\u5fae\u5c0f\u5316\u7cfb\u7edf\u6a21\u7ec4\u65b0\u4ea7\u54c1\u4ea7\u4e1a\u5316\u9700\u6c42\u3002\u76f8\u6bd4\u4e8e\u975e\u96c6\u6210\u5316\u7684\u7535\u8def\uff0c\u591a\u529f\u80fd\u5fae\u5c0f\u5316\u7cfb\u7edf\u6a21\u7ec4\u5177\u6709\u660e\u663e\u7684\u5fae\u578b\u5316\u3001\u6563\u70ed\u548c\u6297\u5e72\u6270\u4f18\u52bf\uff0c\u4ee5\u5fae\u5c0f\u5316\u6a21\u7ec4\u53d6\u4ee3\u4f20\u7edf\u624b\u6301\u88c5\u7f6e\u7684\u4e3b\u677f\u529f\u80fd\uff0c\u4f7f\u516c\u53f8\u4ea7\u54c1\u80fd\u66f4\u5e7f\u6cdb\u5e94\u7528\u4e8e\u5bf9\u4f53\u79ef\u5fae\u5c0f\u5316\u8981\u6c42\u66f4\u9ad8\u3001\u8f7b\u8584\u77ed\u5c0f\u7684\u88c5\u7f6e\u7684\u5404\u7c7b\u9ad8\u7aef\u7535\u5b50\u4ea7\u54c1\u3002\u9879\u76ee\u6295\u4ea7\u5b9e\u65bd\u540e\uff0c\u5c06\u4e3b\u8981\u751f\u4ea7\u5fae\u5c0f\u5316\u7cfb\u7edf\u6a21\u7ec4\u5143\u4ef6\uff0c\u5e94\u7528\u4e8e\u9ad8\u7aef\u624b\u673a\u3001\u5e73\u677f\u7535\u8111\u3001\u53ef\u7a7f\u6234\u8bbe\u5907\u7b49\u5404\u7c7b\u7535\u5b50\u4ea7\u54c1\uff0c\u8fbe\u4ea7\u540e\u5c06\u5b9e\u73b0\u5e74\u751f\u4ea7\u65b0\u578b\u591a\u529f\u80fd\u5fae\u5c0f\u5316\u7cfb\u7edf\u6a21\u7ec4\u5143\u4ef63,600\u4e07\u4ef6\u7684\u751f\u4ea7\u80fd\u529b\u3002\u76ee\u524d\uff0c\u516c\u53f8\u5df2\u4e0e\u4f17\u591a\u56fd\u9645\u77e5\u540d\u7535\u5b50\u54c1\u724c\u4f01\u4e1a\u5efa\u7acb\u4e86\u957f\u671f\u7a33\u5b9a\u5408\u4f5c\u5173\u7cfb\uff0c\u800c\u8fd9\u4e9b\u5ba2\u6237\u6b63\u662f\u5fae\u5c0f\u5316\u7cfb\u7edf\u6a21\u7ec4\u4ea7\u54c1\u5e94\u7528\u7684\u5e02\u573a\u9886\u519b\u4f01\u4e1a\u3002\u901a\u8fc7\u4e0e\u4ed6\u4eec\u7684\u6df1\u5165\u5408\u4f5c\uff0c\u516c\u53f8\u80fd\u591f\u987a\u5229\u83b7\u5f97\u5fae\u5c0f\u5316\u7cfb\u7edf\u6a21\u7ec4\u4ea7\u54c1\u7684\u8ba2\u5355\uff0c\u8fdb\u4e00\u6b65\u63d0\u9ad8\u5fae\u5c0f\u5316\u7cfb\u7edf\u6a21\u7ec4\u4ea7\u54c1\u7684\u5e02\u573a\u5360\u6709\u7387\uff1b\u53e6\u4e00\u52df\u6295\u9879\u76ee\u9ad8\u4f20\u8f93\u9ad8\u5bc6\u5ea6\u5fae\u578b\u5316\u65e0\u7ebf\u901a\u4fe1\u6a21\u5757\u5236\u9020\u6280\u672f\u6539\u9020\u9879\u76ee\u6295\u8d44\u603b\u989d\u4e3a59,000\u4e07\u5143\uff0c\u9879\u76ee\u5efa\u8bbe\u5185\u5bb9\u4e3a\u65b0\u5efa\u5341\u6761\u65e0\u7ebf\u901a\u8baf\u6a21\u5757\u751f\u4ea7\u7ebf\uff0c\u5b8c\u6210\u516c\u53f8\u65e0\u7ebf\u6a21\u5757\u4ea7\u54c1\u7ebf\u7684\u6280\u672f\u5347\u7ea7\uff0c\u5b9e\u73b0\u6700\u65b0\u4e00\u4ee3\u7684\u65e0\u7ebf\u7f51\u7edc\u6807\u51c6\uff08IEEE 802.11ac\uff09\uff0c\u6ee1\u8db3\u65e0\u7ebf\u6a21\u7ec4\u65b0\u4ea7\u54c1\u4ea7\u4e1a\u5316\u9700\u6c42\u3002\u65e0\u7ebf\u901a\u8baf\u6a21\u5757\u4e3b\u8981\u5e94\u7528\u4e8e\u9ad8\u7aef\u667a\u80fd\u578b\u624b\u673a\u3001\u7535\u8111\uff08\u7b14\u8bb0\u672c\u3001\u5e73\u677f\uff09\u3001\u4e2a\u4eba\u5f71\u97f3\u5a31\u4e50\u88c5\u7f6e\uff08\u5305\u62ec MP3\u3001\u7f51\u7edc\u7535\u89c6\u53ca\u968f\u9009\u89c6\u8baf\u7b49\uff09\u548c\u6e38\u620f\u673a\uff08\u542b\u7f51\u7edc\u6e38\u620f\uff09\u3002\u8be5\u9879\u76ee\u4ea7\u54c1\u53ef\u5185\u5d4cWiFi\u3001\u84dd\u7259\u3001\u536b\u661f\u5bfc\u822a\uff08GPS\uff09\u3001NFC \u7b49\u591a\u79cd\u65e0\u7ebf\u53d1\u5c04\u6a21\u5757\uff0c\u80fd\u9002\u5e94\u65e0\u7ebf\u901a\u8baf\u4ea7\u54c1\u5411\u8f7b\u8584\u77ed\u5c0f\u65b9\u5411\u53d1\u5c55\u7684\u8d8b\u52bf\uff0c\u6ee1\u8db3\u9ad8\u6027\u4ef7\u6bd4\u3001\u9ad8\u901f\u7387\u3001\u4f4e\u80fd\u8017\u3001\u5c0f\u5c3a\u5bf8\u53ca\u591a\u529f\u80fd\u7684\u65e0\u7ebf\u901a\u8baf\u4ea7\u54c1\u9700\u6c42\u3002\u9879\u76ee\u6295\u4ea7\u540e\uff0c\u5c06\u5b9e\u73b0\u5e74\u751f\u4ea7\u65e0\u7ebf\u901a\u8baf\u6a21\u57579,720\u4e07\u4ef6\u7684\u751f\u4ea7\u80fd\u529b\u3002\u8be5\u9879\u76ee\u7684\u5b9e\u65bd\uff0c\u5c06\u6709\u52a9\u4e8e\u516c\u53f8\u5728\u65e0\u7ebf\u901a\u4fe1\u6a21\u7ec4\u6280\u672f\u7684\u7814\u7a76\u548c\u5f00\u53d1\u4e0a\u5efa\u7acb\u6838\u5fc3\u7ade\u4e89\u4f18\u52bf\uff0c\u63d0\u5347\u516c\u53f8\u7684\u4ea7\u54c1\u6280\u672f\u6c34\u5e73\uff0c\u6ee1\u8db3\u7ec8\u7aef\u5ba2\u6237\u7684\u9700\u6c42\uff0c\u63d0\u9ad8\u5e02\u573a\u5360\u6709\u7387\uff0c\u5de9\u56fa\u516c\u53f8\u5728\u65e0\u7ebf\u901a\u4fe1\u6a21\u7ec4\u9886\u57df\u7684\u5e02\u573a\u5730\u4f4d\uff1b\u516c\u53f8\u62df\u5c06\u672c\u6b21\u975e\u516c\u5f00\u53d1\u884c\u80a1\u7968\u52df\u96c6\u8d44\u91d1\u4e2d\u768447,300 \u4e07\u5143\u7528\u4e8e\u8865\u5145\u516c\u53f8\u6d41\u52a8\u8d44\u91d1\uff0c\u4ee5\u6ee1\u8db3\u516c\u53f8\u4e3b\u8425\u4e1a\u52a1\u6301\u7eed\u53d1\u5c55\u7684\u8d44\u91d1\u9700\u6c42\uff0c\u5e76\u6709\u52a9\u4e8e\u589e\u5f3a\u516c\u53f8\u6297\u98ce\u9669\u80fd\u529b\uff0c\u63d0\u5347\u7ecf\u8425\u6548\u76ca\u3002<br>\u3000\u3000\u516c\u53f8\u8868\u793a\uff0c\u968f\u77404G\u5e02\u573a\u7684\u5feb\u901f\u53d1\u5c55\u53ca\u53ef\u7a7f\u6234\u8bbe\u5907\u3001\u667a\u80fd\u7ec8\u7aef\u7b49\u4ea7\u4e1a\u5de8\u5927\u5e02\u573a\u524d\u666f\u7684\u91ca\u653e\uff0c\u516c\u53f8\u9700\u8fdb\u4e00\u6b65\u52a0\u5927\u5728\u4e0a\u8ff0\u4ea7\u54c1\u9886\u57df\u7684\u6295\u5165\uff0c\u4e3a\u5ba2\u6237\u63d0\u4f9b\u5b8c\u6574\u7684DMS\u670d\u52a1\u65b9\u6848\uff0c\u5e76\u529b\u4e89\u6210\u4e3a\u7535\u5b50\u8bbe\u8ba1\u4e0e\u5236\u9020\u670d\u52a1\u4e1a\u7684\u9886\u5bfc\u8005\u3002\u672c\u6b21\u52df\u6295\u9879\u76ee\u5efa\u6210\u6295\u4ea7\u540e\uff0c\u516c\u53f8\u7684\u76f8\u5173\u4ea7\u54c1\u7684\u7814\u53d1\u548c\u751f\u4ea7\u80fd\u529b\u5c06\u5f97\u5230\u589e\u5f3a\uff0c\u4ece\u800c\u4e3a\u516c\u53f8\u8fdb\u4e00\u6b65\u63d0\u5347\u6838\u5fc3\u7ade\u4e89\u529b\u6253\u4e0b\u575a\u5b9e\u57fa\u7840\u3002\u540c\u65f6\uff0c\u5229\u7528\u52df\u96c6\u8d44\u91d1\u8865\u5145\u516c\u53f8\u6d41\u52a8\u8d44\u91d1\uff0c\u5c06\u5728\u4e00\u5b9a\u7a0b\u5ea6\u4e0a\u589e\u5f3a\u516c\u53f8\u7684\u8d44\u91d1\u652f\u4ed8\u80fd\u529b\uff0c\u4f18\u5316\u516c\u53f8\u8d44\u4ea7\u8d1f\u503a\u7ed3\u6784\uff0c\u589e\u5f3a\u516c\u53f8\u53d1\u5c55\u540e\u52b2\u3002\u52df\u6295\u9879\u76ee\u5efa\u6210\u6295\u4ea7\u540e\uff0c\u968f\u7740\u516c\u53f8\u751f\u4ea7\u80fd\u529b\u7684\u63d0\u9ad8\u3001\u7814\u53d1\u6280\u672f\u5b9e\u529b\u7684\u589e\u5f3a\u4ee5\u53ca\u54c1\u724c\u7ade\u4e89\u80fd\u529b\u7684\u589e\u5f3a\uff0c\u516c\u53f8\u7684\u8425\u4e1a\u6536\u5165\u6709\u671b\u8fdb\u4e00\u6b65\u589e\u52a0\uff0c\u516c\u53f8\u7684\u957f\u671f\u76c8\u5229\u80fd\u529b\u4e5f\u5c06\u83b7\u5f97\u63d0\u5347\uff0c\u6709\u5229\u4e8e\u516c\u53f8\u7684\u53ef\u6301\u7eed\u53d1\u5c55\u3002</p></div><div id="doc_3199621_4" style="display:none;"><p jquery1412780716737="5" jquery1412780710735="5" jquery1412780704255="5" jquery1412780699349="5"><strong>\u3000\u3000\u4eac\u4e1c\u65b9\u53c2\u80a1\u7f8e\u56fdMeta\u516c\u53f8 \u5207\u5165\u53ef\u7a7f\u6234\u6280\u672f\u9886\u57df</strong></p><p>\u3000\u3000\u4e2d\u56fd\u8bc1\u5238\u7f51\u8baf\uff08\u8bb0\u8005 \u8d3a\u5efa\u4e1a\uff09 \u4eac\u4e1c\u65b9\u65e5\u524d\u901a\u8fc7\u4e0b\u5c5e\u5168\u8d44\u5b50\u516c\u53f8BOEOH\u51fa\u8d44\u7ea6500\u4e07\u7f8e\u5143\u8ba4\u8d2d\u4e86\u7f8e\u56fdMeta\u516c\u53f8\u90e8\u5206\u4f18\u5148\u80a1\u80a1\u6743\u3002\u5728\u516c\u53f8\u770b\u6765\uff0c\u6b64\u4e3e\u662f\u5b9e\u73b0\u5728\u53ef\u7a7f\u6234\u667a\u80fd\u8bbe\u5907\u548c\u589e\u5f3a\u73b0\u5b9e\u6280\u672f\u7b49\u521b\u65b0\u6027\u3001\u98a0\u8986\u6027\u6280\u672f\u9886\u57df\u7684\u6218\u7565\u5e03\u5c40\u53ca\u6280\u672f\u4eba\u624d\u7684\u79ef\u7d2f\u3002<br>\u3000\u3000\u636e\u516c\u53f8\u4ecb\u7ecd\uff0c\u589e\u5f3a\u73b0\u5b9e\u6280\u672f\u662f\u901a\u8fc7\u7cfb\u7edf\u63d0\u4f9b\u7684\u865a\u62df\u4fe1\u606f\u589e\u52a0\u7528\u6237\u5bf9\u73b0\u5b9e\u4e16\u754c\u611f\u77e5\u7684\u6280\u672f\uff0c\u5b83\u5c06\u7cfb\u7edf\u6240\u751f\u6210\u7684\u865a\u62df\u7269\u4f53\u3001\u573a\u666f\u6216\u7cfb\u7edf\u63d0\u793a\u4fe1\u606f\u53e0\u52a0\u5230\u771f\u5b9e\u73af\u5883\u4e2d\uff0c\u901a\u8fc7\u7acb\u4f53\u89e6\u63a7\uff0c\u5b9e\u73b0\u771f\u5b9e\u73af\u5883\u4e0e\u865a\u62df\u4e16\u754c\u4e4b\u95f4\u7684\u4e92\u52a8\uff0c\u4e3a\u865a\u62df\u73b0\u5b9e\u6280\u672f\u7684\u4e00\u4e2a\u7ec6\u5206\u9886\u57df\u3002Meta\u516c\u53f8\u4e3b\u8981\u4ea7\u54c1\u201cSpace Glasses\u201d\u662f\u4e00\u6b3e\u53ef\u4ee5\u201c\u62d3\u5c55\u73b0\u5b9e\u73af\u5883\u201d\u7684\u667a\u80fd\u773c\u955c\uff0c\u5b9a\u4f4d\u4e3a\u589e\u5f3a\u73b0\u5b9e\u73af\u5883\u5e73\u53f0\uff0c\u5c06\u4fe1\u606f\u4ee53D\u6210\u50cf\u5f62\u5f0f\u548c\u73b0\u5b9e\u5bf9\u63a5\uff0c\u6709\u671b\u6539\u53d8\u751f\u4ea7\u5236\u9020\u3001\u533b\u7597\u53ca\u6e38\u620f\u7b49\u4f17\u591a\u9886\u57df\u7684\u6280\u672f\u751f\u6001\u73af\u5883\u3002<br>\u3000\u3000Meta\u662f\u7f8e\u56fd\u4e00\u5bb6\u53ef\u7a7f\u6234\u667a\u80fd\u8bbe\u5907\u521d\u521b\u516c\u53f8\uff0c\u4e3b\u8981\u6d89\u8db3\u53ef\u7a7f\u6234\u8ba1\u7b97\u548c\u589e\u5f3a\u73b0\u5b9e\u6280\u672f\u9886\u57df\uff0c\u4e3b\u8425\u4e1a\u52a1\u662f\u53ef\u7a7f\u6234\u589e\u5f3a\u73b0\u5b9e\u667a\u80fd\u8bbe\u5907\u3002\u8be5\u516c\u53f8\u4f18\u52bf\u6280\u672f\u9886\u5148\uff0c\u638c\u63e1\u4e16\u754c\u9886\u5148\u7684\u589e\u5f3a\u73b0\u5b9e\uff08Augmented Reality\uff09\u6280\u672f\uff0c\u53ef\u4ee5\u8ba9\u7528\u6237\u5728\u865a\u62df\u73b0\u5b9e\u4e2d\u8fdc\u7a0b\u64cd\u7eb5\u624b\u673a\u548c\u7535\u8111\u3002\u540c\u65f6\uff0c\u8be5\u516c\u53f8\u56e2\u961f\u6838\u5fc3\u5f3a\u5927\uff0c\u5305\u62ecSteve Mann\uff08\u9996\u5e2d\u79d1\u5b66\u5bb6\uff0c\u7a7f\u6234\u5f0f\u8ba1\u7b97\u9886\u57df\u4e13\u5bb6\uff09\u3001Steven Feiner\uff08\u6280\u672f\u987e\u95ee\uff0c\u589e\u5f3a\u73b0\u5b9e\u6280\u672f\u9886\u57df\u4e13\u5bb6\uff09\u548cJayse Hansen\uff08\u66fe\u62c5\u4efb\u300a\u94a2\u94c1\u4fa0\u300b\u7cfb\u5217\u7535\u5f71\u4e2d\u5168\u606f\u56fe\u4ea4\u4e92\u754c\u9762\u7684\u8bbe\u8ba1\u8005\uff09\u3002\u6b64\u5916\uff0c\u8be5\u516c\u53f8\u8fd8\u5177\u6709\u5f3a\u5927\u7684\u4e13\u5229\u6c60\u548c\u8f6f\u786c\u4ef6\u7ed3\u5408\u7684\u5f3a\u5927\u5e73\u53f0\u5f00\u53d1\uff0c\u53ef\u5145\u5206\u5229\u7528\u5168\u7403\u8303\u56f4\u5185\u5f00\u53d1\u8005\u7684\u8d44\u6e90\u642d\u5efa\u5176\u751f\u6001\u7cfb\u7edf\u3002\u4f5c\u4e3a\u667a\u80fd\u773c\u955c\u5382\u5546\u4e4b\u4e00\uff0cMeta\u9009\u62e9\u4e86\u4e00\u6761\u4e0d\u540c\u4e8e\u5176\u4ed6\u5382\u5546\u7684\u8def\u7ebf\u2014\u2014\u4e0d\u4ec5\u5c06\u865a\u62df\u73b0\u5b9e\u4e0e\u771f\u5b9e\u4e16\u754c\u76f8\u7ed3\u5408\uff0c\u540c\u65f6\u8fd8\u5177\u6709\u4ea4\u4e92\u6027\u3002<br>\u3000\u3000\u636e\u7535\u5b50\u884c\u4e1a\u6743\u5a01\u7814\u7a76\u673a\u6784IMS\u4f30\u8ba1\uff0c\u53ef\u7a7f\u6234\u8bbe\u5907\u5c06\u6301\u7eed\u5347\u6e29\uff0c2016\u5e74\u53ef\u7a7f\u6234\u8bbe\u5907\u5e02\u573a\u89c4\u6a21\u53ef\u8fbe60\u4ebf\u7f8e\u5143\u3002<br>\u3000\u3000\u4eac\u4e1c\u65b9\u8ba4\u4e3a\uff0c\u865a\u62df\u73b0\u5b9e\u6280\u672f\u7ecf\u5386\u8fc7\u6ce1\u6cab\u671f\u540e\uff0c\u6b63\u5904\u4e8e\u590d\u82cf\u671f\uff0c\u5f53\u524d\u6295\u8d44\u65f6\u673a\u8f83\u597d\u3002Meta\u516c\u53f8\u6280\u672f\u53d1\u5c55\u8def\u7ebf\u6e05\u6670\uff0c\u5176\u4ea7\u54c1\u5728\u672a\u6765\u53ef\u4ee5\u53d6\u4ee3\u4e2a\u4eba\u7535\u8111\uff0c\u5e94\u7528\u8303\u56f4\u5e7f\u6cdb\u3002\u6295\u8d44Meta\u516c\u53f8\uff0c\u53ef\u5229\u7528\u5176\u73b0\u6709\u6280\u672f\u4f18\u52bf\u548c\u4eba\u624d\u56e2\u961f\u62d3\u5c55\u516c\u53f8\u5728\u865a\u62df\u4eba\u673a\u4ea4\u4e92\u9886\u57df\u7684\u5e03\u5c40\uff0c\u5e76\u4e3a\u516c\u53f8\u5207\u5165\u8fd9\u4e2a\u4e1a\u52a1\u65b9\u5411\u79ef\u7d2f\u6280\u672f\u4eba\u624d\u7b49\u76f8\u5173\u8d44\u6e90\u3002<br>\u3000\u3000\u516c\u53f8\u540c\u65f6\u8868\u793a\uff0c\u5c06\u5229\u7528\u591a\u5e74\u6765\u5728\u534a\u5bfc\u4f53\u663e\u793a\u3001\u89e6\u63a7\u548c\u7cfb\u7edf\u96c6\u6210\u9886\u57df\u79ef\u6512\u7684\u6280\u672f\u7ecf\u9a8c\uff0c\u4e3a\u4eca\u540e\u865a\u62df\u4eba\u673a\u4ea4\u4e92\u6280\u672f\u53d1\u5c55\u63d0\u4f9b\u6709\u529b\u652f\u6491\u3002</p></div><div id="contentPager"><span id="span_previous_page"><a href="javascript:goPage(page-1);">\u4e0a\u4e00\u9875</a></span>\xa0\xa0\u7b2c<span id="span_pagerNumber_0" onclick="goPage(\'0\');">\xa0[1]</span><span id="span_pagerNumber_1" onclick="goPage(\'1\');">\xa0[2]</span><span id="span_pagerNumber_2" onclick="goPage(\'2\');">\xa0[3]</span><span id="span_pagerNumber_3" onclick="goPage(\'3\');">\xa0[4]</span><span id="span_pagerNumber_4" onclick="goPage(\'4\');">\xa0[5]</span>\xa0\u9875<span id="span_total_page" style="cursor: auto;color: #000;">\xa0(\u5171<strong>5</strong>\u9875)</span>\xa0\xa0<span id="span_next_page"><a href="javascript:goPage(page+1);">\u4e0b\u4e00\u9875</a></span></div><div id="output_hangqing_div" style="text-align:center;" class="visible-md-block visible-lg-block"></div><input type="hidden" id="hid_totalPage" value="5"><input type="hidden" id="hid_docId" value="3199621">\r\n                        \r\n                    </div>',
+ 'time': datetime.datetime(2014, 10, 9, 0, 0),
+ 'title': u'*ST\u5408\u6cf0\u6210\u7acb\u603b\u89c4\u6a2110\u4ebf\u4ea7\u4e1a\u57fa\u91d1   \u5f00\u62d3\u667a\u80fd\u7a7f\u6234\u4e1a\u52a1',
+ 'url': 'http://ggjd.cnstock.com/company/scp_ggjd/tjd_bbdj/201410/3199621.htm'}
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/twisted/internet/defer.py", line 649, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/yuweifu/spiders/news/news/pipelines.py", line 32, in process_item
+    self.db[self.collection_name].create_index("url", unique=True)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1387, in create_index
+    self.__create_index(keys, kwargs)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1294, in __create_index
+    with self._socket_for_writes() as sock_info:
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/Library/Python/2.7/site-packages/pymongo/mongo_client.py", line 762, in _get_socket
+    server = self._get_topology().select_server(selector)
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 210, in select_server
+    address))
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 186, in select_servers
+    self._error_message(selector))
+ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused
+2016-11-23 15:17:50 [scrapy] ERROR: Error processing {'content': u'<div class="content" id="qmt_content_div">\r\n                        <p>\u3000\u3000\u4e2d\u56fd\u8bc1\u5238\u7f51\u8baf\uff08\u8bb0\u8005 \u66f9\u6500\u5cf0\uff09 \u4e2d\u987a\u6d01\u67d4\u4e8e10\u67088\u65e5\u665a\u53d1\u5e03\u5b9a\u589e\u9884\u6848\u3002\u8be5\u516c\u53f8\u62df\u4ee5\u6bcf\u80a18.11\u5143\u7684\u4ef7\u683c\uff0c\u5411\u8be5\u516c\u53f8\u5b9e\u9645\u63a7\u5236\u4eba\u9093\u6c0f\u5bb6\u65cf\u6210\u5458\u5b9a\u589e2466\u4e07\u80a1\u80a1\u4efd\uff0c\u52df\u8d44\u8fd12\u4ebf\u5143\uff0c\u8865\u5145\u6d41\u52a8\u8d44\u91d1\u3002<br>\u3000\u3000\u63d0\u53ca\u6b64\u6b21\u542f\u52a8\u5b9a\u589e\u7684\u80cc\u666f\uff0c\u4e2d\u987a\u6d01\u67d4\u8868\u793a\uff0c\u867d\u7136\u6b27\u503a\u5371\u673a\u53ca\u5168\u7403\u7ecf\u6d4e\u653e\u7f13\u7ee7\u7eed\u56f0\u6270\u5168\u7403\u7ecf\u6d4e\uff0c\u4f46\u751f\u6d3b\u7528\u7eb8\u4ea7\u54c1\u5c5e\u4e8e\u5feb\u901f\u6d88\u8d39\u54c1\uff0c\u53d7\u56fd\u9645\u7ecf\u6d4e\u73af\u5883\u5f71\u54cd\u8f83\u5c0f\uff0c\u6574\u4f53\u5e02\u573a\u89c4\u6a21\u4ecd\u5448\u9010\u5e74\u589e\u957f\u6001\u52bf\u3002\u8fd1\u5e74\u6765\u884c\u4e1a\u65b0\u589e\u4ea7\u80fd\u8fc7\u591a\uff0c\u51fa\u73b0\u9636\u6bb5\u6027\u7684\u4f9b\u5927\u4e8e\u6c42\uff0c\u5bfc\u81f4\u5e02\u573a\u7ade\u4e89\u52a0\u5267\u3002\u62a5\u544a\u671f\u5185\uff0c\u4e3a\u5e94\u5bf9\u4e0d\u65ad\u52a0\u5267\u7684\u5e02\u573a\u7ade\u4e89\u73af\u5883\uff0c\u8be5\u516c\u53f8\u4e0d\u65ad\u52a0\u5f3a\u5168\u56fd\u96f6\u552e\u7cfb\u7edf\u7684\u5f00\u62d3\u5e76\u5feb\u901f\u586b\u8865\u7a7a\u767d\u7f51\u70b9\uff0c\u540c\u65f6\u79ef\u6781\u901a\u8fc7\u5404\u79cd\u5a92\u4ecb\u8fdb\u884c\u54c1\u724c\u8425\u9500\u548c\u4ea7\u54c1\u63a8\u4ecb\uff0c\u8be5\u516c\u53f8\u9500\u552e\u89c4\u6a21\u6301\u7eed\u589e\u957f\uff0c2013\u5e74\u5ea6\u516c\u53f8\u5b9e\u73b0\u9500\u552e\u6536\u516525.02\u4ebf\u5143\uff0c\u8f832011\u5e74\u5ea6\u589e\u957f34.77%\u3002\u672a\u6765\uff0c\u968f\u7740\u516c\u53f8\u4ea7\u80fd\u7684\u8fdb\u4e00\u6b65\u91ca\u653e\uff0c\u8be5\u516c\u53f8\u5c06\u8fdb\u4e00\u6b65\u52a0\u5f3a\u8425\u9500\u7f51\u7edc\u7684\u5efa\u8bbe\uff0c\u52a0\u5927\u54c1\u724c\u8425\u9500\u529b\u5ea6\uff0c\u5bf9\u8425\u8fd0\u8d44\u91d1\u7684\u9700\u6c42\u4e5f\u5c06\u76f8\u5e94\u589e\u52a0\u3002\u4e3a\u4e86\u8fdb\u4e00\u6b65\u6269\u5927\u516c\u53f8\u89c4\u6a21\uff0c\u63d0\u5347\u516c\u53f8\u7efc\u5408\u7ade\u4e89\u5b9e\u529b\uff0c\u8be5\u516c\u53f8\u62df\u63d0\u51fa\u672c\u6b21\u975e\u516c\u5f00\u53d1\u884c\u80a1\u7968\u7533\u8bf7\u3002<br>\u3000\u3000\u503c\u5f97\u4e00\u63d0\u7684\u662f\uff0c\u8be5\u516c\u53f8\u5b9e\u9645\u63a7\u5236\u4eba\u4e3a\u9093\u6c0f\u5bb6\u65cf\uff0c\u5176\u6210\u5458\u4e3a\u9093\u9896\u5fe0\u3001\u9093\u51a0\u5f6a\u548c\u9093\u51a0\u6770\uff0c\u5176\u4e2d\u9093\u9896\u5fe0\u4e0e\u9093\u51a0\u5f6a\u3001\u9093\u51a0\u6770\u7cfb\u7236\u5b50\u5173\u7cfb\uff0c\u9093\u51a0\u5f6a\u548c\u9093\u51a0\u6770\u7cfb\u5144\u5f1f\u5173\u7cfb\u3002\u9093\u9896\u5fe0\u3001\u9093\u51a0\u5f6a\u548c\u9093\u51a0\u6770\u5206\u522b\u6301\u6709\u516c\u53f8\u63a7\u80a1\u80a1\u4e1c\u4e2d\u987a\u96c6\u56e260%\u300120%\u548c20%\u7684\u80a1\u6743\uff1b\u9093\u9896\u5fe0\u6301\u6709\u4e2d\u987a\u516c\u53f8100%\u7684\u80a1\u6743\u3002\u6b64\u6b21\u5b9a\u589e\u5bf9\u8c61\u4e3a\u8be5\u516c\u53f8\u5b9e\u9645\u63a7\u5236\u4eba\u9093\u6c0f\u5bb6\u65cf\u6210\u5458\u9093\u9896\u5fe0\uff0c\u6b64\u6b21\u975e\u516c\u5f00\u53d1\u884c\u5b8c\u6210\u540e\uff0c\u516c\u53f8\u80a1\u4efd\u603b\u6570\u4e3a43026\u4e07\u80a1\uff0c\u9093\u6c0f\u5bb6\u65cf\u5408\u8ba1\u63a7\u5236\u516c\u53f854.64%\u7684\u80a1\u4efd\uff0c\u4ecd\u4e3a\u516c\u53f8\u5b9e\u9645\u63a7\u5236\u4eba\u3002</p><div id="output_hangqing_div" style="text-align:center;" class="visible-md-block visible-lg-block"></div><input type="hidden" id="hid_totalPage" value="1"><input type="hidden" id="hid_docId" value="3199629">\r\n                        \r\n                    </div>',
+ 'time': datetime.datetime(2014, 10, 8, 0, 0),
+ 'title': u'\u4e2d\u987a\u6d01\u67d4\u5b9a\u589e\u52df\u8d442\u4ebf \u5b9e\u9645\u63a7\u5236\u4eba\u9093\u9896\u5fe0\u4e00\u4eba\u5305\u63fd',
+ 'url': 'http://ggjd.cnstock.com/company/scp_ggjd/tjd_bbdj/201410/3199629.htm'}
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/twisted/internet/defer.py", line 649, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/yuweifu/spiders/news/news/pipelines.py", line 32, in process_item
+    self.db[self.collection_name].create_index("url", unique=True)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1387, in create_index
+    self.__create_index(keys, kwargs)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1294, in __create_index
+    with self._socket_for_writes() as sock_info:
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/Library/Python/2.7/site-packages/pymongo/mongo_client.py", line 762, in _get_socket
+    server = self._get_topology().select_server(selector)
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 210, in select_server
+    address))
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 186, in select_servers
+    self._error_message(selector))
+ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused
+2016-11-23 15:18:20 [scrapy] ERROR: Error processing {'content': u'<div class="content" id="qmt_content_div">\r\n                        <p>\u3000\u3000\u4e2d\u56fd\u8bc1\u5238\u7f51\u8baf\uff08\u8bb0\u8005 \u9648\u5fd7\u5f3a\uff09 10\u67088\u65e5\u665a\u95f4\uff0c\u4e2d\u5174\u5546\u4e1a\u53d1\u5e03\u516c\u544a\uff0c\u6839\u636e\u6c88\u9633\u5e02\u548c\u5e73\u533a\u653f\u5e9c\u300a\u5173\u4e8e\u7ed9\u4e88\u4e2d\u5174\u2014\u6c88\u9633\u5546\u4e1a\u5927\u53a6\uff08\u96c6\u56e2\uff09\u80a1\u4efd\u6709\u9650\u516c\u53f8\u653f\u7b56\u6276\u6301\u8d44\u91d1\u7684\u590d\u51fd\u300b\uff0c\u4e3a\u652f\u6301\u516c\u53f8\u6301\u7eed\u53d1\u5c55\uff0c\u4f9d\u636e\u76f8\u5173\u73b0\u4ee3\u670d\u52a1\u4e1a\u53ca\u79d1\u6280\u6587\u5316\u878d\u5408\u6276\u6301\u653f\u7b56\uff0c\u7ed9\u4e88\u516c\u53f8\u653f\u7b56\u8865\u8d341400\u4e07\u3002<br>\u3000\u3000\u516c\u53f8\u79f0\uff0c\u4e0a\u8ff0\u6b3e\u9879\u5df2\u5212\u62e8\u5230\u516c\u53f8\u8d26\u6237\u3002\u516c\u53f8\u5c06\u6309\u7167\u300a\u4f01\u4e1a\u4f1a\u8ba1\u51c6\u5219\u7b2c16\u53f7-\u653f\u5e9c\u8865\u52a9\u300b\u7684\u6709\u5173\u89c4\u5b9a\uff0c\u5bf9\u4e0a\u8ff0\u8865\u8d34\u8d44\u91d1\u8fdb\u884c\u4f1a\u8ba1\u5904\u7406\uff0c\u8ba1\u51652014\u5e74\u5ea6\u5f53\u671f\u635f\u76ca\u3002\u5177\u4f53\u4f1a\u8ba1\u5904\u7406\u5c06\u4ee5\u4f1a\u8ba1\u5e08\u4e8b\u52a1\u6240\u5e74\u5ea6\u5ba1\u8ba1\u7ed3\u679c\u4e3a\u51c6\u3002<br>\u3000\u3000\u6570\u636e\u663e\u793a,\u4eca\u5e74\u4e0a\u534a\u5e74\uff0c\u516c\u53f8\u5b9e\u73b0\u5f52\u5c5e\u4e8e\u4e0a\u5e02\u516c\u53f8\u80a1\u4e1c\u7684\u51c0\u5229\u6da6\u4e3a4273\u4e07\u5143\u3002</p><div id="output_hangqing_div" style="text-align:center;" class="visible-md-block visible-lg-block"></div><input type="hidden" id="hid_totalPage" value="1"><input type="hidden" id="hid_docId" value="3199612">\r\n                        \r\n                    </div>',
+ 'time': datetime.datetime(2014, 10, 8, 0, 0),
+ 'title': u'\u4e2d\u5174\u5546\u4e1a\u83b71400\u4e07\u5143\u653f\u5e9c\u8865\u52a9',
+ 'url': 'http://ggjd.cnstock.com/company/scp_ggjd/tjd_bbdj/201410/3199612.htm'}
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/twisted/internet/defer.py", line 649, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/yuweifu/spiders/news/news/pipelines.py", line 32, in process_item
+    self.db[self.collection_name].create_index("url", unique=True)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1387, in create_index
+    self.__create_index(keys, kwargs)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1294, in __create_index
+    with self._socket_for_writes() as sock_info:
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/Library/Python/2.7/site-packages/pymongo/mongo_client.py", line 762, in _get_socket
+    server = self._get_topology().select_server(selector)
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 210, in select_server
+    address))
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 186, in select_servers
+    self._error_message(selector))
+ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused
+2016-11-23 15:18:51 [scrapy] ERROR: Error processing {'content': u'<div class="content" id="qmt_content_div">\r\n                        <p>\u3000\u3000\u4e2d\u56fd\u8bc1\u5238\u7f51\u8baf\uff08\u8bb0\u8005 \u9648\u5fd7\u5f3a\uff09 \u7ee7\u5b9a\u589e\u65b9\u6848\u83b7\u5f97\u5317\u4eac\u56fd\u8d44\u59d4\u540c\u610f\u540e\uff0c10\u67088\u65e5\u665a\u95f4\uff0c\u677e\u8fbd\u6c7d\u8f66\u516c\u544a\uff0c\u516c\u53f8\u4e8e10 \u67088\u65e5\u6536\u5230\u4e86\u4e2d\u56fd\u8bc1\u5238\u76d1\u7763\u7ba1\u7406\u59d4\u5458\u4f1a\u300a\u4e2d\u56fd\u8bc1\u76d1\u4f1a\u884c\u653f\u8bb8\u53ef\u7533\u8bf7\u53d7\u7406\u901a\u77e5\u4e66\u300b\uff08141253 \u53f7\uff09\uff0c\u8bc1\u76d1\u4f1a\u4f9d\u6cd5\u5bf9\u516c\u53f8\u63d0\u4ea4\u7684\u300a\u4e0a\u5e02\u516c\u53f8\u975e\u516c\u5f00\u53d1\u884c\u80a1\u7968\u300b\u884c\u653f\u8bb8\u53ef\u7533\u8bf7\u6750\u6599\u8fdb\u884c\u4e86\u5ba1\u67e5\uff0c\u8ba4\u4e3a\u8be5\u7533\u8bf7\u6750\u6599\u9f50\u5168\uff0c\u7b26\u5408\u6cd5\u5b9a\u5f62\u5f0f\uff0c\u51b3\u5b9a\u5bf9\u8be5\u884c\u653f\u8bb8\u53ef\u7533\u8bf7\u4e88\u4ee5\u53d7\u7406\u3002<br>\u3000\u3000\u516c\u53f8\u79f0\uff0c\u6b64\u975e\u516c\u5f00\u53d1\u884c\u80a1\u7968\u4e8b\u5b9c\u80fd\u5426\u83b7\u5f97\u6838\u51c6\u4ecd\u5b58\u5728\u4e0d\u786e\u5b9a\u6027\uff0c\u516c\u53f8\u5c06\u53ca\u65f6\u62ab\u9732\u6b64\u6b21\u975e\u516c\u5f00\u53d1\u884c\u80a1\u7968\u4e8b\u5b9c\u7684\u540e\u7eed\u8fdb\u5c55\u60c5\u51b5\u3002</p><div id="output_hangqing_div" style="text-align:center;" class="visible-md-block visible-lg-block"></div><input type="hidden" id="hid_totalPage" value="1"><input type="hidden" id="hid_docId" value="3199616">\r\n                        \r\n                    </div>',
+ 'time': datetime.datetime(2014, 10, 8, 0, 0),
+ 'title': u'\u677e\u8fbd\u6c7d\u8f66\u5b9a\u589e\u65b9\u6848\u83b7\u5f97\u8bc1\u76d1\u4f1a\u53d7\u7406',
+ 'url': 'http://ggjd.cnstock.com/company/scp_ggjd/tjd_bbdj/201410/3199616.htm'}
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/twisted/internet/defer.py", line 649, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/yuweifu/spiders/news/news/pipelines.py", line 32, in process_item
+    self.db[self.collection_name].create_index("url", unique=True)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1387, in create_index
+    self.__create_index(keys, kwargs)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1294, in __create_index
+    with self._socket_for_writes() as sock_info:
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/Library/Python/2.7/site-packages/pymongo/mongo_client.py", line 762, in _get_socket
+    server = self._get_topology().select_server(selector)
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 210, in select_server
+    address))
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 186, in select_servers
+    self._error_message(selector))
+ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused
+2016-11-23 15:18:51 [scrapy] INFO: Crawled 6429 pages (at 0 pages/min), scraped 6145 items (at 0 items/min)
+2016-11-23 15:19:21 [scrapy] ERROR: Error processing {'content': u'<div class="content" id="qmt_content_div">\r\n                        <p>\u3000\u3000\u4e2d\u56fd\u8bc1\u5238\u73a9\u8baf\uff08\u8bb0\u8005 \u5b8b\u5143\u4e1c\uff09 \u5927\u897f\u6d0b\uff08600558\uff0929\u65e5\u665a\u95f4\u53d1\u5e03\u4e1a\u7ee9\u9884\u589e\u516c\u544a\uff0c\u7ecf\u516c\u53f8\u8d22\u52a1\u90e8\u95e8\u521d\u6b65\u6d4b\u7b97\uff0c\u9884\u8ba1\u516c\u53f82014\u5e741-9\u6708\u5b9e\u73b0\u7684\u51c0\u5229\u6da6\u4e0e\u540c\u6bd4\u589e\u957f50%\u5de6\u53f3\u3002</p><p>\u3000\u3000\u5927\u897f\u6d0b\u8868\u793a\uff0c\u4e0a\u5e74\u540c\u671f\u5f52\u5c5e\u4e8e\u4e0a\u5e02\u516c\u53f8\u80a1\u4e1c\u7684\u51c0\u5229\u6da62374.46\u4e07\u5143\u3002\u4eca\u5e74\u516c\u53f8\u51c0\u5229\u6da6\u540c\u6bd4\u8f83\u5927\u5e45\u5ea6\u589e\u957f\uff0c\u4e3b\u8981\u4e3a\u516c\u53f8\u4e3b\u8425\u4e1a\u52a1\u6bdb\u5229\u7387\u589e\u957f\u6240\u81f4\u3002\u5206\u6790\u4eba\u58eb\u8ba4\u4e3a\uff0c\u4f5c\u4e3a\u56fd\u5185\u7279\u79cd\u710a\u6750\u9886\u57df\u7684\u9f99\u5934\u4f01\u4e1a\uff0c\u516c\u53f8\u5df2\u7ecf\u6210\u529f\u8fdb\u5165\u6838\u7535\u3001\u519b\u5de5\u7528\u7b49\u7279\u79cd\u710a\u6750\u5e02\u573a\uff1b \u540c\u65f6\uff0c\u4e3a\u6ee1\u8db3\u516c\u53f8\u672a\u6765\u53d1\u5c55\u6218\u7565\uff0c\u516c\u53f8\u5c06\u672c\u7740\u201c\u505a\u597d\u7279\u79cd\u710a\u6750\uff0c\u5411\u4e24\u4e2a\u65b9\u5411\u5ef6\u4f38\u201d\u7684\u65b9\u9488\u52a0\u5feb\u6269\u5f20\u3002\u76ee\u524d\uff0c\u5927\u897f\u6d0b\u6838\u7535\u5e38\u89c4\u5c9b\u710a\u6750\u5df2\u5f97\u5230\u5e7f\u6cdb\u5e94\u7528\uff0c\u6838\u5c9b\u710a\u6750\u4e3a\u56fd\u5185\u72ec\u5bb6\u751f\u4ea7\u4f01\u4e1a\uff0c\u5e76\u5df2\u5177\u5907\u9879\u76ee\u7ecf\u9a8c\uff0c\u968f\u7740\u519b\u5de5\u710a\u6750\u968f\u7740\u6211\u56fd\u6d77\u519b\u88c5\u5907\u7684\u53d1\u5c55\uff0c\u672a\u6765\u9700\u6c42\u91cf\u6709\u671b\u6301\u7eed\u589e\u957f\u3002\u516c\u53f8\u76f8\u5173\u4eba\u58eb\u66fe\u8868\u793a\uff0c\u5927\u897f\u6d0b\u5c06\u5411\u4ea7\u4e1a\u94fe\u4e0b\u6e38\u5ef6\u4f38\uff0c\u79ef\u6781\u5e03\u5c40\u81ea\u52a8\u5316\u710a\u63a5\u8bbe\u5907\u3001\u710a\u63a5\u5de5\u827a\u603b\u5305\u7b49\u4e1a\u52a1\uff0c\u8ba1\u5212\u4ee5\u517c\u5e76\u91cd\u7ec4\u7b49\u5f62\u5f0f\u5b9e\u73b0\u5feb\u901f\u7a81\u7834\u3002</p><div id="output_hangqing_div" style="text-align:center;" class="visible-md-block visible-lg-block"></div><input type="hidden" id="hid_totalPage" value="1"><input type="hidden" id="hid_docId" value="3196232">\r\n                        \r\n                    </div>',
+ 'time': datetime.datetime(2014, 9, 29, 0, 0),
+ 'title': u'\u5927\u897f\u6d0b\u4e09\u5b63\u62a5\u51c0\u5229\u6da6\u9884\u589e50%',
+ 'url': 'http://ggjd.cnstock.com/company/scp_ggjd/tjd_bbdj/201409/3196232.htm'}
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/twisted/internet/defer.py", line 649, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/yuweifu/spiders/news/news/pipelines.py", line 32, in process_item
+    self.db[self.collection_name].create_index("url", unique=True)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1387, in create_index
+    self.__create_index(keys, kwargs)
+  File "/Library/Python/2.7/site-packages/pymongo/collection.py", line 1294, in __create_index
+    with self._socket_for_writes() as sock_info:
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/Library/Python/2.7/site-packages/pymongo/mongo_client.py", line 762, in _get_socket
+    server = self._get_topology().select_server(selector)
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 210, in select_server
+    address))
+  File "/Library/Python/2.7/site-packages/pymongo/topology.py", line 186, in select_servers
+    self._error_message(selector))
+ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused
+2016-11-23 15:19:25 [scrapy] ERROR: Spider error processing <GET http://ggjd.cnstock.com/gglist/search/qmtbbdj/29> (referer: http://ggjd.cnstock.com/gglist/search/qmtbbdj/28)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/yuweifu/spiders/news/news/spiders/cnstock.py", line 29, in parse
+    if words[-2] == u'下一页':
+IndexError: list index out of range
+2016-11-23 15:19:33 [scrapy] INFO: Crawled 6760 pages (at 331 pages/min), scraped 6477 items (at 332 items/min)
+2016-11-23 15:19:46 [scrapy] ERROR: Spider error processing <GET http://company.cnstock.com/company/scp_ggjd/gszhuanti/2015bnb/> (referer: http://company.cnstock.com/company/scp_dsy/tcsy_rdgs/26)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/yuweifu/spiders/news/news/spiders/cnstock.py", line 36, in parse_item
+    item['time'] = response.xpath('//span[@class="timer"]/text()').extract_first()[:10]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2016-11-23 15:20:14 [scrapy] ERROR: Spider error processing <GET http://company.cnstock.com/gszj/rdgs/201412/3283082.htm> (referer: http://company.cnstock.com/company/scp_dsy/tcsy_rdgs/76)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/yuweifu/spiders/news/news/spiders/cnstock.py", line 36, in parse_item
+    item['time'] = response.xpath('//span[@class="timer"]/text()').extract_first()[:10]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2016-11-23 15:20:14 [scrapy] ERROR: Spider error processing <GET http://company.cnstock.com/gszj/rdgs/201412/3278178.htm> (referer: http://company.cnstock.com/company/scp_dsy/tcsy_rdgs/77)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/yuweifu/spiders/news/news/spiders/cnstock.py", line 36, in parse_item
+    item['time'] = response.xpath('//span[@class="timer"]/text()').extract_first()[:10]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2016-11-23 15:20:14 [scrapy] ERROR: Spider error processing <GET http://company.cnstock.com/gszj/rdgs/201412/3280014.htm> (referer: http://company.cnstock.com/company/scp_dsy/tcsy_rdgs/77)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/yuweifu/spiders/news/news/spiders/cnstock.py", line 36, in parse_item
+    item['time'] = response.xpath('//span[@class="timer"]/text()').extract_first()[:10]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2016-11-23 15:20:14 [scrapy] ERROR: Spider error processing <GET http://company.cnstock.com/gszj/rdgs/201412/3281519.htm> (referer: http://company.cnstock.com/company/scp_dsy/tcsy_rdgs/77)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/yuweifu/spiders/news/news/spiders/cnstock.py", line 36, in parse_item
+    item['time'] = response.xpath('//span[@class="timer"]/text()').extract_first()[:10]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2016-11-23 15:20:14 [scrapy] ERROR: Spider error processing <GET http://company.cnstock.com/gszj/rdgs/201412/3280033.htm> (referer: http://company.cnstock.com/company/scp_dsy/tcsy_rdgs/77)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/yuweifu/spiders/news/news/spiders/cnstock.py", line 36, in parse_item
+    item['time'] = response.xpath('//span[@class="timer"]/text()').extract_first()[:10]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2016-11-23 15:20:14 [scrapy] ERROR: Spider error processing <GET http://company.cnstock.com/gszj/rdgs/201412/3276450.htm> (referer: http://company.cnstock.com/company/scp_dsy/tcsy_rdgs/78)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/yuweifu/spiders/news/news/spiders/cnstock.py", line 36, in parse_item
+    item['time'] = response.xpath('//span[@class="timer"]/text()').extract_first()[:10]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2016-11-23 15:20:14 [scrapy] ERROR: Spider error processing <GET http://company.cnstock.com/gszj/rdgs/201412/3276453.htm> (referer: http://company.cnstock.com/company/scp_dsy/tcsy_rdgs/78)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/yuweifu/spiders/news/news/spiders/cnstock.py", line 36, in parse_item
+    item['time'] = response.xpath('//span[@class="timer"]/text()').extract_first()[:10]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2016-11-23 15:20:15 [scrapy] ERROR: Spider error processing <GET http://company.cnstock.com/gszj/rdgs/201412/3273173.htm> (referer: http://company.cnstock.com/company/scp_dsy/tcsy_rdgs/79)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/yuweifu/spiders/news/news/spiders/cnstock.py", line 36, in parse_item
+    item['time'] = response.xpath('//span[@class="timer"]/text()').extract_first()[:10]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2016-11-23 15:20:15 [scrapy] ERROR: Spider error processing <GET http://company.cnstock.com/gszj/rdgs/201412/3274832.htm> (referer: http://company.cnstock.com/company/scp_dsy/tcsy_rdgs/79)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/yuweifu/spiders/news/news/spiders/cnstock.py", line 36, in parse_item
+    item['time'] = response.xpath('//span[@class="timer"]/text()').extract_first()[:10]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2016-11-23 15:20:17 [scrapy] ERROR: Spider error processing <GET http://company.cnstock.com/gszj/rdgs/201411/3258128.htm> (referer: http://company.cnstock.com/company/scp_dsy/tcsy_rdgs/84)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/yuweifu/spiders/news/news/spiders/cnstock.py", line 36, in parse_item
+    item['time'] = response.xpath('//span[@class="timer"]/text()').extract_first()[:10]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2016-11-23 15:20:22 [scrapy] ERROR: Spider error processing <GET http://company.cnstock.com/gszj/rdgs/201411/3246942.htm> (referer: http://company.cnstock.com/company/scp_dsy/tcsy_rdgs/88)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/yuweifu/spiders/news/news/spiders/cnstock.py", line 36, in parse_item
+    item['time'] = response.xpath('//span[@class="timer"]/text()').extract_first()[:10]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2016-11-23 15:20:24 [scrapy] ERROR: Spider error processing <GET http://company.cnstock.com/gszj/rdgs/201412/3274684.htm> (referer: http://company.cnstock.com/company/scp_dsy/tcsy_rdgs/79)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/yuweifu/spiders/news/news/spiders/cnstock.py", line 36, in parse_item
+    item['time'] = response.xpath('//span[@class="timer"]/text()').extract_first()[:10]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2016-11-23 15:20:24 [scrapy] ERROR: Spider error processing <GET http://company.cnstock.com/gszj/rdgs/201412/3278159.htm> (referer: http://company.cnstock.com/company/scp_dsy/tcsy_rdgs/78)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/yuweifu/spiders/news/news/spiders/cnstock.py", line 36, in parse_item
+    item['time'] = response.xpath('//span[@class="timer"]/text()').extract_first()[:10]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2016-11-23 15:20:24 [scrapy] ERROR: Spider error processing <GET http://company.cnstock.com/gszj/rdgs/201412/3278232.htm> (referer: http://company.cnstock.com/company/scp_dsy/tcsy_rdgs/78)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/yuweifu/spiders/news/news/spiders/cnstock.py", line 36, in parse_item
+    item['time'] = response.xpath('//span[@class="timer"]/text()').extract_first()[:10]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2016-11-23 15:20:24 [scrapy] ERROR: Spider error processing <GET http://company.cnstock.com/gszj/rdgs/201412/3281562.htm> (referer: http://company.cnstock.com/company/scp_dsy/tcsy_rdgs/77)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/yuweifu/spiders/news/news/spiders/cnstock.py", line 36, in parse_item
+    item['time'] = response.xpath('//span[@class="timer"]/text()').extract_first()[:10]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2016-11-23 15:20:33 [scrapy] INFO: Crawled 9055 pages (at 2295 pages/min), scraped 8666 items (at 2189 items/min)
+2016-11-23 15:20:37 [scrapy] INFO: Closing spider (finished)
+2016-11-23 15:20:37 [scrapy] INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 16,
+ 'downloader/exception_type_count/twisted.internet.error.TimeoutError': 8,
+ 'downloader/exception_type_count/twisted.web._newclient.ResponseNeverReceived': 8,
+ 'downloader/request_bytes': 2925977,
+ 'downloader/request_count': 9220,
+ 'downloader/request_method_count/GET': 9220,
+ 'downloader/response_bytes': 85488211,
+ 'downloader/response_count': 9204,
+ 'downloader/response_status_count/200': 9189,
+ 'downloader/response_status_count/302': 1,
+ 'downloader/response_status_count/404': 14,
+ 'dupefilter/filtered': 940,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2016, 11, 23, 7, 20, 37, 215665),
+ 'item_scraped_count': 8814,
+ 'log_count/ERROR': 47,
+ 'log_count/INFO': 16,
+ 'request_depth_max': 207,
+ 'response_received_count': 9201,
+ 'scheduler/dequeued': 9220,
+ 'scheduler/dequeued/memory': 9220,
+ 'scheduler/enqueued': 9220,
+ 'scheduler/enqueued/memory': 9220,
+ 'spider_exceptions/IndexError': 1,
+ 'spider_exceptions/TypeError': 23,
+ 'start_time': datetime.datetime(2016, 11, 23, 7, 5, 33, 386074)}
+2016-11-23 15:20:37 [scrapy] INFO: Spider closed (finished)
+2016-11-23 15:20:38 [scrapy] INFO: Scrapy 1.2.1 started (bot: news)
+2016-11-23 15:20:38 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'news.spiders', 'SPIDER_MODULES': ['news.spiders'], 'LOG_FILE': 'scrapy.log', 'LOG_LEVEL': 'INFO', 'BOT_NAME': 'news'}
+2016-11-23 15:20:38 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-11-23 15:20:38 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-11-23 15:20:38 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-11-23 15:20:38 [scrapy] INFO: Enabled item pipelines:
+['news.pipelines.MongoDBPipeline']
+2016-11-23 15:20:38 [scrapy] INFO: Spider opened
+2016-11-23 15:20:38 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2016-11-23 15:21:38 [scrapy] INFO: Crawled 1556 pages (at 1556 pages/min), scraped 1491 items (at 1491 items/min)
+2016-11-23 15:22:18 [scrapy] ERROR: Spider error processing <GET http://www.stcn.com> (referer: http://company.stcn.com/cjnews/14.shtml)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Library/Python/2.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/yuweifu/spiders/news/news/spiders/stcn.py", line 36, in parse_item
+    item['time'] = response.xpath('//div[@class="intal_tit"]/div[@class="info"]/text()').extract_first()[:10]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2016-11-23 15:22:38 [scrapy] INFO: Crawled 3633 pages (at 2077 pages/min), scraped 3531 items (at 2040 items/min)
+2016-11-23 15:23:18 [scrapy] INFO: Closing spider (finished)
+2016-11-23 15:23:18 [scrapy] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 1402125,
+ 'downloader/request_count': 4913,
+ 'downloader/request_method_count/GET': 4913,
+ 'downloader/response_bytes': 72167689,
+ 'downloader/response_count': 4913,
+ 'downloader/response_status_count/200': 4906,
+ 'downloader/response_status_count/302': 7,
+ 'dupefilter/filtered': 14,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2016, 11, 23, 7, 23, 18, 601796),
+ 'item_scraped_count': 4785,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 9,
+ 'request_depth_max': 20,
+ 'response_received_count': 4906,
+ 'scheduler/dequeued': 4913,
+ 'scheduler/dequeued/memory': 4913,
+ 'scheduler/enqueued': 4913,
+ 'scheduler/enqueued/memory': 4913,
+ 'spider_exceptions/TypeError': 1,
+ 'start_time': datetime.datetime(2016, 11, 23, 7, 20, 38, 727607)}
+2016-11-23 15:23:18 [scrapy] INFO: Spider closed (finished)
