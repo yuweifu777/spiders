@@ -10,7 +10,7 @@ from pymongo import IndexModel, DESCENDING
 
 class MongoDBPipeline(object):
 
-    collection_name = 'news'
+    collection_name = 'report'
 
     def __init__(self, mongo_uri, mongo_db):
         self.mongo_uri = mongo_uri

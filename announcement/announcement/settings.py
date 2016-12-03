@@ -94,5 +94,5 @@ ITEM_PIPELINES = {
 MONGO_URI = 'localhost:27017'
 MONGO_DATABASE = 'announcement'
 LOG_FILE = 'scrapy.log'
-LOG_STDOUT = False
+LOG_STDOUT = True
 LOG_LEVEL = 'INFO'
