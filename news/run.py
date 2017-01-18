@@ -1,8 +1,12 @@
+# -*- coding:utf-8 -*-
+"""
+    script to crawl news from three different websites
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"""
 import os
 
 commands = [
     'scrapy crawl cs',
-    'scrapy crawl cs2',
     'scrapy crawl cnstock',
     'scrapy crawl stcn'
 ]

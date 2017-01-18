@@ -1,4 +1,15 @@
 # -*- coding: utf-8 -*-
+"""
+    News from www.cnstock.com.cn (Shanghai Stock Newspaper)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Different section updates with different speed.
+    Evaluate the appropriate X page number.
+    for i in range(1, X):
+        ...
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    2017.1
+"""
 import sys
 import datetime
 
@@ -10,6 +21,11 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 class CnstockSpider(Spider):
+    """
+        downloading urls
+        ~~~~~~~~~~~~~~~~
+        http://company.cnstock.com/company/scp_dsy/tcsy_rdgs/10
+    """
     name = "cnstock"
     allowed_domains = ["cnstock.com"]
     #: hot spot company
@@ -17,18 +33,33 @@ class CnstockSpider(Spider):
         "http://company.cnstock.com/company/scp_dsy/tcsy_rdgs/",        # 1.公司新闻
         "http://company.cnstock.com/company/scp_gsxw",                  # 2.公司聚焦
         "http://ggjd.cnstock.com/gglist/search/qmtbbdj/",               # 3.最新解读
-
     ]
+
+    def start_requests(self):
+
+        # 1. company news
+        url = "http://company.cnstock.com/company/scp_dsy/tcsy_rdgs/%s"
+        for i in xrange(1, 11):
+            download_url = url % i
+            yield Request(download_url, self.parse)
+
+        # 2. company focus
+        url = "http://company.cnstock.com/company/scp_gsxw/%s"
+        for i in xrange(1, 25):
+            download_url = url % i
+            yield Request(download_url, self.parse)
+
+        # 3. newest analysis
+        url = "http://ggjd.cnstock.com/gglist/search/qmtbbdj/%s"
+        for i in xrange(10):
+            download_url = url % i
+            yield Request(download_url, self.parse)
 
     def parse(self, response):
         sites = response.xpath('//div[@class="main-list"]/ul/li/a/@href').extract()
         for site in sites:
             yield Request(site, callback=self.parse_item)
 
-        words = response.xpath('//div[@class="pagination pagination-centered"]/ul/li/a/text()').extract()
-        if words[-2] == u'下一页':
-            next_url = response.xpath('//div[@class="pagination pagination-centered"]/ul/li/a/@href').extract()[-2]
-            yield Request(next_url, callback=self.parse)
 
     def parse_item(self, response):
         item = NewsItem()
